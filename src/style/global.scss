@@ -1,0 +1,49 @@
+// 重置滚动条样式
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #825f35;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+input {
+  // background: none;
+  // outline: none;
+  // border: 0px;
+  // caret-color: white;
+  &[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+// 字体样式
+// @font-face {
+//   font-family: "TrajanPro-Bold";
+//   src: url("../assets/fonts/TrajanPro-Bold-4.otf");
+// }
+
+// // 英文特殊体
+// .ff_en_special {
+//   font-family: Facon;
+// }
+// // 英文常规
+// .ff_en_regular {
+//   font-family: TrajanPro-Regular;
+// }
+// // 英文粗体
+// .ff_en_bold {
+//   font-family: TrajanPro-Bold;
+// }
+// // 中文常规
+// .ff_cn_regular {
+//   font-family: WenYue-GuDianMingChaoTi-JRFC;
+// }
