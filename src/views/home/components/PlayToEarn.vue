@@ -2,7 +2,9 @@
   <div class="box">
     <div class="box_title"><span>PLAY TO EARN</span></div>
     <div class="box_content">
-      <!-- <video src=""></video> -->
+      <video loop muted controls>
+        <source src="../../../assets/videos/PV2.0/通感-阵营展示-1280X720.mp4" type="video/mp4" />
+      </video>
       <div class="btn">Play</div>
     </div>
   </div>
@@ -24,6 +26,11 @@ export default {
   background: url("../../../assets/images/bg7.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
+  video {
+    padding: 10% 15% 5% 15%;
+    width: 100%;
+    height: 100%;
+  }
   .btn {
     width: 15%;
     background: url("../../../assets/images/btn_bg5.png") no-repeat;

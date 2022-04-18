@@ -10,7 +10,7 @@
     </div>
     <div>
       <div class="connect">
-        <span>{{ $t("message.nav.txt9") }}</span>
+        <span>{{ $t("message.nav.txt8") }}</span>
         <img src="../assets/images/angle.png" alt="" />
       </div>
       <div class="lang_box" @mouseover="showLangSelect = true" @mouseleave="showLangSelect = false">
@@ -32,13 +32,13 @@ export default {
     return {
       navActive: 0,
       navArr: [
-        { label: "首页", link: "/home" },
-        { label: "NFT", link: "/home" },
-        { label: "市场", link: "/home" },
-        { label: "COMMUNITY", link: "/home" },
-        { label: "白皮书", link: "/home" },
-        { label: "DAO", link: "/home" },
-        { label: "购买盲盒", link: "/home" },
+        { label: "message.nav.txt1", link: "/home" },
+        { label: "message.nav.txt2", link: "/home" },
+        { label: "message.nav.txt3", link: "/home" },
+        { label: "message.nav.txt4", link: "/home" },
+        { label: "message.nav.txt5", link: "/home" },
+        { label: "message.nav.txt6", link: "/home" },
+        { label: "message.nav.txt7", link: "/home" },
       ],
       showLangSelect: false,
       language: "",
@@ -52,7 +52,7 @@ export default {
     },
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       // if (from.matched.length && to.matched[0].path !== from.matched[0].path) {
       //  window.scrollTo(0, 0);
       // }
