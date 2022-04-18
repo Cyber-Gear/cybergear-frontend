@@ -36,8 +36,9 @@ export default {
       imgList: [
         require("../../../assets/images/gamemode_bg1.png"),
         require("../../../assets/images/gamemode_bg2.png"),
-        require("../../../assets/images/gamemode_bg1.png"),
-        require("../../../assets/images/gamemode_bg2.png"),
+        require("../../../assets/images/gamemode_bg3.png"),
+        require("../../../assets/images/gamemode_bg4.png"),
+        require("../../../assets/images/gamemode_bg5.png"),
       ],
       currentSwiperIndex: 0,
       swiperOptionTop: {

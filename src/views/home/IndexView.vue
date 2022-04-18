@@ -211,8 +211,8 @@ $maxWidth: calc(100vw - 5px);
   right: 0;
   margin: auto;
   z-index: 99;
-  width: 80vw;
-  height: calc(80vw * 0.56);
+  width: calc(50vh * 1.7);
+  height: 50vh;
   background: #000;
   > div {
     position: relative;
