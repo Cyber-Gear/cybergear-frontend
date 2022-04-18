@@ -1,6 +1,6 @@
 <template>
-  <div id="container" :class="isEnLang ? 'ff_en_bold' : 'ff_cn_regular'">
-    <HeaderLayout />
+  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'" @scroll="handleScrollScroll($event)">
+    <HeaderLayout :scrollTop="scrollTop" />
     <div id="container_body">
       <router-view />
       <FooterLayout />
@@ -9,11 +9,16 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import HeaderLayout from "@/layout/HeaderLayout.vue";
-import FooterLayout from "@/layout/FooterLayout.vue";
+import HeaderLayout from "./layout/HeaderLayout";
+import FooterLayout from "./layout/FooterLayout";
 export default {
   components: { HeaderLayout, FooterLayout },
   computed: { ...mapGetters(["isEnLang"]) },
+  data() {
+    return {
+      scrollTop: 0,
+    };
+  },
   mounted() {
     this.resetRem();
   },
@@ -25,6 +30,11 @@ export default {
         document.getElementsByTagName("html")[0].style.fontSize = rem375 + "px";
       }
     },
+    handleScrollScroll(e) {
+      this.scrollTop = e.srcElement.scrollTop;
+      // if (e.srcElement.scrollTop == 0) {
+      // }
+    },
   },
 };
 </script>
@@ -33,12 +43,13 @@ export default {
 #container {
   width: 100vw;
   height: 100vh;
+  position: relative;
   color: #ffffff;
-  background: #000;
+  background: #09071f;
+  overflow: auto;
 }
 #container_body {
-  width: 100vw;
-  height: calc(100vh - 80px);
-  overflow: auto;
+  width: calc(100vw - 5px);
+  height: 100vh;
 }
 </style>

@@ -1,3 +1,26 @@
+// 字体样式
+@font-face {
+  font-family: "PingFang";
+  src: url("../assets/fonts/PingFang.ttf");
+}
+@font-face {
+  font-family: "CaviarDreams";
+  src: url("../assets/fonts/CaviarDreams.ttf");
+}
+@font-face {
+  font-family: "CaviarDreams-Bold";
+  src: url("../assets/fonts/CaviarDreams-Bold.ttf");
+}
+
+// 中文常规
+.fontfamily_zh {
+  font-family: PingFang;
+}
+// 英文常规
+.fontfamily_en {
+  font-family: CaviarDreams;
+}
+
 // 重置滚动条样式
 ::-webkit-scrollbar {
   width: 5px;
@@ -25,25 +48,17 @@ input {
   }
 }
 
-// 字体样式
-// @font-face {
-//   font-family: "TrajanPro-Bold";
-//   src: url("../assets/fonts/TrajanPro-Bold-4.otf");
-// }
-
-// // 英文特殊体
-// .ff_en_special {
-//   font-family: Facon;
-// }
-// // 英文常规
-// .ff_en_regular {
-//   font-family: TrajanPro-Regular;
-// }
-// // 英文粗体
-// .ff_en_bold {
-//   font-family: TrajanPro-Bold;
-// }
-// // 中文常规
-// .ff_cn_regular {
-//   font-family: WenYue-GuDianMingChaoTi-JRFC;
-// }
+.box_title {
+  width: fit-content;
+  background: url("../assets/images/title_bg1.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 20px;
+  span {
+    font-size: 32px;
+    color: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #61f0f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+}

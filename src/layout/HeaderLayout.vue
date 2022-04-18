@@ -1,18 +1,21 @@
 <template>
-  <div class="nav">
-    <div class="nav_left">
-      <img class="logo" src="../assets/images/logo.png" alt="" @click="toRoute('/home')" />
-      <ul>
-        <li v-for="(item, index) in navArr" :key="index" :class="{ active: navActive == index }" @click="toRoute(item.link)">
-          <span> {{ $t(item.label) }}</span>
-        </li>
-      </ul>
+  <div class="nav" :class="{ active: scrollTop > 0 }">
+    <div>
+      <img class="logo" src="../assets/images/logo1.png" alt="" @click="toRoute('/home')" />
     </div>
-    <div class="nav_right">
-      <div class="connect">{{ $t("message.nav.txt9") }}</div>
+    <div>
+      <div class="nav_list" v-for="(item, index) in navArr" :key="index" :class="{ active: navActive == index }" @click="toRoute(item.link)">
+        <span>{{ $t(item.label) }}</span>
+      </div>
+    </div>
+    <div>
+      <div class="connect">
+        <span>{{ $t("message.nav.txt9") }}</span>
+        <img src="../assets/images/angle.png" alt="" />
+      </div>
       <div class="lang_box" @mouseover="showLangSelect = true" @mouseleave="showLangSelect = false">
         <span>{{ language }}</span>
-        <img src="../assets/images/accrow.png" alt="" />
+        <img src="../assets/images/angle.png" alt="" />
         <transition name="select-lang" appear>
           <ul v-show="showLangSelect">
             <li v-for="(item, index) in langArr" :key="index" @click="selectLang(index)">{{ item }}</li>
@@ -29,19 +32,24 @@ export default {
     return {
       navActive: 0,
       navArr: [
-        { label: "message.nav.txt1", link: "/home" },
-        { label: "message.nav.txt2", link: "/nft" },
-        { label: "message.nav.txt3", link: "" },
-        { label: "message.nav.txt4", link: "" },
-        { label: "message.nav.txt5", link: "" },
-        { label: "message.nav.txt6", link: "" },
-        { label: "message.nav.txt7", link: "" },
-        { label: "message.nav.txt8", link: "" },
+        { label: "首页", link: "/home" },
+        { label: "NFT", link: "/home" },
+        { label: "市场", link: "/home" },
+        { label: "COMMUNITY", link: "/home" },
+        { label: "白皮书", link: "/home" },
+        { label: "DAO", link: "/home" },
+        { label: "购买盲盒", link: "/home" },
       ],
       showLangSelect: false,
       language: "",
       langArr: ["English", "繁体中文"],
     };
+  },
+  props: {
+    scrollTop: {
+      type: Number,
+      default: 0,
+    },
   },
   watch: {
     $route(to, from) {
@@ -75,99 +83,111 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  width: 100%;
-  height: 80px;
-  background: #000000;
+  width: 100vw;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
-.nav_left {
-  display: flex;
-  align-items: center;
-  .logo {
-    width: auto;
-    height: 60px;
-    margin-right: 20px;
-    cursor: pointer;
+  justify-content: center;
+  transition: all 0.5s;
+  &.active {
+    background: rgba(0, 0, 0, 1);
   }
-  ul {
+  > div {
+    height: 100%;
     display: flex;
     align-items: center;
-    li {
-      cursor: pointer;
-      margin: 0 10px;
-      padding: 10px 15px;
-      span {
+    &:nth-child(1) .logo {
+      width: auto;
+      height: 30px;
+    }
+    &:nth-child(2) {
+      margin: 0 5vw;
+      .nav_list {
+        cursor: pointer;
+        height: 80%;
+        padding: 0 2vw;
         font-size: 19px;
-      }
-      &.active {
-        span {
-          font-weight: bold;
-          color: #d8d8d8;
-          background: linear-gradient(180deg, #825f35 0%, #fadd82 51%, #876333 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        position: relative;
+        &::after {
+          content: "";
+          width: 1px;
+          height: 100%;
+          background: url("../assets/images/border1.png") no-repeat;
+          background-size: auto 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
         }
-        background: url("../assets/images/menubg.png") no-repeat;
+        &:last-child::after {
+          width: 0;
+        }
+        &.active {
+          color: #29a7e1;
+          background: url("../assets/images/btn_bg4.png") no-repeat;
+          background-size: 75% auto;
+          background-position: center;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .connect {
+        font-size: 14px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: url("../assets/images/btn_bg1.png") no-repeat;
         background-size: 100% 100%;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 20px;
+          height: auto;
+        }
       }
-    }
-  }
-}
-.nav_right {
-  display: flex;
-  align-items: center;
-  .connect {
-    cursor: pointer;
-    padding: 5px 20px;
-    background: url("../assets/images/connect.png") no-repeat;
-    background-size: 100% 100%;
-    margin-right: 10px;
-    font-size: 16px;
-    color: #381a02;
-  }
-  .lang_box {
-    cursor: pointer;
-    position: relative;
-    padding: 0 10px;
-    span {
-      margin-right: 5px;
-      color: #939393;
-    }
-    img {
-      width: 15px;
-      height: auto;
-    }
-    ul {
-      width: 100%;
-      height: auto;
-      background: #000;
-      text-align: center;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 99;
-      transition: transform 0.3s;
-      transform-origin: top center;
-      padding: 10px 0;
-      li {
-        padding: 5px 0;
-        color: #939393;
-        // 语言切换单独设置，不能改
-        &:nth-child(1) {
-          font-family: TrajanPro-Bold;
+      .lang_box {
+        font-size: 14px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background: url("../assets/images/btn_bg2.png") no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        img {
+          width: 20px;
+          height: auto;
         }
-        &:nth-child(2) {
-          font-family: WenYue-GuDianMingChaoTi-JRFC;
-        }
-        &:hover {
-          color: #fff;
+        ul {
+          width: 100%;
+          height: auto;
+          background: #000;
+          text-align: center;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 99;
+          transition: transform 0.3s;
+          transform-origin: top center;
+          padding: 10px 0;
+          li {
+            padding: 5px 0;
+            color: #939393;
+            &:hover {
+              color: #ffffff;
+            }
+          }
         }
       }
     }
   }
 }
+
 .select-lang-enter,
 .select-lang-leave-to {
   transform: scaleY(0);
