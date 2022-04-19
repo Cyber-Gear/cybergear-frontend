@@ -5,7 +5,6 @@
       <video loop muted controls>
         <source src="../../../assets/videos/PV2.0/通感-阵营展示-1280X720.mp4" type="video/mp4" />
       </video>
-      <div class="btn">Play</div>
     </div>
   </div>
 </template>
@@ -18,33 +17,19 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5% 10%;
+  padding: 5vw;
 }
 .box_content {
-  width: 100%;
+  width: 80vw;
   height: 45vw;
-  background: url("../../../assets/images/bg7.png") no-repeat;
+  margin: 0 auto;
+  background: url("../../../assets/images/bg11.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
   video {
-    padding: 10% 15% 5% 15%;
+    padding: 3% 2%;
     width: 100%;
     height: 100%;
-  }
-  .btn {
-    width: 15%;
-    background: url("../../../assets/images/btn_bg5.png") no-repeat;
-    background-size: 100% 100%;
-    font-size: 25px;
-    font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding: 10px 0;
-    text-align: center;
-    cursor: pointer;
   }
 }
 </style>

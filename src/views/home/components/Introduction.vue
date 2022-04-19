@@ -29,22 +29,46 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
+  padding: 5vw;
   background: url("../../../assets/images/bg2.png") no-repeat;
   background-size: auto;
   background-position: top left;
-  padding: 10% 10% 5% 10%;
   .inside {
     width: 100%;
+    height: 100%;
     background: url("../../../assets/images/bg3.png") no-repeat;
-    background-size: 100% 100%;
+    background-size: auto 100%;
+    background-position: center;
     margin: 0 auto;
+    padding: 5vw;
     .inside2 {
       width: 100%;
+      height: 100%;
       display: flex;
       justify-content: space-between;
       .left {
         width: 30%;
-        padding-top: 7%;
+        height: 100%;
+        .box_title {
+          position: relative;
+          top: 2vw;
+        }
+        .box_content {
+          display: flex;
+          position: relative;
+          top: 4vw;
+          img {
+            width: auto;
+            height: 2vw;
+            margin-top: 0.5vh;
+            transform: rotate(-90deg);
+          }
+          div {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 36px;
+          }
+        }
       }
       .right {
         width: 70%;
@@ -52,27 +76,13 @@ export default {
         align-items: center;
         justify-content: center;
         img {
-          width: 35vw;
+          width: 30vw;
           height: auto;
           position: relative;
-          bottom: 3vw;
+          bottom: 2vw;
         }
       }
     }
-  }
-}
-.box_content {
-  display: flex;
-  margin-top: 10%;
-  img {
-    width: auto;
-    height: 2vw;
-    transform: rotate(-90deg);
-  }
-  div {
-    font-size: 12px;
-    line-height: 36px;
-    font-weight: 400;
   }
 }
 </style>

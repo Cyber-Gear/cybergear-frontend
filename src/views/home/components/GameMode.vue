@@ -8,22 +8,24 @@
       </div>
       <div>PVE剧情闯关（能力提升获取CT）,奖池为所有盲盒售卖的10%+玩家在游戏内所有充值的20%</div>
     </div>
-    <div class="box_content">
-      <div class="box_title3">
-        <img src="../../../assets/images/gamemode_title2.png" alt="" />
+    <div class="box_bg">
+      <div class="box_content">
+        <div class="box_title3">
+          <img src="../../../assets/images/gamemode_title2.png" alt="" />
+        </div>
+        <swiper class="gallery-top" :options="swiperOptionTop" ref="swiperTop">
+          <swiper-slide v-for="(item, index) in imgList" :key="index">
+            <img :src="item" />
+          </swiper-slide>
+        </swiper>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <swiper class="gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
+          <swiper-slide v-for="(item, index) in imgList" :key="index" :class="{ 'slide-thumb-active': currentSwiperIndex == index }">
+            <img :src="item" />
+          </swiper-slide>
+        </swiper>
       </div>
-      <swiper class="gallery-top" :options="swiperOptionTop" ref="swiperTop">
-        <swiper-slide v-for="(item, index) in imgList" :key="index">
-          <img :src="item" />
-        </swiper-slide>
-      </swiper>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <swiper class="gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-        <swiper-slide v-for="(item, index) in imgList" :key="index" :class="{ 'slide-thumb-active': currentSwiperIndex == index }">
-          <img :src="item" />
-        </swiper-slide>
-      </swiper>
     </div>
   </div>
 </template>
@@ -34,11 +36,11 @@ export default {
   data() {
     return {
       imgList: [
-        require("../../../assets/images/gamemode_bg1.png"),
-        require("../../../assets/images/gamemode_bg2.png"),
-        require("../../../assets/images/gamemode_bg3.png"),
-        require("../../../assets/images/gamemode_bg4.png"),
-        require("../../../assets/images/gamemode_bg5.png"),
+        require("../../../assets/images/gamemode_bg1.jpg"),
+        require("../../../assets/images/gamemode_bg2.jpg"),
+        require("../../../assets/images/gamemode_bg3.jpg"),
+        require("../../../assets/images/gamemode_bg4.jpg"),
+        require("../../../assets/images/gamemode_bg5.jpg"),
       ],
       currentSwiperIndex: 0,
       swiperOptionTop: {
@@ -84,10 +86,10 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5% 10%;
+  padding: 5vw;
 }
 .box_title2 {
-  width: 70%;
+  width: 70vw;
   margin: 2vw auto;
   background: url("../../../assets/images/title_bg2.png") no-repeat;
   background-size: 100% 100%;
@@ -108,28 +110,35 @@ export default {
     }
   }
 }
+.box_title3 {
+  background: url("../../../assets/images/gamemode_title1.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 10vw;
+  left: 0;
+  z-index: 99;
+  img {
+    width: 80px;
+    height: auto;
+  }
+}
+.box_bg {
+  width: 100%;
+  height: 100%;
+  background: url("../../../assets/images/bg10.png") no-repeat;
+  background-size: auto 90%;
+  background-position: top center;
+}
 .box_content {
-  width: 60%;
+  width: 60vw;
   margin: 0 auto;
   position: relative;
-  .box_title3 {
-    background: url("../../../assets/images/gamemode_title1.png") no-repeat;
-    background-size: 100% 100%;
-    position: absolute;
-    bottom: 8.5vw;
-    left: 0;
-    z-index: 99;
-    img {
-      width: 80px;
-      height: auto;
-    }
-  }
   .gallery-top {
     .swiper-slide {
-      width: 80%;
+      text-align: center;
       img {
         width: 100%;
-        height: 30vw;
+        height: 35vw;
       }
     }
   }
@@ -140,7 +149,7 @@ export default {
       width: 25%;
       img {
         width: 100%;
-        height: 7vw;
+        height: 8vw;
       }
       &.slide-thumb-active {
         opacity: 1;

@@ -13,7 +13,7 @@
             每一张NFT（虚拟偶像）都可以发行成动态卡牌，均可与玩家产生多维互动，且有人气声优为其配音，使得日系少女形象更加立体真实。玩家与NFT（虚拟偶像）一起战斗，提升NFT价值的同时，可进一步与NFT互动，如线上Party及生日会、实物手办等。
           </p>
         </div>
-        <img src="../../../assets/images/figure7.png" alt="" />
+        <img src="../../../assets/images/coreFeatures_figure1.png" alt="" />
       </li>
       <li>
         <div>
@@ -34,7 +34,7 @@
             还加入了卡牌元素，进一步提升了游戏的趣味性和策略性。
           </p>
         </div>
-        <img src="../../../assets/images/figure8.png" alt="" />
+        <img src="../../../assets/images/coreFeatures_figure2.png" alt="" />
       </li>
       <li>
         <div>
@@ -45,7 +45,7 @@
           <img src="../../../assets/images/angle2.png" alt="" />
           <p>海外知名经济和数值团队构建了循环生态模型，满足多种角色收益形式。</p>
         </div>
-        <img src="../../../assets/images/figure9.png" alt="" />
+        <img src="../../../assets/images/coreFeatures_figure3.png" alt="" />
       </li>
     </ul>
   </div>
@@ -60,8 +60,7 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  height: 60vw;
-  padding: 5% 10%;
+  padding: 5vw;
   background: url("../../../assets/images/bg5.png") no-repeat;
   background-size: 100% 100%;
 }
@@ -70,9 +69,9 @@ export default {
   justify-content: space-around;
   li {
     width: 20%;
-    height: 40vw;
+    height: 70vh;
     background: url("../../../assets/images/bg6.png") no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     padding: 0 10px;
     position: relative;
     &:nth-child(1) {

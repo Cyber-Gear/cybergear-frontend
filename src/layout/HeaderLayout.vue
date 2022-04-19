@@ -14,11 +14,13 @@
         <img src="../assets/images/angle.png" alt="" />
       </div>
       <div class="lang_box" @mouseover="showLangSelect = true" @mouseleave="showLangSelect = false">
-        <span>{{ language }}</span>
+        <span><img :src="languageImage" alt="" /></span>
         <img src="../assets/images/angle.png" alt="" />
         <transition name="select-lang" appear>
           <ul v-show="showLangSelect">
-            <li v-for="(item, index) in langArr" :key="index" @click="selectLang(index)">{{ item }}</li>
+            <li v-for="(item, index) in langArr" :key="index" @click="selectLang(item)">
+              <img :src="item.image" alt="" />
+            </li>
           </ul>
         </transition>
       </div>
@@ -41,8 +43,11 @@ export default {
         { label: "message.nav.txt7", link: "/home" },
       ],
       showLangSelect: false,
-      language: "",
-      langArr: ["English", "繁体中文"],
+      languageImage: "",
+      langArr: [
+        { lang: "cn", image: require("../assets/images/national_cn.png") },
+        { lang: "en", image: require("../assets/images/national_us.png") },
+      ],
     };
   },
   props: {
@@ -64,16 +69,15 @@ export default {
     },
   },
   created() {
-    this.language = this.$i18n.locale == "en" ? this.langArr[0] : this.langArr[1];
+    this.languageImage = this.$i18n.locale == "cn" ? this.langArr[0].image : this.langArr[1].image;
   },
   methods: {
     toRoute(link) {
       if (link) this.$router.push(link);
     },
-    selectLang(index) {
-      if (this.language == this.langArr[index]) return (this.showLangSelect = false);
-      this.language = this.langArr[index];
-      this.$i18n.locale = this.language == "English" ? "en" : "cn";
+    selectLang(item) {
+      if (this.$i18n.locale == item.lang) return (this.showLangSelect = false);
+      this.$i18n.locale = item.lang;
       this.$utils.setCookie("LANG", this.$i18n.locale);
       location.reload();
     },
@@ -151,7 +155,6 @@ export default {
         }
       }
       .lang_box {
-        font-size: 14px;
         cursor: pointer;
         padding: 5px 10px;
         background: url("../assets/images/btn_bg2.png") no-repeat;
@@ -166,7 +169,7 @@ export default {
         ul {
           width: 100%;
           height: auto;
-          background: #000;
+          background: rgba(0, 0, 0, 0.3);
           text-align: center;
           position: absolute;
           top: 100%;
@@ -174,12 +177,14 @@ export default {
           z-index: 99;
           transition: transform 0.3s;
           transform-origin: top center;
-          padding: 10px 0;
           li {
-            padding: 5px 0;
-            color: #939393;
+            padding: 10px 0;
+            img {
+              width: 2vw;
+              height: auto;
+            }
             &:hover {
-              color: #ffffff;
+              background: #000;
             }
           }
         }

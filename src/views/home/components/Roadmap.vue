@@ -1,20 +1,20 @@
 <template>
   <div class="box">
     <div class="box_title"><span>路线图</span></div>
-    <img class="figure1" src="../../../assets/images/figure10.png" alt="" />
-    <ul class="box_content">
-      <li v-for="(item, index) in list" :key="index" :class="{ active: index == activeIndex }">
-        <div>
-          {{ item.text2.split(" ")[0] }}<br />
-          {{ item.text2.split(" ")[1] }}
-        </div>
-        <div @click="activeIndex = index">
-          {{ item.text1 }}
-          <img :src="activeIndex == index ? item.image2 : item.image1" alt="" />
-        </div>
-        <img v-if="activeIndex == index" class="figure2" src="../../../assets/images/figure11.png" alt="" />
-      </li>
-    </ul>
+    <img class="figure1" src="../../../assets/images/roadmap_figure1.png" alt="" />
+    <div class="box_content">
+      <img class="figure2" src="../../../assets/images/roadmap_figure2.png" alt="" />
+      <ul>
+        <li v-for="(item, index) in list" :key="index">
+          <img :src="item.image" alt="" />
+          <span> {{ item.text1 }}</span>
+          <p>
+            {{ item.text2.split(" ")[0] }}<br />
+            {{ item.text2.split(" ")[1] }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -23,15 +23,14 @@ export default {
   name: "Roadmap",
   data() {
     return {
-      activeIndex: 0,
       list: [
-        { text1: "Game Logic Planning", text2: "November 2018", image1: require("../../../assets/images/line1.png"), image2: require("../../../assets/images/line1_active.png") },
-        { text1: "Artistic creation complete", text2: "March 2019", image1: require("../../../assets/images/line2.png"), image2: require("../../../assets/images/line2_active.png") },
-        { text1: "Game Chain Change Planning", text2: "February 2022", image1: require("../../../assets/images/line3.png"), image2: require("../../../assets/images/line3_active.png") },
-        { text1: "April 2022NFT Presale", text2: "April 2022", image1: require("../../../assets/images/line4.png"), image2: require("../../../assets/images/line4_active.png") },
-        { text1: "Market launch", text2: "May 2022", image1: require("../../../assets/images/line5.png"), image2: require("../../../assets/images/line5_active.png") },
-        { text1: "May 2022  Alpha testing", text2: "May 2022", image1: require("../../../assets/images/line6.png"), image2: require("../../../assets/images/line6_active.png") },
-        { text1: "Game Live", text2: "June 2022", image1: require("../../../assets/images/line7.png"), image2: require("../../../assets/images/line7_active.png") },
+        { text1: "Game Logic Planning", text2: "November 2018", image: require("../../../assets/images/roadmap_bg1.png") },
+        { text1: "Artistic creation complete", text2: "March 2019", image: require("../../../assets/images/roadmap_bg2.png") },
+        { text1: "Game Chain Change Planning", text2: "February 2022", image: require("../../../assets/images/roadmap_bg3.png") },
+        { text1: "April 2022NFT Presale", text2: "April 2022", image: require("../../../assets/images/roadmap_bg4.png") },
+        { text1: "Market launch", text2: "May 2022", image: require("../../../assets/images/roadmap_bg5.png") },
+        { text1: "May 2022  Alpha testing", text2: "May 2022", image: require("../../../assets/images/roadmap_bg6.png") },
+        { text1: "Game Live", text2: "June 2022", image: require("../../../assets/images/roadmap_bg7.png") },
       ],
     };
   },
@@ -40,168 +39,152 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5% 10%;
+  padding: 5vw;
   position: relative;
 }
 .figure1 {
   width: 150px;
   height: auto;
   position: absolute;
-  top: 25%;
-  left: 36%;
+  top: 23%;
+  left: 35vw;
 }
 .figure2 {
   width: 90px;
   height: auto;
   position: absolute;
-  bottom: 0%;
-  right: -1%;
+  right: 5%;
+  top: 5%;
+  z-index: 9;
 }
 .box_content {
   width: 100%;
   background: url("../../../assets/images/bg8.png") no-repeat;
   background-size: 100% 100%;
-  li {
-    cursor: pointer;
-    width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  ul {
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 50px;
-    &.active {
-      div {
-        &:nth-child(1) {
-          background: url("../../../assets/images/roadmap_icon2.png") no-repeat;
-          background-size: 100% 100%;
-        }
-        &:nth-child(2) {
-          background: url("../../../assets/images/roadmap_bg2.png") no-repeat;
-          background-size: 100% 100%;
-        }
-      }
-    }
-    div {
+    li {
+      position: relative;
+      height: 10vw;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      &:nth-child(1) {
-        width: 180px;
-        height: 180px;
+      span {
+        font-size: 18px;
+        width: 32vw;
+        height: 5vw;
+        line-height: 5vw;
+        text-align: center;
+        z-index: 9;
+      }
+      p {
+        font-size: 18px;
         font-weight: bold;
         text-align: center;
-        background: url("../../../assets/images/roadmap_icon1.png") no-repeat;
-        background-size: 100% 100%;
         position: absolute;
+        z-index: 9;
       }
-      &:nth-child(2) {
-        width: 400px;
-        height: 60px;
-        padding: 10px 0;
-        background: url("../../../assets/images/roadmap_bg1.png") no-repeat;
-        background-size: 100% 100%;
-        position: relative;
+      img {
+        height: auto;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+      }
+      &:nth-child(1) {
         img {
-          position: absolute;
-          right: 100%;
+          width: 47.5vw;
+          top: 0;
+        }
+        p {
+          left: -10vw;
+          top: 9vw;
+        }
+        span {
         }
       }
-    }
-  }
-  li:nth-child(1) {
-    div {
-      &:nth-child(1) {
-        top: 50%;
-        right: 35%;
-      }
+
       &:nth-child(2) {
         img {
-          width: 120px;
-          top: 50%;
+          width: 49vw;
+          top: 0;
+          z-index: 2;
+        }
+        p {
+          top: 10.5vw;
+          left: -11vw;
+        }
+        span {
         }
       }
-    }
-  }
-  li:nth-child(2) {
-    div {
-      &:nth-child(1) {
-        top: 80%;
-        right: 34%;
-      }
-      &:nth-child(2) {
+
+      &:nth-child(3) {
         img {
-          width: 65px;
-          top: 50%;
+          width: 61vw;
+          top: -5vw;
+          z-index: 3;
+        }
+        p {
+          top: 1.5vw;
+          left: -23.5vw;
+        }
+        span {
+          margin-top: 0.5vw;
         }
       }
-    }
-  }
-  li:nth-child(3) {
-    div {
-      &:nth-child(1) {
-        top: -95%;
-        right: 45%;
-      }
-      &:nth-child(2) {
+
+      &:nth-child(4) {
         img {
-          width: 220px;
-          top: 50%;
+          width: 71vw;
+          top: -8vw;
+        }
+        p {
+          top: -2vw;
+          left: -33vw;
+        }
+        span {
+          margin-top: 1.5vw;
         }
       }
-    }
-  }
-  li:nth-child(4) {
-    div {
-      &:nth-child(1) {
-        top: -200%;
-        right: 55%;
-      }
-      &:nth-child(2) {
+
+      &:nth-child(5) {
         img {
-          width: 340px;
-          top: 50%;
+          width: 68vw;
+          top: -7vw;
+        }
+        p {
+          top: -1vw;
+          left: -30vw;
+        }
+        span {
+          margin-top: 2vw;
         }
       }
-    }
-  }
-  li:nth-child(5) {
-    div {
-      &:nth-child(1) {
-        top: -178%;
-        right: 52%;
-      }
-      &:nth-child(2) {
+
+      &:nth-child(6) {
         img {
-          width: 290px;
-          top: -50%;
+          width: 60vw;
+          top: -10vw;
+        }
+        p {
+          top: -4vw;
+          left: -22vw;
+        }
+        span {
+          margin-top: 5vw;
         }
       }
-    }
-  }
-  li:nth-child(6) {
-    div {
-      &:nth-child(1) {
-        top: -235%;
-        right: 44%;
-      }
-      &:nth-child(2) {
+
+      &:nth-child(7) {
         img {
-          width: 200px;
-          top: -50%;
+          width: 58vw;
+          top: -8vw;
         }
-      }
-    }
-  }
-  li:nth-child(7) {
-    div {
-      &:nth-child(1) {
-        top: -200%;
-        right: 42%;
-      }
-      &:nth-child(2) {
-        img {
-          width: 160px;
-          top: -75%;
+        p {
+          top: -2vw;
+          left: -20vw;
+        }
+        span {
+          margin-top: 5vw;
         }
       }
     }
