@@ -29,7 +29,7 @@
       <div class="right_content">
         <div class="characterClasses2">
           <div class="item" v-for="(item, index) in characterClassesList" :key="index" :class="{ active: currentSwiperIndex == index }" @click="switchClasses(index)">
-            <span>{{ isEnLang ? item.oldName : item.name }}</span>
+            <span>{{ isEnLang ? item.nameEn : item.name }}</span>
             <img :src="currentSwiperIndex == index ? item.iconActive : item.icon" alt="" />
             <span>{{ index + 1 > 9 ? index + 1 : "0" + (index + 1) }}</span>
           </div>
@@ -343,7 +343,7 @@ export default {
   .bg {
     width: auto;
     height: 80%;
-    opacity: 0.2;
+    opacity: 0.5;
     position: absolute;
     top: 0;
     left: 0;
