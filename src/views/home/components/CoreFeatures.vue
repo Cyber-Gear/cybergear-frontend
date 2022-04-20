@@ -57,9 +57,9 @@ export default {
   justify-content: space-around;
   li {
     width: 20%;
-    height: 70vh;
+    height: 45vw;
     background: url("../../../assets/images/bg6.png") no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     padding: 0 10px;
     position: relative;
     &:nth-child(1) {
@@ -96,7 +96,7 @@ export default {
     div {
       &:nth-child(1) {
         width: 40%;
-        height: 20%;
+        height: 18%;
         margin: 0 auto;
         padding-right: 8%;
         text-align: center;

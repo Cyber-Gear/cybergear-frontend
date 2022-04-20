@@ -25,7 +25,7 @@
       <div>
         <span @click="closeVideo">×</span>
         <video loop autoplay muted controls>
-          <source src="../../../assets/videos/PV2.0/LG_BR_80s_PV-ALL.mp4" type="video/mp4" />
+          <source src="../../../assets/videos/video1.mp4" type="video/mp4" />
         </video>
       </div>
     </div>

@@ -60,6 +60,7 @@ export default {
         },
       },
       swiperOptionThumbs: {
+        spaceBetween: "2%",
         slidesPerView: 4,
         observer: true,
         observeParents: true,
@@ -89,13 +90,14 @@ export default {
 }
 .box_title2 {
   width: 70vw;
+  height: 10vw;
   margin: 2vw auto;
   background: url("../../../assets/images/title_bg2.png") no-repeat;
   background-size: 100% 100%;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 30px;
+  padding: 0 2vw;
   div {
     &:nth-child(1) {
       width: 15%;
@@ -145,8 +147,8 @@ export default {
   .gallery-thumbs {
     margin-top: 1vw;
     .swiper-slide {
-      opacity: 0.5;
       width: 25%;
+      opacity: 0.5;
       img {
         width: 100%;
         height: 8vw;
@@ -161,14 +163,14 @@ export default {
     background-size: 100% auto;
     width: 50px;
     left: -80px;
-    top: 20%;
+    top: 40%;
   }
   .swiper-button-next {
     background-image: url("../../../assets/images/angle3.png");
     background-size: 100% auto;
     width: 50px;
     right: -80px;
-    top: 20%;
+    top: 40%;
     transform: rotate(180deg);
   }
   .swiper-button-disabled {

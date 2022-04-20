@@ -342,8 +342,8 @@ export default {
   position: relative;
   .bg {
     width: auto;
-    height: 80%;
-    opacity: 0.5;
+    height: 90%;
+    opacity: 0.3;
     position: absolute;
     top: 0;
     left: 0;
