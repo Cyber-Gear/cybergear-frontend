@@ -4,15 +4,15 @@
     <div class="btnbox">
       <div>
         <img src="../../assets/images/btn_icon1.png" alt="" />
-        <p>购买NFT</p>
+        <p>{{ $t("message.home.text1") }}</p>
       </div>
       <div>
         <img src="../../assets/images/btn_icon2.png" alt="" />
-        <p>加入公会</p>
+        <p>{{ $t("message.home.text2") }}</p>
       </div>
       <div>
         <img src="../../assets/images/btn_icon3.png" alt="" />
-        <p>玩游戏</p>
+        <p>{{ $t("message.home.text3") }}</p>
       </div>
     </div>
     <Introduction />

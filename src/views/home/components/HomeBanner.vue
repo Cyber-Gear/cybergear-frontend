@@ -2,30 +2,25 @@
   <div class="box">
     <div class="banner">
       <div class="figure">
-        <div>
-          <img src="../../../assets/images/banner_figure1.png" alt="" />
-          <img src="../../../assets/images/banner_figure2.png" alt="" />
-          <img src="../../../assets/images/banner_figure3.png" alt="" />
-          <img src="../../../assets/images/banner_figure4.png" alt="" />
-          <img src="../../../assets/images/banner_figure5.png" alt="" />
-        </div>
+        <img src="../../../assets/images/banner_figure1.png" alt="" />
+        <img src="../../../assets/images/banner_figure2.png" alt="" />
+        <img src="../../../assets/images/banner_figure3.png" alt="" />
+        <img src="../../../assets/images/banner_figure4.png" alt="" />
+        <img src="../../../assets/images/banner_figure5.png" alt="" />
       </div>
       <div class="contact">
-        <div>
-          <div class="center" @click="openVideo">
-            <img class="logo" src="../../../assets/images/logo2.png" alt="" />
-            <span>Click Play Video</span>
-          </div>
-          <div class="right">
-            <img src="../../../assets/images/contact1.png" alt="" />
-            <img src="../../../assets/images/contact2.png" alt="" />
-            <img src="../../../assets/images/contact3.png" alt="" />
-            <img src="../../../assets/images/contact4.png" alt="" />
-          </div>
+        <div class="center" @click="openVideo">
+          <img class="logo" src="../../../assets/images/logo2.png" alt="" />
+          <span>{{ $t("message.home.text22") }}</span>
+        </div>
+        <div class="right">
+          <img src="../../../assets/images/contact1.png" alt="" />
+          <img src="../../../assets/images/contact2.png" alt="" />
+          <img src="../../../assets/images/contact3.png" alt="" />
+          <img src="../../../assets/images/contact4.png" alt="" />
         </div>
       </div>
     </div>
-
     <div class="center_video" v-if="isShowVideo">
       <div>
         <span @click="closeVideo">×</span>
@@ -68,95 +63,76 @@ export default {
   position: relative;
   .figure {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-
-    > div {
-      width: 100%;
-      height: 100%;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 50vh;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      img {
-        width: auto;
-        height: 50vh;
-        position: absolute;
-        &:nth-child(1) {
-          bottom: 20%;
-          left: 10%;
-          z-index: 3;
-        }
-        &:nth-child(2) {
-          bottom: 18%;
-          left: 23%;
-          z-index: 2;
-        }
-        &:nth-child(3) {
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          z-index: 1;
-        }
-        &:nth-child(4) {
-          bottom: 18%;
-          right: 25%;
-          z-index: 2;
-        }
-        &:nth-child(5) {
-          bottom: 20%;
-          right: 10%;
-          z-index: 3;
-        }
+      &:nth-child(1) {
+        bottom: 5%;
+        left: 15%;
+        z-index: 3;
+      }
+      &:nth-child(2) {
+        bottom: 0;
+        left: 5%;
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        bottom: 10%;
+        z-index: 1;
+      }
+      &:nth-child(4) {
+        bottom: 0;
+        right: 10%;
+        z-index: 2;
+      }
+      &:nth-child(5) {
+        bottom: 5%;
+        right: 15%;
+        z-index: 3;
       }
     }
   }
   .contact {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 2;
-    > div {
-      width: 100%;
-      height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .center {
+      text-align: center;
       position: relative;
-      .center {
+      .logo {
+        width: 30vw;
+        height: auto;
+        cursor: url("../../../assets/images/hand.jpg"), pointer;
+      }
+      span {
+        width: fit-content;
+        height: fit-content;
+        font-size: 10px;
         position: absolute;
-        bottom: 10%;
+        top: 100%;
+        bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
-        text-align: center;
-        .logo {
-          width: 30vw;
-          height: auto;
-          cursor: url("../../../assets/images/hand.jpg"), pointer;
-        }
-        span {
-          width: fit-content;
-          height: fit-content;
-          font-size: 10px;
-          position: absolute;
-          top: 100%;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-        }
       }
-      .right {
-        position: absolute;
-        bottom: 10%;
-        right: 15%;
-        img {
-          width: 4vw;
-          height: 4vw;
-          margin: 0 5px;
-          cursor: pointer;
-        }
+    }
+    .right {
+      position: absolute;
+      bottom: 10%;
+      right: 15%;
+      img {
+        width: 4vw;
+        height: 4vw;
+        margin: 0 5px;
+        cursor: pointer;
       }
     }
   }

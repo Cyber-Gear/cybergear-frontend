@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <div class="box_title"><span>合作者</span></div>
+    <div class="box_title">
+      <span>{{ $t("message.home.text21") }}</span>
+    </div>
     <ul class="box_content">
       <li><img src="../../../assets/images/collaborators/collaborators1.png" alt="" /></li>
       <li><img src="../../../assets/images/collaborators/collaborators2.png" alt="" /></li>

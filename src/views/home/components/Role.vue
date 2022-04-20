@@ -1,9 +1,12 @@
 <template>
   <div class="box">
-    <div class="box_title"><span>角色</span></div>
+    <div class="box_title">
+      <span>{{ $t("message.home.text17") }}</span>
+    </div>
     <div class="box_content">
       <div class="left_content">
-        <div class="characterClasses1" :class="showCharacterClassesItem ? 'show' : 'hidden'" :style="{ backgroundImage: `url(${characterClassesItem.image1})` }">
+        <div class="characterClasses1" :class="showCharacterClassesItem ? 'show' : 'hidden'">
+          <img class="bg" :src="characterClassesItem.image" alt="" />
           <div class="left">
             <div class="top">
               <div>{{ isEnLang ? characterClassesItem.nameEn : characterClassesItem.name }}</div>
@@ -17,16 +20,16 @@
                 <img class="angle" src="../../../assets/images/angle.png" alt="" />
                 <div>{{ isEnLang ? characterClassesItem.descriptionEn : characterClassesItem.description }}</div>
               </div>
-              <img class="bottom_img" :src="characterClassesItem.image2" alt="" />
+              <img class="bottom_img" src="../../../assets/images/role/bg1.png" alt="" />
             </div>
           </div>
-          <div class="right"><img :src="characterClassesItem.image3" alt="" /></div>
+          <div class="right"><img :src="characterClassesItem.image" alt="" /></div>
         </div>
       </div>
       <div class="right_content">
         <div class="characterClasses2">
           <div class="item" v-for="(item, index) in characterClassesList" :key="index" :class="{ active: currentSwiperIndex == index }" @click="switchClasses(index)">
-            <span>{{ isEnLang ? item.nameEn : item.name }}</span>
+            <span>{{ isEnLang ? item.oldName : item.name }}</span>
             <img :src="currentSwiperIndex == index ? item.iconActive : item.icon" alt="" />
             <span>{{ index + 1 > 9 ? index + 1 : "0" + (index + 1) }}</span>
           </div>
@@ -58,9 +61,7 @@ export default {
             "A smiling tyrant.She is an extreme control freak who speaks calmly and treats people politely.She is a high level Executor of the P.T.H. Group and one of the ten Governors who control the Group.She's never exposed her true strength. Her behaviors may seem casual and unpredictable, but she actually plans her every move very carefully.",
           icon: require("../../../assets/images/role/professional1.png"),
           iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure1.png"),
+          image: require("../../../assets/images/role/figure1.png"),
           level: require("../../../assets/images/role/role_level_mr.png"),
         },
         {
@@ -75,10 +76,8 @@ export default {
           descriptionEn:
             "A ruthless and cold-blooded stalker. She never doubts the accuracy of an order. She's a commander of the United Council's Search Team and also a second level stalker approved by the United Council. As Koubu's most trusted ally, she never doubts Koubu's actions and decisions. She considers Koubu the only person who can command her. And she despises most other people serving under Koubu. She is willing to follow Koubu wherever she goes.",
           icon: require("../../../assets/images/role/professional2.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure2.png"),
+          iconActive: require("../../../assets/images/role/professional_active2.png"),
+          image: require("../../../assets/images/role/figure2.png"),
           level: require("../../../assets/images/role/role_level_r.png"),
         },
         {
@@ -92,11 +91,9 @@ export default {
             "习惯虚张声势的少女，元气的外表下是自卑的内心，常常因为做不出成果而感到不安。联合议会所属，新编第三军团机动部队副队长，多次随姐姐迎战教团的袭扰。因为能力不足而被认为是不合格的副队长。后为了弥补天赋的不足，总会加大训练量，争取早日获得他人的认同。",
           descriptionEn:
             "A young lady who bluffs all the time. Under that energetic appearance, hides an unconfident heart. She is the deputy captain of the New 3rd Corps Mobile Division under the United Council. And she has followed her sister to fight against the invading Order. She is considered a failure as deputy captain due to her incompetence. To make up for the talents she lack, she always takes extra trainings, hoping that others will recognize her one day soon. She believes that her sister is capable of handling any situation, so she looks up to her sister.",
-          icon: require("../../../assets/images/role/professional1.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure3.png"),
+          icon: require("../../../assets/images/role/professional2.png"),
+          iconActive: require("../../../assets/images/role/professional_active2.png"),
+          image: require("../../../assets/images/role/figure3.png"),
           level: require("../../../assets/images/role/role_level_mr.png"),
         },
         {
@@ -110,10 +107,8 @@ export default {
           descriptionEn:
             "A loving supporter who helps her teammates with firepower from the backline. She's a hard-working person , but kind of sluggish.She will carry out the pre-planned operation step by step.",
           icon: require("../../../assets/images/role/professional5.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure4.png"),
+          iconActive: require("../../../assets/images/role/professional_active5.png"),
+          image: require("../../../assets/images/role/figure4.png"),
           level: require("../../../assets/images/role/role_level_sr.png"),
         },
         {
@@ -128,10 +123,8 @@ export default {
           descriptionEn:
             "A greedy stalker. She's not young, but deep down, she's still a little girl who's gluttonous and greedy. She is very good at disguising herself. The weapon she made for herself can adjust and adapt based on what opponents she is fighting. Throughout her professional career, she's never messed things up. And so she claims to be the best stalker there is.",
           icon: require("../../../assets/images/role/professional4.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure5.png"),
+          iconActive: require("../../../assets/images/role/professional_active4.png"),
+          image: require("../../../assets/images/role/figure5.png"),
           level: require("../../../assets/images/role/role_level_sr.png"),
         },
 
@@ -147,13 +140,10 @@ export default {
           descriptionEn:
             "A young lady with unique personalities. She is a silly girl who has a poker face and loves eating pizza and sweets. She's a member of the Kluto Order and the niece of the Order's protector. She's also one of the few who has seen the Pontiff's real face. When she's making the 'beeping' voice, few people can understand her.",
           icon: require("../../../assets/images/role/professional4.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure6.png"),
+          iconActive: require("../../../assets/images/role/professional_active4.png"),
+          image: require("../../../assets/images/role/figure6.png"),
           level: require("../../../assets/images/role/role_level_mr.png"),
         },
-
         {
           oldName: "羽飞",
           name: "飞鸟",
@@ -167,12 +157,9 @@ export default {
             "A protector who offers firepower support. She is somewhat naive and muddle-headed. She's the best friend of Carol and one of the few people dearly trusted by the Pontiff. She possesses the rare long-range firepower and is valued by the Order because of it. She usually works alone. However, she often loses her way on a solo mission due to her muddle-headed nature.",
           icon: require("../../../assets/images/role/professional1.png"),
           iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure7.png"),
+          image: require("../../../assets/images/role/figure7.png"),
           level: require("../../../assets/images/role/role_level_r.png"),
         },
-
         {
           oldName: "魏子鱼",
           name: "梨花",
@@ -184,13 +171,10 @@ export default {
           descriptionEn:
             "A young girl who loves little animals. She does whatever she likes and speaks whatever she wants. And she likes to tell people that she's a genius. She's a commander of the United Council's Search Team and also a direct subordinate of Koubu. She considers Koubu a competent, hard-working, and rational superior. She will not hesitate to give her thoughts or opinions to Koubu.",
           icon: require("../../../assets/images/role/professional3.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure8.png"),
+          iconActive: require("../../../assets/images/role/professional_active3.png"),
+          image: require("../../../assets/images/role/figure8.png"),
           level: require("../../../assets/images/role/role_level_r.png"),
         },
-
         {
           oldName: "紫婧",
           name: "凯茜",
@@ -203,13 +187,10 @@ export default {
           descriptionEn:
             "A young lady born in a political family. She's bossy, stubborn, and afraid of nothing. She is a member of the Security Committee under the United Council and also an enemy of many other councilors. She did it all to revive her father who died during the Gene Crisis and advance the research on human-mind robots one day. The butler robot named Alpha that follows her around is a fruit borne out of this project.",
           icon: require("../../../assets/images/role/professional6.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure9.png"),
+          iconActive: require("../../../assets/images/role/professional_active6.png"),
+          image: require("../../../assets/images/role/figure9.png"),
           level: require("../../../assets/images/role/role_level_mr.png"),
         },
-
         {
           oldName: "堇源",
           name: "真希",
@@ -221,11 +202,9 @@ export default {
             "联合议会入伍生总队预备役成员。外表给人冰霜美人的印象，可一旦开口就是毒舌连发。本人似乎对自己的毒舌没有自觉，愈发让人觉得不可亲近，时常会闹出不必要的误会。家庭关系非常特殊，本人从不会主动对外提及自己的家庭情况。",
           descriptionEn:
             "She's a reserved member of the United Council's Recruit Team. Judging by her appearance, she seems to be a nice beautiful lady, but she actually speaks a toxic language. She doesn't seem to notice her toxic language so she pushes people around her further away and often causes unnecessary misunderstandings. Her family relationship is very unique and she never actively brings up her family to anyone.",
-          icon: require("../../../assets/images/role/professional1.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure10.png"),
+          icon: require("../../../assets/images/role/professional4.png"),
+          iconActive: require("../../../assets/images/role/professional_active4.png"),
+          image: require("../../../assets/images/role/figure10.png"),
           level: require("../../../assets/images/role/role_level_ur.png"),
         },
         {
@@ -239,10 +218,8 @@ export default {
           descriptionEn:
             "An organized quartermaster who does things slowly. She's a gentle and forgiving person who loves reading and drinking tea. She is a member of the Squad Special Task Force 202 under the P.T.H. Group. She's in charge of logistics works and making sure that all her teammates' needs are satisfied and supported.",
           icon: require("../../../assets/images/role/professional3.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure11.png"),
+          iconActive: require("../../../assets/images/role/professional_active3.png"),
+          image: require("../../../assets/images/role/figure11.png"),
           level: require("../../../assets/images/role/role_level_sr.png"),
         },
         {
@@ -258,9 +235,7 @@ export default {
             "A vigorous high school girl. This trainee at the Human Gene Enhancement Center dreams to become a righteous hero. She's determined to protect the weak and fight against the evil.An orphan from the Gene Crisis War who was raised by the United Council and later became recruit of the Oasis Human Gene Enhancement Center and received trainings. She's now a criminal at large because people found that she was an 'Sensate'.",
           icon: require("../../../assets/images/role/professional1.png"),
           iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure12.png"),
+          image: require("../../../assets/images/role/figure12.png"),
           level: require("../../../assets/images/role/role_level_ur.png"),
         },
         {
@@ -275,10 +250,8 @@ export default {
           descriptionEn:
             "An online singer who fantasizes about a beautiful, romantic relationship. She's an outgoing person who loves singing. She's also Uiha's best friend. She's a protector of the Kluto Order, but she doesn't seem interested in her jobs or the Order. She's always fantasized about a romantic love relationship, but she never knows what exactly a 'romantic love relationship' is.",
           icon: require("../../../assets/images/role/professional3.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure13.png"),
+          iconActive: require("../../../assets/images/role/professional_active3.png"),
+          image: require("../../../assets/images/role/figure13.png"),
           level: require("../../../assets/images/role/role_level_r.png"),
         },
         {
@@ -292,14 +265,11 @@ export default {
             "联合议会中央安全调查总署的情报人员。性格孤僻，不爱与人打交道，大多时候都是独自行动。主要调查对象为P.T.H.财团，时刻监视财团的计划与动向。从小就被作为情报员进行培养，参与过八年前的源核禁区调查任务，是任务中唯一的幸存者。",
           descriptionEn:
             "An intel agent of the United Council's Central Investigation Bureau. She is a lone wolf who doesn't like to interact with people and works alone most of the time. Her primary target is the P.T.H. Group and she always keeps an eye on their plan and movement. She has been receiving trainings to be an agent since she was little. She participated in the Exclusion Area Probe Quest eight years ago and was the sole survivor of that operation.",
-          icon: require("../../../assets/images/role/professional1.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure14.png"),
+          icon: require("../../../assets/images/role/professional2.png"),
+          iconActive: require("../../../assets/images/role/professional_active2.png"),
+          image: require("../../../assets/images/role/figure14.png"),
           level: require("../../../assets/images/role/role_level_ur.png"),
         },
-
         {
           oldName: "Null",
           name: "爱丽丝",
@@ -310,11 +280,9 @@ export default {
           description: "原职业黑客，现为P.T.H.财团的信息安全监察员。性格极度自负，讨厌工作，不喜欢听人指挥。虽然拥有无与伦比的黑客技术，但生活自理能力几乎为负。",
           descriptionEn:
             "She was originally a hacker and now an Information Security Inspector of the P.T.H. Group. She's a very arrogant person who hates working and following to orders. Though her hacking techniques are second to none, she doesn't know how to take care of herself.",
-          icon: require("../../../assets/images/role/professional1.png"),
-          iconActive: require("../../../assets/images/role/professional_active1.png"),
-          image1: require("../../../assets/images/role/figure_bg1.png"),
-          image2: require("../../../assets/images/role/figure_bg2.png"),
-          image3: require("../../../assets/images/role/figure15.png"),
+          icon: require("../../../assets/images/role/professional5.png"),
+          iconActive: require("../../../assets/images/role/professional_active5.png"),
+          image: require("../../../assets/images/role/figure15.png"),
           level: require("../../../assets/images/role/role_level_ur.png"),
         },
       ],
@@ -329,12 +297,17 @@ export default {
   },
   methods: {
     switchClasses(index) {
+      if (this.currentSwiperIndex == index) return;
       this.currentSwiperIndex = index;
       this.showCharacterClassesItem = false;
-      this.characterClassesItem = this.characterClassesList[this.currentSwiperIndex];
       setTimeout(() => {
-        this.showCharacterClassesItem = true;
-      }, 500);
+        this.$nextTick(() => {
+          this.characterClassesItem = this.characterClassesList[this.currentSwiperIndex];
+          setTimeout(() => {
+            this.showCharacterClassesItem = true;
+          }, 250);
+        });
+      }, 250);
     },
   },
 };
@@ -366,6 +339,16 @@ export default {
   background-size: auto 90%;
   background-position: left top;
   transition: all 0.5s;
+  position: relative;
+  .bg {
+    width: auto;
+    height: 80%;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+  }
   &.show {
     opacity: 1;
     .left {

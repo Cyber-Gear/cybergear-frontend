@@ -10,7 +10,7 @@
     </div>
     <div>
       <div class="connect">
-        <span>{{ $t("message.nav.txt8") }}</span>
+        <span>{{ $t("message.nav.text8") }}</span>
         <img src="../assets/images/angle.png" alt="" />
       </div>
       <div class="lang_box" @mouseover="showLangSelect = true" @mouseleave="showLangSelect = false">
@@ -34,13 +34,13 @@ export default {
     return {
       navActive: 0,
       navArr: [
-        { label: "message.nav.txt1", link: "/home" },
-        { label: "message.nav.txt2", link: "/home" },
-        { label: "message.nav.txt3", link: "/home" },
-        { label: "message.nav.txt4", link: "/home" },
-        { label: "message.nav.txt5", link: "/home" },
-        { label: "message.nav.txt6", link: "/home" },
-        { label: "message.nav.txt7", link: "/home" },
+        { label: "message.nav.text1", link: "/home" },
+        { label: "message.nav.text2", link: "/home" },
+        { label: "message.nav.text3", link: "/home" },
+        { label: "message.nav.text4", link: "/home" },
+        { label: "message.nav.text5", link: "/home" },
+        { label: "message.nav.text6", link: "/home" },
+        { label: "message.nav.text7", link: "/home" },
       ],
       showLangSelect: false,
       languageImage: "",
@@ -79,7 +79,7 @@ export default {
       if (this.$i18n.locale == item.lang) return (this.showLangSelect = false);
       this.$i18n.locale = item.lang;
       this.$utils.setCookie("LANG", this.$i18n.locale);
-      location.reload();
+      // location.reload();
     },
   },
 };
@@ -95,7 +95,7 @@ export default {
   z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   transition: all 0.5s;
   &.active {
     background: rgba(0, 0, 0, 1);
@@ -109,7 +109,6 @@ export default {
       height: 30px;
     }
     &:nth-child(2) {
-      margin: 0 5vw;
       .nav_list {
         cursor: pointer;
         height: 80%;

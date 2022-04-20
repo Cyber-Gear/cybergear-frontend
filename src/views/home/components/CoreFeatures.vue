@@ -1,49 +1,37 @@
 <template>
   <div class="box">
-    <div class="box_title"><span>核心特点</span></div>
+    <div class="box_title">
+      <span>{{ $t("message.home.text7") }}</span>
+    </div>
     <ul class="box_content">
       <li>
-        <div>
-          与虚拟<br />
-          偶像互动
-        </div>
+        <div>{{ $t("message.home.text8") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>
-            每一张NFT（虚拟偶像）都可以发行成动态卡牌，均可与玩家产生多维互动，且有人气声优为其配音，使得日系少女形象更加立体真实。玩家与NFT（虚拟偶像）一起战斗，提升NFT价值的同时，可进一步与NFT互动，如线上Party及生日会、实物手办等。
-          </p>
+          <p>{{ $t("message.home.text9") }}</p>
         </div>
         <img src="../../../assets/images/coreFeatures_figure1.png" alt="" />
       </li>
       <li>
-        <div>
-          知名<br />
-          声优配音
-        </div>
+        <div>{{ $t("message.home.text10") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>邀请了32位知名声优为Cybergear进行配音乐，包括佐仓绫音、明坂聪美、上坂堇、石川由依等，无论是对于玩家还是投资者而言，这都是一场视听盛宴，代入感强烈。</p>
+          <p>{{ $t("message.home.text11") }}</p>
         </div>
       </li>
       <li>
-        <div>创新玩法</div>
+        <div>{{ $t("message.home.text12") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>
-            玩法上采取了比较成熟的SRPG战棋，并且在其基础玩法上添加了诸如天气、地形、属性克制等 相关元素，使得战场的局势瞬息万变，考验玩家对于阵容技能的理解以及随机应变的能力。此外
-            还加入了卡牌元素，进一步提升了游戏的趣味性和策略性。
-          </p>
+          <p>{{ $t("message.home.text13") }}</p>
         </div>
         <img src="../../../assets/images/coreFeatures_figure2.png" alt="" />
       </li>
       <li>
-        <div>
-          环生态<br />
-          模型
-        </div>
+        <div>{{ $t("message.home.text14") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>海外知名经济和数值团队构建了循环生态模型，满足多种角色收益形式。</p>
+          <p>{{ $t("message.home.text15") }}</p>
         </div>
         <img src="../../../assets/images/coreFeatures_figure3.png" alt="" />
       </li>
@@ -107,13 +95,14 @@ export default {
     }
     div {
       &:nth-child(1) {
-        width: 100%;
-        height: 18%;
+        width: 40%;
+        height: 20%;
+        margin: 0 auto;
+        padding-right: 8%;
+        text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-right: 1vw;
-        text-align: center;
         font-size: 14px;
         font-weight: 600;
         line-height: 20px;
@@ -123,7 +112,7 @@ export default {
       }
       &:nth-child(2) {
         display: flex;
-        padding-top: 8vw;
+        padding-top: 6vw;
         img {
           width: auto;
           height: 2vw;

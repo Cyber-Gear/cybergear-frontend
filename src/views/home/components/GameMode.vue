@@ -1,12 +1,11 @@
 <template>
   <div class="box">
-    <div class="box_title"><span>GAME MODE</span></div>
+    <div class="box_title">
+      <span>{{ $t("message.home.text18") }}</span>
+    </div>
     <div class="box_title2">
-      <div>
-        Addition <br />
-        of PVP puppets
-      </div>
-      <div>PVE剧情闯关（能力提升获取CT）,奖池为所有盲盒售卖的10%+玩家在游戏内所有充值的20%</div>
+      <div>Addition of PVP puppets</div>
+      <div>{{ $t("message.home.text19") }}</div>
     </div>
     <div class="box_bg">
       <div class="box_content">
@@ -99,6 +98,7 @@ export default {
   padding: 30px;
   div {
     &:nth-child(1) {
+      width: 15%;
       font-size: 20px;
       font-weight: bold;
       color: #00daff;

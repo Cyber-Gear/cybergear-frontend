@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <div class="box_title"><span>路线图</span></div>
+    <div class="box_title">
+      <span>{{ $t("message.home.text20") }}</span>
+    </div>
     <img class="figure1" src="../../../assets/images/roadmap_figure1.png" alt="" />
     <div class="box_content">
       <img class="figure2" src="../../../assets/images/roadmap_figure2.png" alt="" />

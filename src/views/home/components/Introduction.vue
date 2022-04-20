@@ -3,13 +3,15 @@
     <div class="inside">
       <div class="inside2">
         <div class="left">
-          <div class="box_title"><span>CYBEARGEAR介绍</span></div>
+          <div class="box_title">
+            <span>{{ $t("message.home.text16") }}</span>
+          </div>
           <div class="box_content">
             <img src="../../../assets/images/angle.png" alt="" />
             <div>
-              <p>Cybergear（机甲少女）</p>
-              <p>是一个社区驱动的二次元宇宙，二次元赛博朋克风并融合了SRPG玩法的GameFi产品。</p>
-              <p>是全球首款 NFT+ DeFi+ SRPG+AI 的战棋策略类游戏，游戏完美结合了区块链NFT 和 DeFi 技术，让玩家在参与游戏的同时轻松获得相应的收益。</p>
+              <p>{{ $t("message.home.text4") }}</p>
+              <p>{{ $t("message.home.text5") }}</p>
+              <p>{{ $t("message.home.text6") }}</p>
             </div>
           </div>
         </div>
@@ -40,7 +42,6 @@ export default {
     background-size: auto 100%;
     background-position: center;
     margin: 0 auto;
-    padding: 5vw;
     .inside2 {
       width: 100%;
       height: 100%;
@@ -48,15 +49,14 @@ export default {
       justify-content: space-between;
       .left {
         width: 30%;
-        height: 100%;
         .box_title {
           position: relative;
-          top: 2vw;
+          top: 15%;
         }
         .box_content {
           display: flex;
           position: relative;
-          top: 4vw;
+          top: 20%;
           img {
             width: auto;
             height: 2vw;
