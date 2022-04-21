@@ -4,7 +4,7 @@
       <span>{{ $t("message.home.text18") }}</span>
     </div>
     <div class="box_title2">
-      <div>Addition of PVP puppets</div>
+      <div>{{ $t("message.home.text23") }}</div>
       <div>{{ $t("message.home.text19") }}</div>
     </div>
     <div class="box_bg">

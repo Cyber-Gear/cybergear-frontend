@@ -1,13 +1,16 @@
 <template>
   <div class="box">
     <div class="banner">
-      <div class="figure">
+      <div class="figure_gif">
+        <img src="../../../assets/images/banner_gif.gif" alt="" />
+      </div>
+      <!-- <div class="figure">
         <img src="../../../assets/images/banner_figure1.png" alt="" />
         <img src="../../../assets/images/banner_figure2.png" alt="" />
         <img src="../../../assets/images/banner_figure3.png" alt="" />
         <img src="../../../assets/images/banner_figure4.png" alt="" />
         <img src="../../../assets/images/banner_figure5.png" alt="" />
-      </div>
+      </div> -->
       <div class="contact">
         <div class="center" @click="openVideo">
           <img class="logo" src="../../../assets/images/logo2.png" alt="" />
@@ -61,6 +64,19 @@ export default {
   background: url("../../../assets/images/bg1.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
+  .figure_gif {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: calc(85vh - 100px);
+    }
+  }
   .figure {
     width: 100%;
     height: 85vh;

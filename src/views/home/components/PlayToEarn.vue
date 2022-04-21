@@ -1,6 +1,8 @@
 <template>
   <div class="box">
-    <div class="box_title"><span>PLAY TO EARN</span></div>
+    <div class="box_title">
+      <span>{{ $t("message.home.text24") }}</span>
+    </div>
     <div class="box_content">
       <video loop muted controls>
         <source src="../../../assets/videos/video2.mp4" type="video/mp4" />

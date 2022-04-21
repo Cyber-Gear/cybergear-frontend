@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="box_content">
-      <img class="img" src="../../../assets/images/figure6.png" alt="" />
+      <img class="img" src="../../../assets/images/introduction_gif.gif" alt="" />
       <div class="top">
         <div>
           <div class="box_title">

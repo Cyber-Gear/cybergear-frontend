@@ -7,7 +7,7 @@
       <img src="../assets/images/contact3.png" alt="" />
       <img src="../assets/images/contact4.png" alt="" />
     </div>
-    <p>COPYRIGHT © 2022 CYBERGEAR, All rights Reserved</p>
+    <p>{{ $t("message.footer.text1") }}</p>
   </div>
 </template>
 <script>

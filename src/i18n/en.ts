@@ -9,6 +9,9 @@ export const message = {
     text7: "Buy mystery box",
     text8: "connect",
   },
+  footer: {
+    text1: "COPYRIGHT 2022 CYBERGEAR, All rights Reserved",
+  },
   home: {
     text1: "Buy NFTs",
     text2: "Join a guild",
@@ -36,8 +39,8 @@ export const message = {
     text20: "Roadmap",
     text21: "Partners",
     text22: "Click Play Video",
-    text23: "",
-    text24: "",
+    text23: "Addition of PVP puppets",
+    text24: "PLAY TO EARN",
     text25: "",
   },
 };

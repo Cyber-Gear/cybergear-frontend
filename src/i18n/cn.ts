@@ -9,6 +9,9 @@ export const message = {
     text7: "购买盲盒",
     text8: "连接钱包",
   },
+  footer: {
+    text1: "版权所有 2022 CYBERGEAR，保留所有权利",
+  },
   home: {
     text1: "购买NFT",
     text2: "加入公会",
@@ -34,8 +37,8 @@ export const message = {
     text20: "路线图",
     text21: "合作商",
     text22: "点击播放视频",
-    text23: "",
-    text24: "",
+    text23: "PVP模式",
+    text24: "边玩边赚",
     text25: "",
   },
 };
