@@ -9,7 +9,7 @@
       </div>
     </div>
     <div>
-      <div class="connect">
+      <div class="connect" @click="connectTheWallet">
         <span>{{ $t("message.nav.text8") }}</span>
         <img src="../assets/images/angle.png" alt="" />
       </div>
@@ -72,6 +72,12 @@ export default {
     this.languageImage = this.$i18n.locale == "cn" ? this.langArr[0].image : this.langArr[1].image;
   },
   methods: {
+    connectTheWallet() {
+      // this.$toast("");
+      // this.$toast("测试成功", "success", 5000);
+      // this.$toast("测试警告", "warning");
+      // this.$toast("测试失败", "fail");
+    },
     toRoute(link) {
       if (link) this.$router.push(link);
     },

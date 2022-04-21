@@ -23,7 +23,7 @@ export default {
 }
 .box_content {
   width: fit-content;
-  padding: 1.55vw 1.1vw 1.2vw 0.9vw;
+  padding: 1.6vw 1.2vw 2.5vw 1.6vw;
   margin: 0 auto;
   background: url("../../../assets/images/bg11.png") no-repeat;
   background-size: 100% 100%;

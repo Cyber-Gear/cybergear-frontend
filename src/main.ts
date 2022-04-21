@@ -5,11 +5,15 @@ import store from "./store";
 import i18n from "./i18n/index";
 import "./style/reset.scss";
 import "./style/global.scss";
+
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 Vue.use(VueAwesomeSwiper);
+
 import utils from "./utils/index";
 Vue.prototype.$utils = utils;
+import toast from "./components/toast/index";
+Vue.prototype.$toast = toast;
 
 Vue.config.productionTip = false;
 new Vue({

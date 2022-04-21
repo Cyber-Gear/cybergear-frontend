@@ -41,4 +41,15 @@ export const message = {
     text24: "边玩边赚",
     text25: "",
   },
+  roadmap: [
+    { time: "2018年12月", text: "游戏逻辑规划" },
+    { time: "2019年", text: "艺术创作完成" },
+    { time: "2020年", text: "游戏开发，完善" },
+    { time: "2021年", text: "游戏手办、周边制作，游戏运营" },
+    { time: "2022年2月", text: "游戏链改策划" },
+    { time: "2022年4月", text: "官网上线、NFT预售" },
+    { time: "2022年5月", text: "交易市场上线" },
+    { time: "2022年6月", text: "Alpha 测试" },
+    { time: "更多", text: "更多游戏功能" },
+  ],
 };
