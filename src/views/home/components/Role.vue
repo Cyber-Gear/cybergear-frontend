@@ -301,13 +301,9 @@ export default {
       this.currentSwiperIndex = index;
       this.showCharacterClassesItem = false;
       setTimeout(() => {
-        this.$nextTick(() => {
-          this.characterClassesItem = this.characterClassesList[this.currentSwiperIndex];
-          setTimeout(() => {
-            this.showCharacterClassesItem = true;
-          }, 250);
-        });
-      }, 250);
+        this.characterClassesItem = this.characterClassesList[this.currentSwiperIndex];
+        this.showCharacterClassesItem = true;
+      }, 500);
     },
   },
 };
