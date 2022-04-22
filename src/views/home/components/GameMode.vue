@@ -10,7 +10,8 @@
     <div class="box_bg">
       <div class="box_content">
         <div class="box_title3">
-          <img src="../../../assets/images/gamemode_title2.png" alt="" />
+          <!-- <img src="../../../assets/images/gamemode_title2.png" alt="" /> -->
+          PVP
         </div>
         <swiper class="gallery-top" :options="swiperOptionTop" ref="swiperTop">
           <swiper-slide v-for="(item, index) in imgList" :key="index">
@@ -113,16 +114,12 @@ export default {
   }
 }
 .box_title3 {
-  background: url("../../../assets/images/gamemode_title1.png") no-repeat;
-  background-size: 100% 100%;
+  font-size: 50px;
+  font-weight: bold;
   position: absolute;
-  bottom: 10vw;
-  left: 0;
+  top: 30vw;
+  left: 2vw;
   z-index: 99;
-  img {
-    width: 80px;
-    height: auto;
-  }
 }
 .box_bg {
   width: 100%;

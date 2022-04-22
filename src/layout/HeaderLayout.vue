@@ -1,5 +1,5 @@
 <template>
-  <div class="nav" :class="{ active: scrollTop > 0 }">
+  <div class="nav">
     <div>
       <img class="logo" src="../assets/images/logo1.png" alt="" @click="toRoute('/home')" />
     </div>
@@ -50,12 +50,12 @@ export default {
       ],
     };
   },
-  props: {
-    scrollTop: {
-      type: Number,
-      default: 0,
-    },
-  },
+  // props: {
+  //   scrollTop: {
+  //     type: Number,
+  //     default: 0,
+  //   },
+  // },
   watch: {
     $route(to) {
       // if (from.matched.length && to.matched[0].path !== from.matched[0].path) {
@@ -104,9 +104,7 @@ export default {
   align-items: center;
   justify-content: space-around;
   transition: all 0.5s;
-  &.active {
-    background: rgba(0, 0, 0, 1);
-  }
+  border-bottom: 1px solid #29a7e1;
   > div {
     height: 100%;
     display: flex;

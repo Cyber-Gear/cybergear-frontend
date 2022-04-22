@@ -4,7 +4,7 @@
       <span>{{ $t("message.home.text24") }}</span>
     </div>
     <div class="box_content">
-      <video loop muted controls>
+      <video loop muted controls poster="../../../assets/images/video_poster1.jpg">
         <source src="../../../assets/videos/video2.mp4" type="video/mp4" />
       </video>
     </div>

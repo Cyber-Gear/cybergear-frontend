@@ -1,6 +1,6 @@
 <template>
-  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'" @scroll="handleScrollScroll($event)">
-    <HeaderLayout :scrollTop="scrollTop" />
+  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'">
+    <HeaderLayout />
     <div id="container_body">
       <router-view />
       <FooterLayout />
@@ -16,7 +16,7 @@ export default {
   computed: { ...mapGetters(["isEnLang"]) },
   data() {
     return {
-      scrollTop: 0,
+      // scrollTop: 0,
     };
   },
   mounted() {
@@ -30,11 +30,9 @@ export default {
         document.getElementsByTagName("html")[0].style.fontSize = rem375 + "px";
       }
     },
-    handleScrollScroll(e) {
-      this.scrollTop = e.srcElement.scrollTop;
-      // if (e.srcElement.scrollTop == 0) {
-      // }
-    },
+    // handleScrollScroll(e) {
+    //   this.scrollTop = e.srcElement.scrollTop;
+    // },
   },
 };
 </script>
