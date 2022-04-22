@@ -55,7 +55,6 @@ export default {
 }
 .banner {
   width: 100%;
-  height: 100%;
   background: url("../../../assets/images/bg1.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
@@ -70,10 +69,10 @@ export default {
   }
   .contact {
     width: 100%;
-    padding: 2vh 0;
-    position: relative;
     display: flex;
     justify-content: center;
+    position: relative;
+    top: -25vh;
     .center {
       text-align: center;
       position: relative;
