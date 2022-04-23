@@ -60,7 +60,7 @@ export default {
   padding-top: 0.8rem;
   position: relative;
   .figure_gif {
-    width: 100vw;
+    width: 100%;
     height: calc(100vw * 0.5625);
     video {
       width: 100%;
