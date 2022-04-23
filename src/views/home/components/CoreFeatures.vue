@@ -48,7 +48,8 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5vw;
+  padding: 0 0.8rem;
+  margin-bottom: 0.5rem;
   background: url("../../../assets/images/bg5.png") no-repeat;
   background-size: 100% 100%;
 }
@@ -56,16 +57,16 @@ export default {
   display: flex;
   justify-content: space-around;
   li {
-    width: 20%;
-    height: 45vw;
+    width: 2rem;
+    height: 5rem;
     background: url("../../../assets/images/bg6.png") no-repeat;
     background-size: 100% auto;
-    padding: 0 10px;
+    padding: 0 0.1rem;
     position: relative;
     &:nth-child(1) {
       margin-top: 5%;
       > img {
-        top: -1vw;
+        top: -0.3rem;
         right: 0;
       }
     }
@@ -76,20 +77,20 @@ export default {
       margin-top: 0%;
       > img {
         transform: rotate(-90deg);
-        left: -5.5vw;
-        top: 8vw;
+        left: -0.8rem;
+        top: 1rem;
       }
     }
     &:nth-child(4) {
       margin-top: 8%;
       > img {
         transform: rotate(90deg);
-        right: -4.5vw;
-        top: 15vw;
+        right: -0.7rem;
+        top: 2rem;
       }
     }
     > img {
-      width: 5vw;
+      width: 0.7rem;
       height: auto;
       position: absolute;
     }
@@ -112,17 +113,17 @@ export default {
       }
       &:nth-child(2) {
         display: flex;
-        padding-top: 6vw;
+        padding-top: 0.6rem;
         img {
           width: auto;
-          height: 2vw;
-          margin: 0 5px;
+          height: 0.3rem;
+          margin: 0 0.05rem;
         }
         p {
           width: 80%;
-          font-size: 12px;
+          font-size: 0.12rem;
+          line-height: 0.15rem;
           font-weight: 400;
-          line-height: 17px;
         }
       }
     }

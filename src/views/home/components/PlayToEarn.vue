@@ -19,18 +19,19 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5vw;
+  padding: 0 0.8rem;
+  margin-bottom: 0.5rem;
 }
 .box_content {
   width: fit-content;
-  padding: 1.6vw 1.2vw 2.5vw 1.6vw;
+  padding: 0.25rem 0.2rem 0.4rem 0.25rem;
   margin: 0 auto;
   background: url("../../../assets/images/bg11.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
   video {
     width: 70vw;
-    height: calc(70vw * 0.562);
+    height: calc(70vw * 0.5625);
   }
 }
 </style>

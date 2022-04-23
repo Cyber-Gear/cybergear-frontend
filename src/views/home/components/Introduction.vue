@@ -35,11 +35,13 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5vw;
+  padding: 0 0.8rem;
+  margin-bottom: 0.5rem;
   background: url("../../../assets/images/bg2.png") no-repeat;
   background-size: auto;
   background-position: top left;
   position: relative;
+  padding-top: 1.2rem;
 }
 .bg12 {
   width: 25%;
@@ -50,8 +52,6 @@ export default {
 }
 .box_content {
   width: 100%;
-  height: 60vh;
-  margin: 10vh auto;
   position: relative;
   display: flex;
   .border2 {
@@ -69,16 +69,16 @@ export default {
     top: 0;
   }
   .x {
-    width: 3vw;
-    height: 3vw;
+    width: 0.4rem;
+    height: 0.4rem;
     position: absolute;
-    left: calc(40% - 1.5vw);
-    top: calc(40% - 1.5vw);
+    left: calc(40% - 0.4rem / 2);
+    top: calc(40% - 0.4rem / 2);
   }
 
   .left {
     width: 40%;
-    height: 100%;
+    height: 5rem;
     .top {
       width: 100%;
       height: 40%;
@@ -91,20 +91,20 @@ export default {
       display: flex;
       img {
         width: auto;
-        height: 2vw;
-        margin-top: 0.5vh;
+        height: 0.3rem;
+        margin-top: 0.1rem;
         transform: rotate(-90deg);
       }
       div {
-        font-size: 12px;
+        font-size: 0.12rem;
+        line-height: 0.36rem;
         font-weight: 400;
-        line-height: 36px;
       }
     }
   }
   .right {
     width: 60%;
-    height: 100%;
+    height: 5rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;

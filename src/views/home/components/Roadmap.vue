@@ -7,8 +7,8 @@
       <div class="top">
         <div>
           <div>
-            <p>{{ $t("message.roadmap[0].time") }}</p>
-            <p>{{ $t("message.roadmap[0].text") }}</p>
+            <p>{{ $t("message.roadmap[1].time") }}</p>
+            <p>{{ $t("message.roadmap[1].text") }}</p>
           </div>
         </div>
         <div>
@@ -36,8 +36,8 @@
       <div class="bottom">
         <div>
           <div>
-            <p>{{ $t("message.roadmap[1].time") }}</p>
-            <p>{{ $t("message.roadmap[1].text") }}</p>
+            <p>{{ $t("message.roadmap[0].time") }}</p>
+            <p>{{ $t("message.roadmap[0].text") }}</p>
           </div>
         </div>
         <div>
@@ -77,15 +77,15 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  height: 100vh;
-  padding: 5vw;
+  padding: 0 0.8rem;
+  margin-bottom: 0.5rem;
   position: relative;
   background: url("../../../assets/images/bg8.png") no-repeat;
   background-size: auto 100%;
 }
 .box_content {
   width: 100%;
-  padding-top: 10vh;
+  padding: 2rem 0;
   .center {
     text-align: center;
     img {
@@ -101,17 +101,14 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      > div {
-        padding: 1vw;
-      }
       p {
         &:nth-child(1) {
-          font-size: 18px;
+          font-size: 0.18rem;
           font-weight: bold;
           color: #e39a21;
         }
         &:nth-child(2) {
-          font-size: 12px;
+          font-size: 0.12rem;
           font-weight: bold;
         }
       }
@@ -119,22 +116,22 @@ export default {
   }
   .top {
     > div {
-      width: 10vw;
-      height: 10vw;
+      width: 1.9rem;
+      height: 2rem;
       background: url("../../../assets/images/roadmap_bg2.png") no-repeat;
       background-size: 100% 100%;
       position: relative;
       &:nth-child(1) {
-        left: 19.6vw;
+        left: 2.56rem;
       }
       &:nth-child(2) {
-        left: 24.9vw;
+        left: 2.84rem;
       }
       &:nth-child(3) {
-        left: 30.2vw;
+        left: 3.12rem;
       }
       &:nth-child(4) {
-        left: 35.5vw;
+        left: 3.36rem;
       }
     }
   }
@@ -143,25 +140,25 @@ export default {
     background-size: auto 100%;
     background-position: center;
     > div {
-      width: 10vw;
-      height: 10vw;
+      width: 1.6rem;
+      height: 1.8rem;
       background: url("../../../assets/images/roadmap_bg1.png") no-repeat;
       background-size: 100% 100%;
       position: relative;
       &:nth-child(1) {
-        left: 11.8vw;
+        left: 1.6rem;
       }
       &:nth-child(2) {
-        left: 17.1vw;
+        left: 2.19rem;
       }
       &:nth-child(3) {
-        left: 22.5vw;
+        left: 2.8rem;
       }
       &:nth-child(4) {
-        left: 28.1vw;
+        left: 3.4rem;
       }
       &:nth-child(5) {
-        left: 33.7vw;
+        left: 4.05rem;
       }
     }
   }

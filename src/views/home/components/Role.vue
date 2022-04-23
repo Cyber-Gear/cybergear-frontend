@@ -311,19 +311,20 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5vw;
+  padding: 0 0.8rem;
+  margin-bottom: 0.5rem;
 }
 .box_content {
   width: 100%;
-  height: 80vh;
+  height: 6rem;
   display: flex;
   justify-content: space-between;
   .left_content {
-    width: 75%;
+    width: 80%;
     height: 100%;
   }
   .right_content {
-    width: 25%;
+    width: 20%;
     height: 100%;
   }
 }
@@ -359,8 +360,7 @@ export default {
     }
     .right {
       img {
-        top: 5%;
-        right: 0;
+        right: 10%;
         opacity: 1;
       }
     }
@@ -379,7 +379,6 @@ export default {
     }
     .right {
       img {
-        top: 5%;
         right: -20%;
         opacity: 0;
       }
@@ -405,19 +404,19 @@ export default {
       > div {
         position: relative;
         &:nth-child(1) {
-          font-size: 45px;
+          font-size: 0.45rem;
           font-weight: bold;
           color: #555555;
           right: 10%;
         }
         &:nth-child(2) {
-          font-size: 20px;
+          font-size: 0.2rem;
           font-weight: 600;
           color: #22bbff;
-          right: 0%;
+          right: 0;
           img {
             width: auto;
-            height: 45px;
+            height: 0.45rem;
           }
         }
       }
@@ -429,12 +428,12 @@ export default {
       position: absolute;
       > div {
         display: flex;
-        font-size: 12px;
+        font-size: 0.12rem;
         font-weight: 600;
       }
       .angle {
         width: auto;
-        height: 30px;
+        height: 0.3rem;
         transform: rotate(-90deg);
       }
       .bottom_img {
@@ -452,7 +451,6 @@ export default {
       height: 90%;
       transition: all 0.5s;
       position: absolute;
-      top: 5%;
     }
   }
 }
@@ -461,30 +459,30 @@ export default {
   width: 100%;
   height: 100%;
   overflow-y: auto;
-  padding: 10px 0;
+  padding: 0.1rem 0;
   &::-webkit-scrollbar {
     width: 0;
   }
   .item {
     cursor: pointer;
-    padding: 10px 5px;
+    padding: 0.1rem 0.05rem;
     display: flex;
     align-items: center;
     justify-content: right;
     transition: all 0.5s;
     span {
-      font-size: 25px;
+      font-size: 0.25rem;
       font-weight: 400;
       transition: all 0.5s;
     }
     img {
-      width: 40px;
-      height: 40px;
-      margin: 0 20px;
+      width: 0.4rem;
+      height: 0.4rem;
+      margin: 0 0.2rem;
       transition: all 0.5s;
     }
     &.active {
-      padding: 10px 30px;
+      padding: 0.1rem 0.3rem;
       span {
         color: #22bbff;
       }
@@ -493,7 +491,7 @@ export default {
       }
     }
     &:hover {
-      padding: 10px 30px;
+      padding: 0.1rem 0.3rem;
     }
   }
 }

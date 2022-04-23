@@ -1,3 +1,8 @@
+html,
+body {
+  font-size: 0;
+}
+
 // 字体样式
 @font-face {
   font-family: "PingFang";
@@ -23,11 +28,12 @@
 
 // 重置滚动条样式
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0.05rem;
+  height: 0.05rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: #825f35;
-  border-radius: 5px;
+  background: #555555;
+  border-radius: 0.05rem;
 }
 ::-webkit-scrollbar-track {
   background: #000;
@@ -50,17 +56,16 @@ input {
 .box_title {
   width: fit-content;
   position: relative;
-  padding: 20px;
+  padding: 0.2rem;
   span {
-    font-size: 32px;
-    color: #ffffff;
+    font-size: 0.32rem;
     background: linear-gradient(180deg, #ffffff 0%, #61f0f5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     &::before {
       content: "";
-      width: 5vw;
+      width: 0.8rem;
       height: 100%;
       background: url("../assets/images/title_bg1.png") no-repeat;
       background-size: auto 100%;
@@ -71,7 +76,7 @@ input {
     }
     &::after {
       content: "";
-      width: 5vw;
+      width: 0.8rem;
       height: 100%;
       background: url("../assets/images/title_bg1.png") no-repeat;
       background-size: auto 100%;

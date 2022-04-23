@@ -21,29 +21,28 @@ export default {
 .footer_box {
   width: 100%;
   height: 35vw;
-  margin-top: 10vw;
   background: url("../assets/images/bg4.png") no-repeat;
   background-size: 100% auto;
   text-align: center;
-  padding-top: 2vw;
+  padding-top: 0.8rem;
   > img {
-    width: 28vw;
+    width: 4.3rem;
     height: auto;
   }
   > div {
-    width: 28vw;
+    width: 4.3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2vw auto;
+    margin: 0.2rem auto;
     img {
-      width: 4vw;
-      height: 4vw;
+      width: 0.5rem;
+      height: 0.5rem;
       cursor: pointer;
     }
   }
   > p {
-    font-size: 15px;
+    font-size: 0.15rem;
     font-weight: bold;
   }
 }

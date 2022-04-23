@@ -1,5 +1,5 @@
 <template>
-  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'">
+  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'" @scroll="handleScrollScroll($event)">
     <HeaderLayout />
     <div id="container_body">
       <router-view />
@@ -16,38 +16,46 @@ export default {
   computed: { ...mapGetters(["isEnLang"]) },
   data() {
     return {
-      // scrollTop: 0,
+      showToTop: false,
     };
   },
   mounted() {
-    this.resetRem();
+    window.addEventListener("load", () => {
+      this.resetRem();
+    });
+    window.addEventListener("resize", () => {
+      this.resetRem();
+    });
+  },
+  destroyed() {
+    window.removeEventListener("load", this.resetRem());
+    window.removeEventListener("resize", this.resetRem());
   },
   methods: {
     resetRem() {
-      const bodyWidth = document.body.clientWidth;
-      const rem375 = (bodyWidth * 100) / 375;
-      if (bodyWidth <= 980) {
-        document.getElementsByTagName("html")[0].style.fontSize = rem375 + "px";
-      }
+      const clientWidth = document.body.clientWidth;
+      const rem = (clientWidth * 100) / 1440;
+      document.getElementsByTagName("html")[0].style.fontSize = rem + "px";
     },
-    // handleScrollScroll(e) {
-    //   this.scrollTop = e.srcElement.scrollTop;
-    // },
+    handleScrollScroll(e) {
+      this.showToTop = e.srcElement.scrollTop > 900;
+      // console.log(this.showToTop);
+    },
   },
 };
 </script>
 
 <style lang="scss">
 #container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: relative;
   color: #ffffff;
   background: #09071f;
   overflow: auto;
 }
 #container_body {
-  width: calc(100vw - 5px);
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 </style>

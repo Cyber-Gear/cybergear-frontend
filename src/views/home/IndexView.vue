@@ -2,17 +2,9 @@
   <div class="home">
     <HomeBanner />
     <div class="btnbox">
-      <div>
-        <img src="../../assets/images/btn_icon1.png" alt="" />
-        <p>{{ $t("message.home.text1") }}</p>
-      </div>
-      <div>
-        <img src="../../assets/images/btn_icon2.png" alt="" />
-        <p>{{ $t("message.home.text2") }}</p>
-      </div>
-      <div>
-        <img src="../../assets/images/btn_icon3.png" alt="" />
-        <p>{{ $t("message.home.text3") }}</p>
+      <div v-for="(item, index) in btnList" :key="index">
+        <img :src="item.image" alt="" />
+        <p>{{ $t(item.text) }}</p>
       </div>
     </div>
     <Introduction />
@@ -36,11 +28,20 @@ import Roadmap from "./components/Roadmap";
 import Collaborators from "./components/Collaborators";
 export default {
   components: { HomeBanner, Introduction, CoreFeatures, Role, GameMode, PlayToEarn, Roadmap, Collaborators },
+  data() {
+    return {
+      btnList: [
+        { image: require("../../assets/images/btn_icon1.png"), text: "message.home.text1" },
+        { image: require("../../assets/images/btn_icon2.png"), text: "message.home.text2" },
+        { image: require("../../assets/images/btn_icon3.png"), text: "message.home.text3" },
+      ],
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
 .home {
-  width: calc(100vw - 5px);
+  width: 100%;
   position: relative;
 }
 .btnbox {
@@ -49,16 +50,18 @@ export default {
   align-items: center;
   justify-content: center;
   > div {
-    font-size: 17px;
-    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.17rem;
     text-align: center;
     background: url("../../assets/images/btn_bg3.png") no-repeat;
     background-size: 100% 100%;
-    padding: 1vw 2vw;
-    margin: 0 5vw;
+    margin: 0 0.5rem;
+    cursor: pointer;
     img {
       width: auto;
-      height: 5vw;
+      height: 60%;
+      margin-top: 0.15rem;
     }
   }
 }

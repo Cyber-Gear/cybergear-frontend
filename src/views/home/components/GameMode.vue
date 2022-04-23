@@ -1,28 +1,25 @@
 <template>
   <div class="box">
     <div class="box_title">
-      <span>{{ $t("message.home.text18") }}</span>
+      <span>{{ $t("message.gameMode.text1") }}</span>
     </div>
     <div class="box_title2">
-      <div>{{ $t("message.home.text23") }}</div>
-      <div>{{ $t("message.home.text19") }}</div>
+      <div>{{ $t("message.gameMode.text2") }}</div>
+      <div>{{ $t("message.gameMode.text3") }}</div>
     </div>
     <div class="box_bg">
       <div class="box_content">
-        <div class="box_title3">
-          <!-- <img src="../../../assets/images/gamemode_title2.png" alt="" /> -->
-          PVP
-        </div>
         <swiper class="gallery-top" :options="swiperOptionTop" ref="swiperTop">
           <swiper-slide v-for="(item, index) in imgList" :key="index">
-            <img :src="item" />
+            <img :src="item.image" />
+            <span>{{ $t(item.text) }}</span>
           </swiper-slide>
         </swiper>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <swiper class="gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
           <swiper-slide v-for="(item, index) in imgList" :key="index" :class="{ 'slide-thumb-active': currentSwiperIndex == index }">
-            <img :src="item" />
+            <img :src="item.image" />
           </swiper-slide>
         </swiper>
       </div>
@@ -36,11 +33,11 @@ export default {
   data() {
     return {
       imgList: [
-        require("../../../assets/images/gamemode_bg1.jpg"),
-        require("../../../assets/images/gamemode_bg2.jpg"),
-        require("../../../assets/images/gamemode_bg3.jpg"),
-        require("../../../assets/images/gamemode_bg4.jpg"),
-        require("../../../assets/images/gamemode_bg5.jpg"),
+        { image: require("../../../assets/images/gamemode_pve.jpg"), text: "message.gameMode.text4" },
+        { image: require("../../../assets/images/gamemode_pve2.jpg"), text: "message.gameMode.text5" },
+        { image: require("../../../assets/images/gamemode_pvp.jpg"), text: "message.gameMode.text6" },
+        { image: require("../../../assets/images/gamemode_fighting.jpg"), text: "message.gameMode.text7" },
+        { image: require("../../../assets/images/gamemode_squad.jpg"), text: "message.gameMode.text8" },
       ],
       currentSwiperIndex: 0,
       swiperOptionTop: {
@@ -87,39 +84,32 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5vw;
+  margin-bottom: 0.5rem;
+  padding: 0 0.8rem;
 }
 .box_title2 {
-  width: 70vw;
-  height: 10vw;
-  margin: 2vw auto;
+  width: 10rem;
+  height: 1.5rem;
+  margin: 0.5rem auto;
   background: url("../../../assets/images/title_bg2.png") no-repeat;
   background-size: 100% 100%;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 0 2vw;
+  padding: 0 0.5rem;
   div {
     &:nth-child(1) {
       width: 15%;
-      font-size: 20px;
+      font-size: 0.2rem;
       font-weight: bold;
       color: #00daff;
     }
     &:nth-child(2) {
-      font-size: 12px;
+      font-size: 0.12rem;
+      margin-left: 0.1rem;
       font-weight: 400;
-      margin-left: 10px;
     }
   }
-}
-.box_title3 {
-  font-size: 50px;
-  font-weight: bold;
-  position: absolute;
-  top: 30vw;
-  left: 2vw;
-  z-index: 99;
 }
 .box_bg {
   width: 100%;
@@ -129,26 +119,33 @@ export default {
   background-position: top center;
 }
 .box_content {
-  width: 60vw;
+  width: 8rem;
   margin: 0 auto;
   position: relative;
   .gallery-top {
     .swiper-slide {
       text-align: center;
+      span {
+        font-size: 0.5rem;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0.2rem;
+        left: 0.2rem;
+      }
       img {
         width: 100%;
-        height: 35vw;
+        height: 4.8rem;
       }
     }
   }
   .gallery-thumbs {
-    margin-top: 1vw;
+    margin-top: 0.2rem;
     .swiper-slide {
       width: 25%;
       opacity: 0.5;
       img {
         width: 100%;
-        height: 8vw;
+        height: 1rem;
       }
       &.slide-thumb-active {
         opacity: 1;
@@ -158,15 +155,17 @@ export default {
   .swiper-button-prev {
     background-image: url("../../../assets/images/angle3.png");
     background-size: 100% auto;
-    width: 50px;
-    left: -80px;
+    width: 0.5rem;
+    height: 0.5rem;
+    left: -0.8rem;
     top: 40%;
   }
   .swiper-button-next {
     background-image: url("../../../assets/images/angle3.png");
     background-size: 100% auto;
-    width: 50px;
-    right: -80px;
+    width: 0.5rem;
+    height: 0.5rem;
+    right: -0.8rem;
     top: 40%;
     transform: rotate(180deg);
   }

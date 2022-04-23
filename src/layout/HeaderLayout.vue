@@ -14,8 +14,8 @@
         <img src="../assets/images/angle.png" alt="" />
       </div>
       <div class="lang_box" @mouseover="showLangSelect = true" @mouseleave="showLangSelect = false">
-        <span><img :src="languageImage" alt="" /></span>
-        <img src="../assets/images/angle.png" alt="" />
+        <img class="lang_img" :src="languageImage" alt="" />
+        <img class="angle" src="../assets/images/angle.png" alt="" />
         <transition name="select-lang" appear>
           <ul v-show="showLangSelect">
             <li v-for="(item, index) in langArr" :key="index" @click="selectLang(item)">
@@ -50,12 +50,6 @@ export default {
       ],
     };
   },
-  // props: {
-  //   scrollTop: {
-  //     type: Number,
-  //     default: 0,
-  //   },
-  // },
   watch: {
     $route(to) {
       // if (from.matched.length && to.matched[0].path !== from.matched[0].path) {
@@ -95,8 +89,8 @@ export default {
 <style lang="scss" scoped>
 .nav {
   width: 100vw;
-  height: 100px;
-  background: rgba(0, 0, 0, 0.3);
+  height: 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   z-index: 999;
@@ -110,15 +104,15 @@ export default {
     display: flex;
     align-items: center;
     &:nth-child(1) .logo {
-      width: auto;
-      height: 30px;
+      width: 1.4rem;
+      height: auto;
     }
     &:nth-child(2) {
       .nav_list {
         cursor: pointer;
         height: 80%;
         padding: 0 2vw;
-        font-size: 19px;
+        font-size: 0.18rem;
         display: flex;
         align-items: center;
         position: relative;
@@ -145,35 +139,34 @@ export default {
     }
     &:nth-child(3) {
       .connect {
-        font-size: 14px;
+        font-size: 0.14rem;
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 0.05rem 0.1rem;
         background: url("../assets/images/btn_bg1.png") no-repeat;
         background-size: 100% 100%;
-        margin-right: 10px;
+        margin-right: 0.1rem;
         display: flex;
         align-items: center;
         img {
-          width: 20px;
+          width: 0.2rem;
           height: auto;
         }
       }
       .lang_box {
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 0.05rem 0.1rem;
         background: url("../assets/images/btn_bg2.png") no-repeat;
         background-size: 100% 100%;
         position: relative;
         display: flex;
         align-items: center;
         img {
-          width: 20px;
+          width: 0.2rem;
           height: auto;
         }
         ul {
           width: 100%;
-          height: auto;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.5);
           text-align: center;
           position: absolute;
           top: 100%;
@@ -182,11 +175,7 @@ export default {
           transition: transform 0.3s;
           transform-origin: top center;
           li {
-            padding: 10px 0;
-            img {
-              width: 2vw;
-              height: auto;
-            }
+            padding: 0.1rem 0;
             &:hover {
               background: #000;
             }

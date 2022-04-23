@@ -2,7 +2,6 @@
   <div class="box">
     <div class="banner">
       <div class="figure_gif">
-        <!-- <img src="../../../assets/images/banner_gif.gif" alt="" /> -->
         <video loop autoplay muted>
           <source src="../../../assets/videos/banner_video.mp4" type="video/mp4" />
         </video>
@@ -52,16 +51,17 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 .banner {
   width: 100%;
   background: url("../../../assets/images/bg1.png") no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  padding-top: 0.8rem;
   position: relative;
   .figure_gif {
-    width: 100%;
-    height: 56.25vw;
-    margin-top: 100px;
+    width: 100vw;
+    height: calc(100vw * 0.5625);
     video {
       width: 100%;
       height: 100%;
@@ -71,20 +71,18 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: relative;
-    top: -25vh;
+    position: absolute;
+    top: 80%;
     .center {
       text-align: center;
       position: relative;
       .logo {
         cursor: url("../../../assets/images/hand.jpg"), pointer;
-        width: 30vw;
+        width: 5rem;
         height: auto;
       }
       span {
-        width: fit-content;
-        height: fit-content;
-        font-size: 10px;
+        font-size: 0.12rem;
         position: absolute;
         top: 100%;
         bottom: 0;
@@ -94,13 +92,16 @@ export default {
       }
     }
     .right {
+      height: 100%;
+      display: flex;
+      align-items: center;
       position: absolute;
-      right: -80%;
+      right: -70%;
       top: 10%;
       img {
-        width: 4vw;
-        height: 4vw;
-        margin: 0 5px;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: 0 0.05rem;
         cursor: pointer;
       }
     }
@@ -108,6 +109,8 @@ export default {
 }
 
 .center_video {
+  width: 60vw;
+  height: calc(60vw * 0.5625);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -115,9 +118,6 @@ export default {
   right: 0;
   margin: auto;
   z-index: 99;
-  width: 60vw;
-  height: calc(60vw * 0.5625);
-  background: #000;
   > div {
     position: relative;
     span {

@@ -33,7 +33,8 @@ export default {
 <style lang="scss" scoped>
 .box {
   width: 100%;
-  padding: 5vw;
+  padding: 0 0.8rem;
+  margin-bottom: 0.5rem;
 }
 .box_content {
   position: relative;
@@ -42,8 +43,10 @@ export default {
   flex-wrap: wrap;
   li {
     width: 25%;
-    padding: 20px;
+    padding: 0.2rem;
     img {
+      max-width: 100%;
+      max-height: 100%;
       width: auto;
       height: auto;
     }
