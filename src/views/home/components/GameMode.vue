@@ -12,7 +12,7 @@
         <swiper class="gallery-top" :options="swiperOptionTop" ref="swiperTop">
           <swiper-slide v-for="(item, index) in imgList" :key="index">
             <img :src="item.image" />
-            <span>{{ $t(item.text) }}</span>
+            <div>{{ $t(item.text) }}</div>
           </swiper-slide>
         </swiper>
         <div class="swiper-button-next"></div>
@@ -125,12 +125,15 @@ export default {
   .gallery-top {
     .swiper-slide {
       text-align: center;
-      span {
-        font-size: 0.5rem;
+      div {
+        background: url("../../../assets/images/gamemode_bg.png") no-repeat;
+        background-size: 100% 100%;
+        padding: 0.1rem 0.2rem;
+        font-size: 0.3rem;
         font-weight: bold;
         position: absolute;
-        bottom: 0.2rem;
-        left: 0.2rem;
+        bottom: 0;
+        left: 0;
       }
       img {
         width: 100%;

@@ -104,9 +104,8 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
+        font-size: 0.14rem;
         font-weight: 600;
-        line-height: 20px;
         background: linear-gradient(180deg, #ffffff 0%, #7ee9f4 98%, #72e7f3 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -122,7 +121,6 @@ export default {
         p {
           width: 80%;
           font-size: 0.12rem;
-          line-height: 0.15rem;
           font-weight: 400;
         }
       }

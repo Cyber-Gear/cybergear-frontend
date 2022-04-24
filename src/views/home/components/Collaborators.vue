@@ -35,6 +35,9 @@ export default {
   width: 100%;
   padding: 0 0.8rem;
   margin-bottom: 0.5rem;
+  background: url("../../../assets/images/bg14.png") no-repeat;
+  background-size: auto 100%;
+  background-position: top right;
 }
 .box_content {
   position: relative;
