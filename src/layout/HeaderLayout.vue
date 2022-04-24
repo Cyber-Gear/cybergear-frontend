@@ -51,10 +51,10 @@ export default {
     };
   },
   watch: {
-    $route(to) {
-      // if (from.matched.length && to.matched[0].path !== from.matched[0].path) {
-      //  window.scrollTo(0, 0);
-      // }
+    $route(to, from) {
+      if (from.matched.length && to.matched[0].path !== from.matched[0].path) {
+        window.scrollTo(0, 0);
+      }
       if (to.path == "/home") {
         this.navActive = 0;
       } else if (to.path == "/nft") {
@@ -116,18 +116,10 @@ export default {
         display: flex;
         align-items: center;
         position: relative;
-        &::after {
-          content: "";
-          width: 1px;
-          height: 100%;
-          background: url("../assets/images/border1.png") no-repeat;
-          background-size: auto 100%;
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-        &:last-child::after {
-          width: 0;
+        border-right: 1px solid;
+        border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #29a7e1, rgba(0, 0, 0, 0)) 1 1;
+        &:last-child {
+          border-right: 0;
         }
         &.active {
           color: #29a7e1;
