@@ -38,7 +38,7 @@ export default {
   padding: 0 0.8rem;
   margin-bottom: 0.5rem;
   background: url("../../../assets/images/bg2.png") no-repeat;
-  background-size: auto;
+  background-size: 20% auto;
   background-position: top left;
   position: relative;
   padding-top: 1.2rem;
