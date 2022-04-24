@@ -1,37 +1,37 @@
 <template>
   <div class="box">
     <div class="box_title">
-      <span>{{ $t("message.home.text7") }}</span>
+      <span>{{ $t("message.coreFeatures.text1") }}</span>
     </div>
     <ul class="box_content">
       <li>
-        <div>{{ $t("message.home.text8") }}</div>
+        <div>{{ $t("message.coreFeatures.list1[0].text1") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>{{ $t("message.home.text9") }}</p>
+          <p>{{ $t("message.coreFeatures.list1[0].text2") }}</p>
         </div>
         <img src="../../../assets/images/coreFeatures_figure1.png" alt="" />
       </li>
       <li>
-        <div>{{ $t("message.home.text10") }}</div>
+        <div>{{ $t("message.coreFeatures.list1[1].text1") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>{{ $t("message.home.text11") }}</p>
+          <p>{{ $t("message.coreFeatures.list1[1].text2") }}</p>
         </div>
       </li>
       <li>
-        <div>{{ $t("message.home.text12") }}</div>
+        <div>{{ $t("message.coreFeatures.list1[2].text1") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>{{ $t("message.home.text13") }}</p>
+          <p>{{ $t("message.coreFeatures.list1[2].text2") }}</p>
         </div>
         <img src="../../../assets/images/coreFeatures_figure2.png" alt="" />
       </li>
       <li>
-        <div>{{ $t("message.home.text14") }}</div>
+        <div>{{ $t("message.coreFeatures.list1[3].text1") }}</div>
         <div>
           <img src="../../../assets/images/angle2.png" alt="" />
-          <p>{{ $t("message.home.text15") }}</p>
+          <p>{{ $t("message.coreFeatures.list1[3].text2") }}</p>
         </div>
         <img src="../../../assets/images/coreFeatures_figure3.png" alt="" />
       </li>

@@ -9,7 +9,7 @@
       <div class="contact">
         <div class="center" @click="openVideo">
           <img class="logo" src="../../../assets/images/logo2.png" alt="" />
-          <span>{{ $t("message.home.text22") }}</span>
+          <span>{{ $t("message.homeBanner.text1") }}</span>
           <div class="right">
             <img src="../../../assets/images/contact1.png" alt="" />
             <img src="../../../assets/images/contact2.png" alt="" />
@@ -55,9 +55,6 @@ export default {
 }
 .banner {
   width: 100%;
-  background: url("../../../assets/images/bg1.png") no-repeat;
-  background-size: 100% auto;
-  padding-top: 0.8rem;
   position: relative;
   .figure_gif {
     width: 100%;
@@ -72,7 +69,7 @@ export default {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 80%;
+    bottom: 0.5rem;
     .center {
       text-align: center;
       position: relative;

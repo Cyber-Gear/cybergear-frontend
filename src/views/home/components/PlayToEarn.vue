@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="box_title">
-      <span>{{ $t("message.home.text24") }}</span>
+      <span>{{ $t("message.playToEarn.text1") }}</span>
     </div>
     <div class="box_content">
       <video loop muted controls poster="../../../assets/images/video_poster1.jpg">

@@ -1,32 +1,32 @@
 <template>
   <div class="box">
     <div class="box_title">
-      <span>{{ $t("message.home.text20") }}</span>
+      <span>{{ $t("message.roadmap.text1") }}</span>
     </div>
     <div class="box_content">
       <div class="top">
         <div>
           <div>
-            <p>{{ $t("message.roadmap[1].time") }}</p>
-            <p>{{ $t("message.roadmap[1].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[1].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[1].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[2].time") }}</p>
-            <p>{{ $t("message.roadmap[2].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[2].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[2].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[4].time") }}</p>
-            <p>{{ $t("message.roadmap[4].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[4].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[4].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[6].time") }}</p>
-            <p>{{ $t("message.roadmap[6].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[6].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[6].text") }}</p>
           </div>
         </div>
       </div>
@@ -36,32 +36,32 @@
       <div class="bottom">
         <div>
           <div>
-            <p>{{ $t("message.roadmap[0].time") }}</p>
-            <p>{{ $t("message.roadmap[0].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[0].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[0].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[3].time") }}</p>
-            <p>{{ $t("message.roadmap[3].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[3].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[3].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[5].time") }}</p>
-            <p>{{ $t("message.roadmap[5].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[5].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[5].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[7].time") }}</p>
-            <p>{{ $t("message.roadmap[7].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[7].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[7].text") }}</p>
           </div>
         </div>
         <div>
           <div>
-            <p>{{ $t("message.roadmap[8].time") }}</p>
-            <p>{{ $t("message.roadmap[8].text") }}</p>
+            <p>{{ $t("message.roadmap.list1[8].time") }}</p>
+            <p>{{ $t("message.roadmap.list1[8].text") }}</p>
           </div>
         </div>
       </div>

@@ -8,15 +8,15 @@
       <div class="left">
         <div class="top">
           <div class="box_title">
-            <span>{{ $t("message.home.text16") }}</span>
+            <span>{{ $t("message.introduction.text1") }}</span>
           </div>
         </div>
         <div class="bottom">
           <img src="../../../assets/images/angle.png" alt="" />
           <div>
-            <p>{{ $t("message.home.text4") }}</p>
-            <p>{{ $t("message.home.text5") }}</p>
-            <p>{{ $t("message.home.text6") }}</p>
+            <p>{{ $t("message.introduction.text2") }}</p>
+            <p>{{ $t("message.introduction.text3") }}</p>
+            <p>{{ $t("message.introduction.text4") }}</p>
           </div>
         </div>
       </div>
