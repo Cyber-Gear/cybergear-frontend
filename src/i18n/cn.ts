@@ -16,18 +16,19 @@ export const message = {
     text1: "购买NFT",
     text2: "加入公会",
     text3: "玩游戏",
-  },
-  homeBanner: {
-    text1: "点击播放视频",
-  },
-  introduction: {
-    text1: "CYBEARGEAR介绍",
-    text2: "Cybergear（机甲少⼥）",
-    text3: "是⼀个社区驱动的⼆次元宇宙，⼆次元赛博朋克⻛并融合了SRPG玩法的GameFi产品。",
-    text4: "是全球⾸款 NFT+ DeFi+ SRPG+AI 的战棋策略类游戏，游戏完美结合了区块链NFT 和 DeFi 技术，让玩家在参与游戏的同时轻松获得相应的收益。",
-  },
-  coreFeatures: {
-    text1: "核心特点",
+    text4: "点击播放视频",
+    text5: "CYBEARGEAR介绍",
+    text6: "Cybergear（机甲少⼥）",
+    text7: "是⼀个社区驱动的⼆次元宇宙，⼆次元赛博朋克⻛并融合了SRPG玩法的GameFi产品。",
+    text8: "是全球⾸款 NFT+ DeFi+ SRPG+AI 的战棋策略类游戏，游戏完美结合了区块链NFT 和 DeFi 技术，让玩家在参与游戏的同时轻松获得相应的收益。",
+    text9: "核心特点",
+    text10: "角色",
+    text11: "游戏模式",
+    text12: "PVP模式",
+    text13: "PVE 剧情闯关（能⼒提升获取CT）,奖池为所有盲盒售卖的10%+玩家在游戏内所有充值的20%",
+    text14: "边玩边赚",
+    text15: "路线图",
+    text16: "合作商",
     list1: [
       {
         text1: "与虚拟偶像互动",
@@ -42,10 +43,7 @@ export const message = {
       },
       { text1: "环生态模型", text2: "海外知名经济和数值团队构建了循环⽣态模型，满⾜多种⻆⾊收益形式。" },
     ],
-  },
-  role: {
-    text1: "角色",
-    list1: [
+    list2: [
       { name: "君临", des: "微笑暴君。说话语调沉稳，待人有礼，控制欲极强。是P.T.H.财团高级执行官，位居财团权力顶点的十殿之一。从未展露过真正的实力，行为看似随性无常，但每一步行动都经过缜密思考。" },
       {
         name: "卡特琳娜",
@@ -92,23 +90,8 @@ export const message = {
       },
       { name: "爱丽丝", des: "原职业黑客，现为P.T.H.财团的信息安全监察员。性格极度自负，讨厌工作，不喜欢听人指挥。虽然拥有无与伦比的黑客技术，但生活自理能力几乎为负。" },
     ],
-  },
-  gameMode: {
-    text1: "游戏模式",
-    text2: "PVP模式",
-    text3: "PVE 剧情闯关（能⼒提升获取CT）,奖池为所有盲盒售卖的10%+玩家在游戏内所有充值的20%",
-    text4: "PVE",
-    text5: "PVE",
-    text6: "PVP",
-    text7: "战斗",
-    text8: "阵容",
-  },
-  playToEarn: {
-    text1: "边玩边赚",
-  },
-  roadmap: {
-    text1: "路线图",
-    list1: [
+    list3: ["PVE", "PVE", "PVP", "战斗", "阵容"],
+    list4: [
       { time: "2018年12月", text: "游戏逻辑规划" },
       { time: "2019年", text: "艺术创作完成" },
       { time: "2020年", text: "游戏开发，完善" },
@@ -119,8 +102,5 @@ export const message = {
       { time: "2022年6月", text: "Alpha 测试" },
       { time: "更多", text: "更多游戏功能" },
     ],
-  },
-  collaborators: {
-    text1: "合作商",
   },
 };

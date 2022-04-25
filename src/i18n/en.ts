@@ -16,19 +16,20 @@ export const message = {
     text1: "Buy NFTs",
     text2: "Join a guild",
     text3: "Play games",
-  },
-  homeBanner: {
-    text1: "Click Play Video",
-  },
-  introduction: {
-    text1: "Introduction",
-    text2: "Cybergear (Mecha Girl)",
-    text3: "It is a community-driven two-dimensional universe, two-dimensional cyberpunk and GameFi products that incorporate SRPG gameplay.",
-    text4:
+    text4: "Click Play Video",
+    text5: "Introduction",
+    text6: "Cybergear (Mecha Girl)",
+    text7: "It is a community-driven two-dimensional universe, two-dimensional cyberpunk and GameFi products that incorporate SRPG gameplay.",
+    text8:
       "It is the world's first NFT+DeFi+SRPG+AI war chess strategy game. The game perfectly combines blockchain NFT and DeFi technology, allowing players to easily obtain corresponding benefits while participating in the game.",
-  },
-  coreFeatures: {
-    text1: "Core Features",
+    text9: "Core Features",
+    text10: "Role",
+    text11: "Game Mode",
+    text12: "Addition of PVP puppets",
+    text13: "PVE storyline clearance (power up to get CT), the prize pool is 10% of all mystery box sales + 20% of all players' recharges in the game",
+    text14: "Play To Earn",
+    text15: "Roadmap",
+    text16: "Partners",
     list1: [
       {
         text1: "Interact with virtual idols",
@@ -47,10 +48,7 @@ export const message = {
       },
       { text1: "Circular Ecological Model", text2: "Well-known overseas economic and numerical teams have built a circular ecological model, full of various forms of role income." },
     ],
-  },
-  role: {
-    text1: "Role",
-    list1: [
+    list2: [
       {
         name: "Lord",
         des: "A smiling tyrant.She is an extreme control freak who speaks calmly and treats people politely.She is a high level Executor of the P.T.H. Group and one of the ten Governors who control the Group.She's never exposed her true strength. Her behaviors may seem casual and unpredictable, but she actually plans her every move very carefully.",
@@ -112,23 +110,8 @@ export const message = {
         des: "She was originally a hacker and now an Information Security Inspector of the P.T.H. Group. She's a very arrogant person who hates working and following to orders. Though her hacking techniques are second to none, she doesn't know how to take care of herself.",
       },
     ],
-  },
-  gameMode: {
-    text1: "Game Mode",
-    text2: "Addition of PVP puppets",
-    text3: "PVE storyline clearance (power up to get CT), the prize pool is 10% of all mystery box sales + 20% of all players' recharges in the game",
-    text4: "PVE",
-    text5: "PVE",
-    text6: "PVP",
-    text7: "Fighting",
-    text8: "Squad",
-  },
-  playToEarn: {
-    text1: "Play To Earn",
-  },
-  roadmap: {
-    text1: "Roadmap",
-    list1: [
+    list3: ["PVE", "PVE", "PVP", "Fighting", "Squad"],
+    list4: [
       { time: "2018 Nov", text: "Game Logic Planning" },
       { time: "2019", text: "Artistic creation complete" },
       { time: "2020", text: "Game Development, Perfection" },
@@ -139,8 +122,5 @@ export const message = {
       { time: "2022 Jun", text: "Alpha testing" },
       { time: "more", text: "More game features" },
     ],
-  },
-  collaborators: {
-    text1: "Partners",
   },
 };
