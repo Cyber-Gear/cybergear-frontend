@@ -19,7 +19,23 @@ export default {
       showToTop: false,
     };
   },
+  created() {
+    if (document.readyState === "loading") {
+      // this.$toast("loading...");
+      // this.$toast("测试成功", "success", 3000);
+      // this.$toast("测试警告", "warning");
+      // this.$toast("测试失败", "fail");
+    }
+  },
   mounted() {
+    // const timer = setInterval(function () {
+    //   if (document.readyState === "complete") {
+    //     window.clearInterval(timer);
+    //   } else if (document.readyState === "loading") {
+    //     this.$toast("loading...", "normal", 500);
+    //   }
+    // }, 500);
+
     window.addEventListener("load", () => {
       this.resetRem();
     });

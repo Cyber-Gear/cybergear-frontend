@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 export default {
   /**
    * params: showToast Boolean 是否激活toast 默认 false
@@ -12,12 +11,11 @@ export default {
    * params: duration Number      toast显示时间 默认 3000ms
    * */
   name: "Toast",
-  computed: { ...mapGetters(["isEnLang"]) },
   data() {
     return {
       showToast: true,
       type: "normal",
-      message: this.isEnLang ? "Message prompt" : "消息提示",
+      message: "Message prompt",
       duration: 3000,
     };
   },
@@ -29,15 +27,16 @@ export default {
   position: fixed;
   left: 50%;
   top: 50%;
-  background: rgb(233, 233, 235);
-  padding: 10px;
+  background: #09071f;
+  padding: 0.2rem 0.3rem;
   border-radius: 5px;
   transform: translate(-50%, -50%);
   animation: show-toast 0.2s;
-  color: #909399;
+  color: #ffffff;
   overflow: hidden;
   display: flex;
   align-items: center;
+  font-size: 0.2rem;
 }
 
 @keyframes show-toast {
