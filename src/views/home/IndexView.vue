@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <!-- <HomeBanner /> -->
+    <img class="absolute1" src="../../assets/images/bg16.png" alt="" />
+    <img class="absolute2" src="../../assets/images/bg15.png" alt="" />
     <div class="box1">
       <div class="banner">
         <div class="figure_gif">
@@ -201,10 +202,22 @@ export default {
         { image: require("../../assets/images/btn_icon3.png"), text: "message.home.text3" },
       ],
       coreFeaturesList: [
-        { text1: "message.home.list1[0].text1", text2: "message.home.list1[0].text2", image: require("../../assets/images/coreFeatures_figure1.png") },
+        {
+          text1: "message.home.list1[0].text1",
+          text2: "message.home.list1[0].text2",
+          image: require("../../assets/images/coreFeatures_figure1.png"),
+        },
         { text1: "message.home.list1[1].text1", text2: "message.home.list1[1].text2", image: "" },
-        { text1: "message.home.list1[2].text1", text2: "message.home.list1[2].text2", image: require("../../assets/images/coreFeatures_figure2.png") },
-        { text1: "message.home.list1[3].text1", text2: "message.home.list1[3].text2", image: require("../../assets/images/coreFeatures_figure2.png") },
+        {
+          text1: "message.home.list1[2].text1",
+          text2: "message.home.list1[2].text2",
+          image: require("../../assets/images/coreFeatures_figure2.png"),
+        },
+        {
+          text1: "message.home.list1[3].text1",
+          text2: "message.home.list1[3].text2",
+          image: require("../../assets/images/coreFeatures_figure2.png"),
+        },
       ],
       roleList: [
         {
@@ -453,6 +466,20 @@ export default {
 .home {
   width: 100%;
   position: relative;
+}
+.absolute1 {
+  width: 4.4rem;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 54%;
+}
+.absolute2 {
+  width: 2.48rem;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 70%;
 }
 .box1 {
   width: 100%;

@@ -67,7 +67,7 @@ export default {
   height: 100%;
   position: relative;
   color: #ffffff;
-  background: #09071f;
+  background: #0f0f16;
   overflow: auto;
 }
 #container_body {
