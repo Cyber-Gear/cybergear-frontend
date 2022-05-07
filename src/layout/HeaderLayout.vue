@@ -71,6 +71,7 @@ export default {
     selectLang(item) {
       if (this.$i18n.locale == item) return (this.showLangSelect = false);
       this.$i18n.locale = item;
+      this.showLangSelect = false;
       this.$utils.setCookie("LANG", this.$i18n.locale);
       // location.reload();
     },
