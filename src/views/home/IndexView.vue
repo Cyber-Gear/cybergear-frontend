@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="box3">
-      <img class="bg12" src="../../assets/images/bg12.webp" alt="" />
+      <!-- <img class="bg12" src="../../assets/images/bg12.webp" alt="" /> -->
       <div class="box_content">
         <img class="border2" src="../../assets/images/border2.webp" alt="" />
         <img class="border3" src="../../assets/images/border3.webp" alt="" />
@@ -59,7 +59,9 @@
           </div>
         </div>
         <div class="right">
-          <img src="../../assets/images/introduction_gif.gif" alt="" />
+          <video loop autoplay muted>
+            <source src="../../assets/videos/introduction.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -609,7 +611,7 @@ export default {
     position: relative;
     display: flex;
     .border2 {
-      width: 100%;
+      width: 60%;
       height: auto;
       position: absolute;
       left: 0;
@@ -661,14 +663,18 @@ export default {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      background: url("../../assets/images/bg13.webp") no-repeat;
-      background-size: contain;
-      background-position: center;
+      // background: url("../../assets/images/bg13.webp") no-repeat;
+      // background-size: contain;
+      // background-position: center;
       position: relative;
-      img {
-        width: auto;
-        height: 120%;
+      video {
+        width: 5rem;
+        height: 5rem;
       }
+      // img {
+      //   width: auto;
+      //   height: 120%;
+      // }
     }
   }
 }
