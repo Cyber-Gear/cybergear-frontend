@@ -3,8 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import i18n from "./i18n";
-import "./style/reset.scss";
-import "./style/global.scss";
+import "./styles/reset.scss";
+import "./styles/global.scss";
 
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
@@ -15,9 +15,11 @@ Vue.prototype.$utils = utils;
 import toast from "./components/toast";
 Vue.prototype.$toast = toast;
 
-Vue.prototype.$urlImages = process.env.VUE_APP_IMAGE;
-Vue.prototype.$urlVideos = process.env.VUE_APP_VIDEO;
-Vue.prototype.$urlTypefaces = process.env.VUE_APP_TYPEFACE;
+const production = process.env.NODE_ENV === "production";
+const aws = production ? "//cdn.isekai.fans/cybergear_assets_main" : "//cdn.isekai.fans/cybergear_assets_test";
+Vue.prototype.$urlImages = aws + "/images/";
+Vue.prototype.$urlVideos = aws + "/videos/";
+Vue.prototype.$urlFonts = aws + "/fonts/";
 
 Vue.config.productionTip = false;
 new Vue({

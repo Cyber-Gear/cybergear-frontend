@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <div>
-      <img class="logo" src="../assets/images/logo1.webp" alt="" @click="toRoute('/home')" />
+      <img class="logo" :src="`${$urlImages}logo1.webp`" alt="" @click="toRoute('/home')" />
     </div>
     <div>
       <div class="nav_list" v-for="(item, index) in navArr" :key="index" :class="{ active: navActive == index }" @click="toRoute(item.link)">
@@ -11,11 +11,11 @@
     <div>
       <div class="connect" @click="connectTheWallet">
         <span>{{ $t("message.nav.text8") }}</span>
-        <img src="../assets/images/angle.webp" alt="" />
+        <img :src="`${$urlImages}angle.webp`" alt="" />
       </div>
       <div class="lang_box" @mouseover="showLangSelect = true" @mouseleave="showLangSelect = false">
         <span>{{ $i18n.locale.toUpperCase() }}</span>
-        <img class="angle" src="../assets/images/angle.webp" alt="" />
+        <img class="angle" :src="`${$urlImages}angle.webp`" alt="" />
         <transition name="select-lang" appear>
           <ul v-show="showLangSelect">
             <li v-for="(item, index) in langArr" :key="index" @click="selectLang(item)">
@@ -116,7 +116,7 @@ export default {
         }
         &.active {
           color: #29a7e1;
-          background: url("../assets/images/btn_bg4.webp") no-repeat;
+          background: url($urlImages + "btn_bg4.webp") no-repeat;
           background-size: 75% auto;
           background-position: center;
         }
@@ -127,7 +127,7 @@ export default {
         font-size: 0.14rem;
         cursor: pointer;
         padding: 0.05rem 0.1rem;
-        background: url("../assets/images/btn_bg1.webp") no-repeat;
+        background: url($urlImages + "btn_bg1.webp") no-repeat;
         background-size: 100% 100%;
         margin-right: 0.1rem;
         display: flex;
@@ -140,7 +140,7 @@ export default {
       .lang_box {
         cursor: pointer;
         padding: 0.05rem 0.1rem;
-        background: url("../assets/images/btn_bg2.webp") no-repeat;
+        background: url($urlImages + "btn_bg2.webp") no-repeat;
         background-size: 100% 100%;
         position: relative;
         display: flex;

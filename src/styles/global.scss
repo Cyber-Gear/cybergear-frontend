@@ -1,0 +1,85 @@
+html,
+body {
+  font-size: 0;
+}
+
+// 字体样式
+@font-face {
+  font-family: "PingFang";
+  src: url($urlFonts + "PingFang.ttf");
+}
+@font-face {
+  font-family: "CaviarDreams";
+  src: url($urlFonts + "CaviarDreams.ttf");
+}
+
+// 中文常规
+.fontfamily_zh {
+  font-family: PingFang;
+}
+// 英文常规
+.fontfamily_en {
+  font-family: CaviarDreams;
+}
+
+// 重置滚动条样式
+::-webkit-scrollbar {
+  width: 0.05rem;
+  height: 0.05rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: 0.05rem;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+input {
+  // background: none;
+  // outline: none;
+  // border: 0px;
+  // caret-color: white;
+  &[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.box_title {
+  width: fit-content;
+  position: relative;
+  padding: 0.2rem;
+  span {
+    font-size: 0.32rem;
+    background: linear-gradient(180deg, #ffffff 0%, #61f0f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    &::before {
+      content: "";
+      width: 0.8rem;
+      height: 100%;
+      background: url($urlImages + "title_bg1.webp") no-repeat;
+      background-size: auto 100%;
+      background-position: center left;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &::after {
+      content: "";
+      width: 0.8rem;
+      height: 100%;
+      background: url($urlImages + "title_bg1.webp") no-repeat;
+      background-size: auto 100%;
+      background-position: center right;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

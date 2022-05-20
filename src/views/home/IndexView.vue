@@ -1,23 +1,23 @@
 <template>
   <div class="home">
-    <img class="absolute1" src="../../assets/images/bg16.webp" alt="" />
-    <img class="absolute2" src="../../assets/images/bg15.webp" alt="" />
+    <img class="absolute1" :src="`${$urlImages}bg16.webp`" alt="" />
+    <img class="absolute2" :src="`${$urlImages}bg15.webp`" alt="" />
     <div class="box1">
       <div class="banner">
         <div class="figure_gif">
           <video loop autoplay muted>
-            <source src="../../assets/videos/banner_video.mp4" type="video/mp4" />
+            <source :src="`${$urlVideos}banner_video.mp4`" type="video/mp4" />
           </video>
         </div>
         <div class="contact">
           <div class="center">
-            <img @click="openVideo" class="logo" src="../../assets/images/logo2.webp" alt="" />
+            <img @click="openVideo" class="logo" :src="`${$urlImages}logo2.webp`" alt="" />
             <span>{{ $t("message.home.text4") }}</span>
             <div class="right">
-              <img src="../../assets/images/contact1.webp" alt="" />
-              <img src="../../assets/images/contact2.webp" alt="" />
-              <img src="../../assets/images/contact3.webp" alt="" />
-              <img src="../../assets/images/contact4.webp" alt="" />
+              <img :src="`${$urlImages}contact1.webp`" alt="" />
+              <img :src="`${$urlImages}contact2.webp`" alt="" />
+              <img :src="`${$urlImages}contact3.webp`" alt="" />
+              <img :src="`${$urlImages}contact4.webp`" alt="" />
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@
         <div>
           <span @click="closeVideo">×</span>
           <video loop autoplay muted controls>
-            <source src="../../assets/videos/video1.mp4" type="video/mp4" />
+            <source :src="`${$urlVideos}video1.mp4`" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -38,11 +38,11 @@
       </div>
     </div>
     <div class="box3">
-      <!-- <img class="bg12" src="../../assets/images/bg12.webp" alt="" /> -->
+      <!-- <img class="bg12" :src=`${$urlImages}bg12.webp` alt="" /> -->
       <div class="box_content">
-        <img class="border2" src="../../assets/images/border2.webp" alt="" />
-        <img class="border3" src="../../assets/images/border3.webp" alt="" />
-        <img class="x" src="../../assets/images/x.webp" alt="" />
+        <img class="border2" :src="`${$urlImages}border2.webp`" alt="" />
+        <img class="border3" :src="`${$urlImages}border3.webp`" alt="" />
+        <img class="x" :src="`${$urlImages}x.webp`" alt="" />
         <div class="left">
           <div class="top">
             <div class="box_title">
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="bottom">
-            <img src="../../assets/images/angle.webp" alt="" />
+            <img :src="`${$urlImages}angle.webp`" alt="" />
             <div>
               <p>{{ $t("message.home.text6") }}</p>
               <p>{{ $t("message.home.text7") }}</p>
@@ -60,7 +60,7 @@
         </div>
         <div class="right">
           <video loop autoplay muted>
-            <source src="../../assets/videos/introduction.mp4" type="video/mp4" />
+            <source :src="`${$urlVideos}introduction.mp4`" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -73,7 +73,7 @@
         <li v-for="(item, index) in coreFeaturesList" :key="index">
           <div>{{ $t(item.text1) }}</div>
           <div>
-            <img src="../../assets/images/angle2.webp" alt="" />
+            <img :src="`${$urlImages}angle2.webp`" alt="" />
             <p>{{ $t(item.text2) }}</p>
           </div>
           <img v-if="item.image" :src="item.image" alt="" />
@@ -98,10 +98,10 @@
               </div>
               <div class="bottom">
                 <div>
-                  <img class="angle" src="../../assets/images/angle.webp" alt="" />
+                  <img class="angle" :src="`${$urlImages}angle.webp`" alt="" />
                   <div>{{ $t(roleItem.description) }}</div>
                 </div>
-                <img class="bottom_img" src="../../assets/images/role_bg1.webp" alt="" />
+                <img class="bottom_img" :src="`${$urlImages}role_bg1.webp`" alt="" />
               </div>
             </div>
             <div class="right"><img :src="roleItem.image" alt="" /></div>
@@ -149,8 +149,8 @@
         <span>{{ $t("message.home.text14") }}</span>
       </div>
       <div class="box_content">
-        <video loop muted controls poster="../../assets/images/video_poster1.webp">
-          <source src="../../assets/videos/video2.mp4" type="video/mp4" />
+        <video loop muted controls :poster="`${$urlImages}video_poster1.webp`">
+          <source :src="`${$urlVideos}video2.mp4`" type="video/mp4" />
         </video>
       </div>
     </div>
@@ -168,7 +168,7 @@
           </div>
         </div>
         <div class="center">
-          <img src="../../assets/images/roadmap_bg3.webp" alt="" />
+          <img :src="`${$urlImages}roadmap_bg3.webp`" alt="" />
         </div>
         <div class="bottom">
           <div v-for="(item, index) in roadmapList2" :key="index">
@@ -199,26 +199,26 @@ export default {
     return {
       isShowVideo: false,
       btnList: [
-        { image: require("../../assets/images/btn_icon1.webp"), text: "message.home.text1" },
-        { image: require("../../assets/images/btn_icon2.webp"), text: "message.home.text2" },
-        { image: require("../../assets/images/btn_icon3.webp"), text: "message.home.text3" },
+        { image: `${this.$urlImages}btn_icon1.webp`, text: "message.home.text1" },
+        { image: `${this.$urlImages}btn_icon2.webp`, text: "message.home.text2" },
+        { image: `${this.$urlImages}btn_icon3.webp`, text: "message.home.text3" },
       ],
       coreFeaturesList: [
         {
           text1: "message.home.list1[0].text1",
           text2: "message.home.list1[0].text2",
-          image: require("../../assets/images/coreFeatures_figure1.webp"),
+          image: `${this.$urlImages}coreFeatures_figure1.webp`,
         },
         { text1: "message.home.list1[1].text1", text2: "message.home.list1[1].text2", image: "" },
         {
           text1: "message.home.list1[2].text1",
           text2: "message.home.list1[2].text2",
-          image: require("../../assets/images/coreFeatures_figure2.webp"),
+          image: `${this.$urlImages}coreFeatures_figure2.webp`,
         },
         {
           text1: "message.home.list1[3].text1",
           text2: "message.home.list1[3].text2",
-          image: require("../../assets/images/coreFeatures_figure2.webp"),
+          image: `${this.$urlImages}coreFeatures_figure2.webp`,
         },
       ],
       roleList: [
@@ -226,145 +226,145 @@ export default {
           oldName: "K",
           name: "message.home.list2[0].name",
           description: "message.home.list2[0].des",
-          icon: require("../../assets/images/professional1.webp"),
-          iconActive: require("../../assets/images/professional_active1.webp"),
-          image: require("../../assets/images/role_figure1.webp"),
-          level: require("../../assets/images/role_level_mr.webp"),
+          icon: `${this.$urlImages}professional1.webp`,
+          iconActive: `${this.$urlImages}professional_active1.webp`,
+          image: `${this.$urlImages}role_figure1.webp`,
+          level: `${this.$urlImages}role_level_mr.webp`,
         },
         {
           oldName: "锦云",
           name: "message.home.list2[1].name",
           description: "message.home.list2[1].des",
-          icon: require("../../assets/images/professional2.webp"),
-          iconActive: require("../../assets/images/professional_active2.webp"),
-          image: require("../../assets/images/role_figure2.webp"),
-          level: require("../../assets/images/role_level_r.webp"),
+          icon: `${this.$urlImages}professional2.webp`,
+          iconActive: `${this.$urlImages}professional_active2.webp`,
+          image: `${this.$urlImages}role_figure2.webp`,
+          level: `${this.$urlImages}role_level_r.webp`,
         },
         {
           oldName: "托娅",
           name: "message.home.list2[2].name",
           description: "message.home.list2[2].des",
-          icon: require("../../assets/images/professional2.webp"),
-          iconActive: require("../../assets/images/professional_active2.webp"),
-          image: require("../../assets/images/role_figure3.webp"),
-          level: require("../../assets/images/role_level_mr.webp"),
+          icon: `${this.$urlImages}professional2.webp`,
+          iconActive: `${this.$urlImages}professional_active2.webp`,
+          image: `${this.$urlImages}role_figure3.webp`,
+          level: `${this.$urlImages}role_level_mr.webp`,
         },
         {
           oldName: "沐风",
           name: "message.home.list2[3].name",
           description: "message.home.list2[3].des",
-          icon: require("../../assets/images/professional5.webp"),
-          iconActive: require("../../assets/images/professional_active5.webp"),
-          image: require("../../assets/images/role_figure4.webp"),
-          level: require("../../assets/images/role_level_sr.webp"),
+          icon: `${this.$urlImages}professional5.webp`,
+          iconActive: `${this.$urlImages}professional_active5.webp`,
+          image: `${this.$urlImages}role_figure4.webp`,
+          level: `${this.$urlImages}role_level_sr.webp`,
         },
         {
           oldName: "玲夏",
           name: "message.home.list2[4].name",
           description: "message.home.list2[4].des",
-          icon: require("../../assets/images/professional4.webp"),
-          iconActive: require("../../assets/images/professional_active4.webp"),
-          image: require("../../assets/images/role_figure5.webp"),
-          level: require("../../assets/images/role_level_sr.webp"),
+          icon: `${this.$urlImages}professional4.webp`,
+          iconActive: `${this.$urlImages}professional_active4.webp`,
+          image: `${this.$urlImages}role_figure5.webp`,
+          level: `${this.$urlImages}role_level_sr.webp`,
         },
 
         {
           oldName: "珞珈",
           name: "message.home.list2[5].name",
           description: "message.home.list2[5].des",
-          icon: require("../../assets/images/professional4.webp"),
-          iconActive: require("../../assets/images/professional_active4.webp"),
-          image: require("../../assets/images/role_figure6.webp"),
-          level: require("../../assets/images/role_level_mr.webp"),
+          icon: `${this.$urlImages}professional4.webp`,
+          iconActive: `${this.$urlImages}professional_active4.webp`,
+          image: `${this.$urlImages}role_figure6.webp`,
+          level: `${this.$urlImages}role_level_mr.webp`,
         },
         {
           oldName: "羽飞",
           name: "message.home.list2[6].name",
           description: "message.home.list2[6].des",
-          icon: require("../../assets/images/professional1.webp"),
-          iconActive: require("../../assets/images/professional_active1.webp"),
-          image: require("../../assets/images/role_figure7.webp"),
-          level: require("../../assets/images/role_level_r.webp"),
+          icon: `${this.$urlImages}professional1.webp`,
+          iconActive: `${this.$urlImages}professional_active1.webp`,
+          image: `${this.$urlImages}role_figure7.webp`,
+          level: `${this.$urlImages}role_level_r.webp`,
         },
         {
           oldName: "魏子鱼",
           name: "message.home.list2[7].name",
           description: "message.home.list2[7].des",
-          icon: require("../../assets/images/professional3.webp"),
-          iconActive: require("../../assets/images/professional_active3.webp"),
-          image: require("../../assets/images/role_figure8.webp"),
-          level: require("../../assets/images/role_level_r.webp"),
+          icon: `${this.$urlImages}professional3.webp`,
+          iconActive: `${this.$urlImages}professional_active3.webp`,
+          image: `${this.$urlImages}role_figure8.webp`,
+          level: `${this.$urlImages}role_level_r.webp`,
         },
         {
           oldName: "紫婧",
           name: "message.home.list2[8].name",
           description: "message.home.list2[8].des",
-          icon: require("../../assets/images/professional6.webp"),
-          iconActive: require("../../assets/images/professional_active6.webp"),
-          image: require("../../assets/images/role_figure9.webp"),
-          level: require("../../assets/images/role_level_mr.webp"),
+          icon: `${this.$urlImages}professional6.webp`,
+          iconActive: `${this.$urlImages}professional_active6.webp`,
+          image: `${this.$urlImages}role_figure9.webp`,
+          level: `${this.$urlImages}role_level_mr.webp`,
         },
         {
           oldName: "堇源",
           name: "message.home.list2[9].name",
           description: "message.home.list2[9].des",
-          icon: require("../../assets/images/professional4.webp"),
-          iconActive: require("../../assets/images/professional_active4.webp"),
-          image: require("../../assets/images/role_figure10.webp"),
-          level: require("../../assets/images/role_level_ur.webp"),
+          icon: `${this.$urlImages}professional4.webp`,
+          iconActive: `${this.$urlImages}professional_active4.webp`,
+          image: `${this.$urlImages}role_figure10.webp`,
+          level: `${this.$urlImages}role_level_ur.webp`,
         },
         {
           oldName: "君弘",
           name: "message.home.list2[10].name",
           description: "message.home.list2[10].des",
-          icon: require("../../assets/images/professional3.webp"),
-          iconActive: require("../../assets/images/professional_active3.webp"),
-          image: require("../../assets/images/role_figure11.webp"),
-          level: require("../../assets/images/role_level_sr.webp"),
+          icon: `${this.$urlImages}professional3.webp`,
+          iconActive: `${this.$urlImages}professional_active3.webp`,
+          image: `${this.$urlImages}role_figure11.webp`,
+          level: `${this.$urlImages}role_level_sr.webp`,
         },
         {
           oldName: "赵玥",
           name: "message.home.list2[11].name",
           description: "message.home.list2[11].des",
-          icon: require("../../assets/images/professional1.webp"),
-          iconActive: require("../../assets/images/professional_active1.webp"),
-          image: require("../../assets/images/role_figure12.webp"),
-          level: require("../../assets/images/role_level_ur.webp"),
+          icon: `${this.$urlImages}professional1.webp`,
+          iconActive: `${this.$urlImages}professional_active1.webp`,
+          image: `${this.$urlImages}role_figure12.webp`,
+          level: `${this.$urlImages}role_level_ur.webp`,
         },
         {
           oldName: "凤临",
           name: "message.home.list2[12].name",
           description: "message.home.list2[12].des",
-          icon: require("../../assets/images/professional3.webp"),
-          iconActive: require("../../assets/images/professional_active3.webp"),
-          image: require("../../assets/images/role_figure13.webp"),
-          level: require("../../assets/images/role_level_r.webp"),
+          icon: `${this.$urlImages}professional3.webp`,
+          iconActive: `${this.$urlImages}professional_active3.webp`,
+          image: `${this.$urlImages}role_figure13.webp`,
+          level: `${this.$urlImages}role_level_r.webp`,
         },
         {
           oldName: "樱岚",
           name: "message.home.list2[13].name",
           description: "message.home.list2[13].des",
-          icon: require("../../assets/images/professional2.webp"),
-          iconActive: require("../../assets/images/professional_active2.webp"),
-          image: require("../../assets/images/role_figure14.webp"),
-          level: require("../../assets/images/role_level_ur.webp"),
+          icon: `${this.$urlImages}professional2.webp`,
+          iconActive: `${this.$urlImages}professional_active2.webp`,
+          image: `${this.$urlImages}role_figure14.webp`,
+          level: `${this.$urlImages}role_level_ur.webp`,
         },
         {
           oldName: "Null",
           name: "message.home.list2[14].name",
           description: "message.home.list2[14].des",
-          icon: require("../../assets/images/professional5.webp"),
-          iconActive: require("../../assets/images/professional_active5.webp"),
-          image: require("../../assets/images/role_figure15.webp"),
-          level: require("../../assets/images/role_level_ur.webp"),
+          icon: `${this.$urlImages}professional5.webp`,
+          iconActive: `${this.$urlImages}professional_active5.webp`,
+          image: `${this.$urlImages}role_figure15.webp`,
+          level: `${this.$urlImages}role_level_ur.webp`,
         },
       ],
       gameModeList: [
-        { text: "message.home.list3[0]", image: require("../../assets/images/gamemode_pve.webp") },
-        { text: "message.home.list3[1]", image: require("../../assets/images/gamemode_pve2.webp") },
-        { text: "message.home.list3[2]", image: require("../../assets/images/gamemode_pvp.webp") },
-        { text: "message.home.list3[3]", image: require("../../assets/images/gamemode_fighting.webp") },
-        { text: "message.home.list3[4]", image: require("../../assets/images/gamemode_squad.webp") },
+        { text: "message.home.list3[0]", image: `${this.$urlImages}gamemode_pve.webp` },
+        { text: "message.home.list3[1]", image: `${this.$urlImages}gamemode_pve2.webp` },
+        { text: "message.home.list3[2]", image: `${this.$urlImages}gamemode_pvp.webp` },
+        { text: "message.home.list3[3]", image: `${this.$urlImages}gamemode_fighting.webp` },
+        { text: "message.home.list3[4]", image: `${this.$urlImages}gamemode_squad.webp` },
       ],
       roadmapList1: [
         { time: "message.home.list4[1].time", text: "message.home.list4[1].text" },
@@ -380,23 +380,23 @@ export default {
         { time: "message.home.list4[8].time", text: "message.home.list4[8].text" },
       ],
       collaboratorsList: [
-        require("../../assets/images/collaborators1.webp"),
-        require("../../assets/images/collaborators2.webp"),
-        require("../../assets/images/collaborators3.webp"),
-        require("../../assets/images/collaborators4.webp"),
-        require("../../assets/images/collaborators5.webp"),
-        require("../../assets/images/collaborators6.webp"),
-        require("../../assets/images/collaborators7.webp"),
-        require("../../assets/images/collaborators8.webp"),
-        require("../../assets/images/collaborators9.webp"),
-        require("../../assets/images/collaborators10.webp"),
-        require("../../assets/images/collaborators11.webp"),
-        require("../../assets/images/collaborators12.webp"),
-        require("../../assets/images/collaborators13.webp"),
-        require("../../assets/images/collaborators14.webp"),
-        require("../../assets/images/collaborators15.webp"),
-        require("../../assets/images/collaborators16.webp"),
-        require("../../assets/images/collaborators17.webp"),
+        `${this.$urlImages}collaborators1.webp`,
+        `${this.$urlImages}collaborators2.webp`,
+        `${this.$urlImages}collaborators3.webp`,
+        `${this.$urlImages}collaborators4.webp`,
+        `${this.$urlImages}collaborators5.webp`,
+        `${this.$urlImages}collaborators6.webp`,
+        `${this.$urlImages}collaborators7.webp`,
+        `${this.$urlImages}collaborators8.webp`,
+        `${this.$urlImages}collaborators9.webp`,
+        `${this.$urlImages}collaborators10.webp`,
+        `${this.$urlImages}collaborators11.webp`,
+        `${this.$urlImages}collaborators12.webp`,
+        `${this.$urlImages}collaborators13.webp`,
+        `${this.$urlImages}collaborators14.webp`,
+        `${this.$urlImages}collaborators15.webp`,
+        `${this.$urlImages}collaborators16.webp`,
+        `${this.$urlImages}collaborators17.webp`,
       ],
       roleIndex: 0,
       showRoleItem: false,
@@ -507,7 +507,7 @@ export default {
         text-align: center;
         position: relative;
         .logo {
-          cursor: url("../../assets/images/hand.webp"), pointer;
+          cursor: url($urlImages + "hand.webp"), pointer;
           width: 5rem;
           height: auto;
           transition: all 0.2s;
@@ -579,7 +579,7 @@ export default {
     height: 1.5rem;
     font-size: 0.17rem;
     text-align: center;
-    background: url("../../assets/images/btn_bg3.webp") no-repeat;
+    background: url($urlImages + "btn_bg3.webp") no-repeat;
     background-size: 100% 100%;
     margin: 0 0.5rem;
     cursor: pointer;
@@ -594,7 +594,7 @@ export default {
   width: 100%;
   padding: 0 0.8rem;
   margin-bottom: 0.5rem;
-  background: url("../../assets/images/bg2.webp") no-repeat;
+  background: url($urlImages + "bg2.webp") no-repeat;
   background-size: 20% auto;
   background-position: top left;
   position: relative;
@@ -663,18 +663,11 @@ export default {
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      // background: url("../../assets/images/bg13.webp") no-repeat;
-      // background-size: contain;
-      // background-position: center;
       position: relative;
       video {
         width: 5rem;
         height: 5rem;
       }
-      // img {
-      //   width: auto;
-      //   height: 120%;
-      // }
     }
   }
 }
@@ -682,7 +675,7 @@ export default {
   width: 100%;
   padding: 0 0.8rem;
   margin-bottom: 0.5rem;
-  background: url("../../assets/images/bg5.webp") no-repeat;
+  background: url($urlImages + "bg5.webp") no-repeat;
   background-size: 100% 100%;
   .box_content {
     display: flex;
@@ -690,7 +683,7 @@ export default {
     li {
       width: 2rem;
       height: 5rem;
-      background: url("../../assets/images/bg6.webp") no-repeat;
+      background: url($urlImages + "bg6.webp") no-repeat;
       background-size: 100% auto;
       padding: 0 0.1rem;
       position: relative;
@@ -835,7 +828,7 @@ export default {
     }
     .left {
       width: 40%;
-      background: url("../../assets/images/bg9.webp") no-repeat;
+      background: url($urlImages + "bg9.webp") no-repeat;
       background-size: 100% 100%;
       background-position: right center;
       margin-top: 20%;
@@ -960,7 +953,7 @@ export default {
     width: 10rem;
     height: 1.5rem;
     margin: 0.5rem auto;
-    background: url("../../assets/images/title_bg2.webp") no-repeat;
+    background: url($urlImages + "title_bg2.webp") no-repeat;
     background-size: 100% 100%;
     background-position: center;
     display: flex;
@@ -983,7 +976,7 @@ export default {
   .box_bg {
     width: 100%;
     height: 100%;
-    background: url("../../assets/images/bg10.webp") no-repeat;
+    background: url($urlImages + "bg10.webp") no-repeat;
     background-size: auto 90%;
     background-position: top center;
   }
@@ -995,7 +988,7 @@ export default {
       .swiper-slide {
         text-align: center;
         div {
-          background: url("../../assets/images/gamemode_bg.webp") no-repeat;
+          background: url($urlImages + "gamemode_bg.webp") no-repeat;
           background-size: 100% 100%;
           padding: 0.1rem 0.2rem;
           font-size: 0.3rem;
@@ -1025,7 +1018,7 @@ export default {
       }
     }
     .swiper-button-prev {
-      background-image: url("../../assets/images/angle3.webp");
+      background-image: url($urlImages + "angle3.webp");
       background-size: 100% auto;
       width: 0.5rem;
       height: 0.5rem;
@@ -1033,7 +1026,7 @@ export default {
       top: 40%;
     }
     .swiper-button-next {
-      background-image: url("../../assets/images/angle3.webp");
+      background-image: url($urlImages + "angle3.webp");
       background-size: 100% auto;
       width: 0.5rem;
       height: 0.5rem;
@@ -1055,7 +1048,7 @@ export default {
     width: fit-content;
     padding: 0.25rem 0.2rem 0.4rem 0.25rem;
     margin: 0 auto;
-    background: url("../../assets/images/bg11.webp") no-repeat;
+    background: url($urlImages + "bg11.webp") no-repeat;
     background-size: 100% 100%;
     position: relative;
     video {
@@ -1069,7 +1062,7 @@ export default {
   padding: 0 0.8rem;
   margin-bottom: 0.5rem;
   position: relative;
-  background: url("../../assets/images/bg8.webp") no-repeat;
+  background: url($urlImages + "bg8.webp") no-repeat;
   background-size: auto 100%;
   .box_content {
     width: 100%;
@@ -1106,7 +1099,7 @@ export default {
       > div {
         width: 1.9rem;
         height: 2rem;
-        background: url("../../assets/images/roadmap_bg2.webp") no-repeat;
+        background: url($urlImages + "roadmap_bg2.webp") no-repeat;
         background-size: 100% 100%;
         position: relative;
         &:nth-child(1) {
@@ -1124,13 +1117,13 @@ export default {
       }
     }
     .bottom {
-      background: url("../../assets/images/roadmap_bg4.webp") no-repeat;
+      background: url($urlImages + "roadmap_bg4.webp") no-repeat;
       background-size: auto 100%;
       background-position: center;
       > div {
         width: 1.6rem;
         height: 1.8rem;
-        background: url("../../assets/images/roadmap_bg1.webp") no-repeat;
+        background: url($urlImages + "roadmap_bg1.webp") no-repeat;
         background-size: 100% 100%;
         position: relative;
         &:nth-child(1) {
@@ -1156,7 +1149,7 @@ export default {
   width: 100%;
   padding: 0 0.8rem;
   margin-bottom: 0.5rem;
-  background: url("../../assets/images/bg14.webp") no-repeat;
+  background: url($urlImages + "bg14.webp") no-repeat;
   background-size: auto 100%;
   background-position: top right;
   .box_content {
