@@ -16,7 +16,7 @@ import toast from "./components/toast";
 Vue.prototype.$toast = toast;
 
 const production = process.env.NODE_ENV === "production";
-const aws = production ? "//cdn.isekai.fans/cybergear_assets_main" : "//cdn.isekai.fans/cybergear_assets_test";
+const aws = production ? "https://cdn.isekai.fans/cybergear_assets_main" : "https://cdn.isekai.fans/cybergear_assets_test";
 Vue.prototype.$urlImages = aws + "/images/";
 Vue.prototype.$urlVideos = aws + "/videos/";
 Vue.prototype.$urlFonts = aws + "/fonts/";
