@@ -180,7 +180,7 @@
         </div>
       </div>
     </div>
-    <div class="box9">
+    <!-- <div class="box9">
       <div class="box_title">
         <span>{{ $t("message.home.text16") }}</span>
       </div>
@@ -189,7 +189,7 @@
           <img :src="image" alt="" />
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </template>
 
