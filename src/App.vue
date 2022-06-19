@@ -6,7 +6,7 @@
       <FooterLayout />
     </div>
   </div>
-</template>
+</template>   
 <script>
 import { mapGetters } from "vuex";
 import HeaderLayout from "./layout/HeaderLayout";
