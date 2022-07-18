@@ -1,8 +1,3 @@
-html,
-body {
-  font-size: 0;
-}
-
 // 字体样式
 @font-face {
   font-family: "PingFang";
@@ -12,7 +7,6 @@ body {
   font-family: "CaviarDreams";
   src: url($urlFonts + "CaviarDreams.ttf");
 }
-
 // 中文常规
 .fontfamily_zh {
   font-family: PingFang;
@@ -21,24 +15,38 @@ body {
 .fontfamily_en {
   font-family: CaviarDreams;
 }
-
+html,
+body {
+  font-size: 0;
+  width: 100%;
+  position: relative;
+  color: #ffffff;
+  background: #0f0f16;
+}
+.pc {
+  display: flex !important;
+}
+.mobile {
+  display: none !important;
+}
 // 重置滚动条样式
 ::-webkit-scrollbar {
   width: 0.05rem;
   height: 0.05rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: #555555;
+  background: linear-gradient(180deg, rgba(104, 35, 145, 1), rgba(12, 129, 161, 1));
   border-radius: 0.05rem;
 }
 ::-webkit-scrollbar-track {
   background: #000;
 }
+// 重置原生样式
 input {
-  // background: none;
-  // outline: none;
-  // border: 0px;
-  // caret-color: white;
+  background: none;
+  outline: none;
+  border: 0px;
+  caret-color: white;
   &[type="number"] {
     -moz-appearance: textfield;
     &::-webkit-inner-spin-button,
@@ -47,6 +55,12 @@ input {
       margin: 0;
     }
   }
+}
+pre {
+  white-space: pre-line;
+  word-break: break-all;
+  word-wrap: break-word;
+  font-family: inherit;
 }
 
 .box_title {
@@ -80,6 +94,150 @@ input {
       position: absolute;
       right: 0;
       top: 0;
+    }
+  }
+}
+
+// 重置组件样式
+.el-message {
+  min-width: 1rem;
+  border-color: transparent;
+  background: linear-gradient(90deg, #7b95a3 0%, #7f82a3 100%);
+  padding: 0.15rem 0.2rem;
+  top: 1.2rem !important;
+  .el-message__icon {
+    font-size: 0.25rem;
+    color: #ffffff;
+  }
+  .el-message__content {
+    font-size: 0.15rem;
+    color: #ffffff;
+  }
+}
+.el-message--success {
+  background: linear-gradient(90deg, #38697f 0%, #5d4c78 100%);
+}
+.el-message--warning {
+  background: linear-gradient(90deg, #8e8754 0%, #946144 100%);
+}
+.el-message--error {
+  background: linear-gradient(90deg, #905a54 0%, #6f272f 100%);
+}
+.el-button {
+  padding: 0;
+  color: #ffffff;
+  background-color: #211f24;
+  border-color: #413f3f;
+  border-radius: 0.1rem;
+  &:focus,
+  &:hover {
+    color: #ffffff;
+    background-color: #211f24;
+    border-color: #413f3f;
+  }
+  &.is-disabled,
+  &.is-disabled:focus,
+  &.is-disabled:hover {
+    cursor: not-allowed;
+    color: #413f3f;
+    background-color: #211f24;
+    border-color: #413f3f;
+  }
+  &.is-loading:before {
+    background-color: transparent;
+  }
+  &.el-button--primary,
+  &.el-button--primary:focus,
+  &.el-button--primary:hover {
+    color: #ffffff;
+    border-color: transparent;
+    background: linear-gradient(90deg, #44819d 0%, #7a649e 100%);
+  }
+}
+.el-select {
+  .el-input {
+    width: 100%;
+    height: 100%;
+    font-size: 0.16rem;
+    font-weight: 400;
+    .el-input__inner {
+      padding: 0 0.1rem;
+      width: 100%;
+      height: 100%;
+      color: #ffffff;
+      text-align: left;
+      background-color: rgba(24, 24, 28, 0.8);
+      border-radius: 0.09rem;
+      border: 1px solid #606060;
+    }
+  }
+}
+.el-select-dropdown {
+  box-shadow: 0px 2px 12px 0px rgba(255, 255, 255, 0.27);
+  background-color: #18181c;
+  border-radius: 0.09rem;
+  border: none;
+  .el-scrollbar__wrap {
+    .el-select-dropdown__list {
+      .el-select-dropdown__item {
+        color: #696969;
+        font-size: 0.15rem;
+        font-weight: 400;
+        text-align: center;
+        &:hover,
+        &.hover,
+        &.selected {
+          color: #ffffff;
+          background-color: #27272e;
+        }
+      }
+    }
+  }
+}
+.el-select-dropdown.el-popper[x-placement^="bottom"],
+.el-picker-panel.el-popper[x-placement^="bottom"] {
+  .popper__arrow {
+    border-bottom-color: transparent;
+    &::after {
+      border-bottom-color: #18181c;
+    }
+  }
+}
+
+.el-dialog__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(0.1rem);
+  .el-dialog {
+    width: fit-content;
+    margin: 0;
+    background: #211f24;
+    border-radius: 0.2rem;
+    border: 1px solid #504e4e;
+    .el-dialog__header {
+      .el-dialog__title {
+        font-size: 0.2rem;
+        font-weight: bold;
+        color: #ffffff;
+        line-height: 0.2rem;
+      }
+      .el-dialog__headerbtn {
+        font-size: 0.35rem;
+        top: 0.1rem;
+        right: 0.1rem;
+        .el-dialog__close {
+          color: #ffffff;
+        }
+      }
+    }
+    .el-dialog__body {
+      padding: 0.2rem;
+    }
+    .el-dialog__footer .dialog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

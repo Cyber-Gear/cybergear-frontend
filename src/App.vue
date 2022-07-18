@@ -6,36 +6,18 @@
       <FooterLayout />
     </div>
   </div>
-</template>   
+</template>
 <script>
 import { mapGetters } from "vuex";
-import HeaderLayout from "./layout/HeaderLayout";
-import FooterLayout from "./layout/FooterLayout";
+import HeaderLayout from "@/layout/HeaderLayout.vue";
+import FooterLayout from "@/layout/FooterLayout.vue";
 export default {
   components: { HeaderLayout, FooterLayout },
-  computed: { ...mapGetters(["isEnLang"]) },
   data() {
-    return {
-      showToTop: false,
-    };
+    return {};
   },
-  created() {
-    if (document.readyState === "loading") {
-      // this.$toast("loading...");
-      // this.$toast("测试成功", "success", 3000);
-      // this.$toast("测试警告", "warning");
-      // this.$toast("测试失败", "fail");
-    }
-  },
+  computed: { ...mapGetters(["isEnLang"]) },
   mounted() {
-    // const timer = setInterval(function () {
-    //   if (document.readyState === "complete") {
-    //     window.clearInterval(timer);
-    //   } else if (document.readyState === "loading") {
-    //     this.$toast("loading...", "normal", 500);
-    //   }
-    // }, 500);
-
     window.addEventListener("load", () => {
       this.resetRem();
     });
@@ -43,35 +25,36 @@ export default {
       this.resetRem();
     });
   },
-  destroyed() {
+  beforeDestroy() {
     window.removeEventListener("load", this.resetRem());
     window.removeEventListener("resize", this.resetRem());
   },
   methods: {
     resetRem() {
       const clientWidth = document.body.clientWidth;
-      const rem = (clientWidth * 100) / 1440;
+      let rem = 0;
+      if (1440 <= clientWidth) {
+        rem = 100;
+      } else {
+        rem = (clientWidth * 100) / 1440;
+      }
+      // else if (750 < clientWidth && clientWidth < 1440) {
+      //   rem = (clientWidth * 100) / 1440;
+      // } else if (clientWidth <= 750) {
+      //   rem = (clientWidth * 100) / 375;
+      // }
       document.getElementsByTagName("html")[0].style.fontSize = rem + "px";
-    },
-    handleScrollScroll(e) {
-      this.showToTop = e.srcElement.scrollTop > 900;
-      // console.log(this.showToTop);
     },
   },
 };
 </script>
 
 <style lang="scss">
-#container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  color: #ffffff;
-  background: #0f0f16;
-  overflow: auto;
-}
-#container_body {
-  width: 100%;
-  height: 100%;
+@media screen and (max-width: 750px) {
+  #container {
+    #container_body {
+      padding-bottom: 0.5rem;
+    }
+  }
 }
 </style>

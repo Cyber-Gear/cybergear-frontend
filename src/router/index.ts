@@ -24,5 +24,8 @@ const routes: Array<RouteConfig> = [
 const router = new VueRouter({
   routes,
 });
-
+// 跳转后返回顶部
+// router.afterEach(() => {
+//   window.scrollTo(0, 0);
+// });
 export default router;

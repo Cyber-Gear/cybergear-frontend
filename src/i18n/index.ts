@@ -1,12 +1,18 @@
 import Vue from "vue";
 import VueI18n from "vue-i18n";
 import utils from "../utils/index";
+import zhLocale from "element-ui/lib/locale/lang/zh-CN";
+import enLocale from "element-ui/lib/locale/lang/en";
+import ElementLocale from "element-ui/lib/locale";
+import zh from "./zh";
+import en from "./en";
 Vue.use(VueI18n);
 const i18n = new VueI18n({
-  locale: utils.getCookie("LANG") || "cn",
+  locale: utils.getCookie("LANG") || "en",
   messages: {
-    cn: require("./cn"),
-    en: require("./en"),
+    zh: Object.assign(zh, zhLocale),
+    en: Object.assign(en, enLocale),
   },
 });
+ElementLocale.i18n((key: any, value: any) => i18n.t(key, value));
 export default i18n;
