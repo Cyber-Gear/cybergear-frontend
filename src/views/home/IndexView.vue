@@ -199,7 +199,6 @@ import VideoPlayback from "@/components/VideoPlayback.vue";
 export default {
   name: "Home",
   components: { VideoPlayback },
-
   data() {
     return {
       isShowVideo: false,

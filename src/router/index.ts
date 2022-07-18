@@ -11,13 +11,37 @@ const routes: Array<RouteConfig> = [
   { path: "/", redirect: "/home" },
   {
     path: "/home",
-    name: "Home",
     component: () => import("../views/home/IndexView.vue"),
   },
   {
+    path: "/community",
+    component: () => import("../views/community/IndexView.vue"),
+    children: [
+      { path: "/", redirect: "guild" },
+      {
+        path: "guild",
+        component: () => import("../views/community/Guild.vue"),
+      },
+      {
+        path: "invite",
+        component: () => import("../views/community/Invite.vue"),
+      },
+    ],
+  },
+  {
     path: "/nft",
-    name: "NFT",
     component: () => import("../views/nft/IndexView.vue"),
+    children: [
+      { path: "/", redirect: "card" },
+      {
+        path: "card",
+        component: () => import("../views/nft/NFTCard.vue"),
+      },
+      {
+        path: "my",
+        component: () => import("../views/nft/NFTMy.vue"),
+      },
+    ],
   },
 ];
 

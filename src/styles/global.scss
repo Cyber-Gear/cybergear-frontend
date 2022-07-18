@@ -97,6 +97,22 @@ pre {
     }
   }
 }
+.box_title2 {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  img {
+    width: 1.4rem;
+    height: auto;
+  }
+  span {
+    font-size: 0.3rem;
+    font-weight: bold;
+    padding: 0.1rem;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(135deg, rgba(212, 135, 241, 0.44), rgba(82, 224, 255, 0.44)) 1 1;
+  }
+}
 
 // 重置组件样式
 .el-message {

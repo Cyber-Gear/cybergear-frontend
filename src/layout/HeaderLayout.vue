@@ -46,12 +46,12 @@ export default {
       navActive: 0,
       navArr: [
         { label: "nav.text1", icon: "pchome", link: "/home", isOpen: true },
-        { label: "nav.text2", link: "/home" },
-        { label: "nav.text3", link: "/home" },
-        { label: "nav.text4", link: "/home" },
-        { label: "nav.text5", link: "/home" },
-        { label: "nav.text6", link: "/home" },
-        { label: "nav.text7", link: "/home" },
+        { label: "nav.text2", icon: "pchome", link: "/nft", isOpen: true },
+        { label: "nav.text3", icon: "pchome", link: "/home", isOpen: false },
+        { label: "nav.text4", icon: "pchome", link: "/community", isOpen: true },
+        { label: "nav.text5", icon: "pchome", link: "/home", isOpen: false },
+        { label: "nav.text6", icon: "pchome", link: "/home", isOpen: false },
+        { label: "nav.text7", icon: "pchome", link: "/home", isOpen: false },
       ],
       showDisconnect: false,
       langArr: ["en", "zh"],
@@ -65,10 +65,12 @@ export default {
       // }
       if (to.path == "/home") {
         this.navActive = 0;
+      } else if (to.path.indexOf("/nft") !== -1) {
+        this.navActive = 1;
+      } else if (to.path.indexOf("/community") !== -1) {
+        this.navActive = 3;
       }
-      // else if (to.path.indexOf("/artist") !== -1) {
-      //   this.navActive = 1;
-      // } else if (to.path.indexOf("/dao") !== -1) {
+      // else if (to.path.indexOf("/dao") !== -1) {
       //   this.navActive = 2;
       // } else if (to.path.indexOf("/launchpad") !== -1) {
       //   this.navActive = 3;
@@ -195,7 +197,7 @@ export default {
     &.active {
       color: #29a7e1;
       background: url($urlImages + "btn_bg4.webp") no-repeat;
-      background-size: 75% auto;
+      background-size: 90% auto;
       background-position: center;
     }
   }
