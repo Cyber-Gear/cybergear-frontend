@@ -433,33 +433,6 @@ export default {
       }
     }
   }
-  .center_video {
-    width: 60vw;
-    height: calc(60vw * 0.5625);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 99;
-    > div {
-      position: relative;
-      span {
-        font-size: 80px;
-        color: #00daff;
-        font-weight: bold;
-        position: absolute;
-        right: -50px;
-        top: -80px;
-        cursor: pointer;
-      }
-      video {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
 }
 .box2 {
   width: 100%;
