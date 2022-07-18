@@ -456,11 +456,10 @@ export default {
   }
 }
 .box3 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 12.5rem;
+  margin: 0.5rem auto;
   background: url($urlImages + "bg2.webp") no-repeat;
-  background-size: 20% auto;
+  background-size: 25% auto;
   background-position: top left;
   position: relative;
   padding-top: 1.2rem;
@@ -537,9 +536,8 @@ export default {
   }
 }
 .box4 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 12.5rem;
+  margin: 0.5rem auto;
   background: url($urlImages + "bg5.webp") no-repeat;
   background-size: 100% 100%;
   .box_content {
@@ -618,9 +616,8 @@ export default {
   }
 }
 .box5 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 12.5rem;
+  margin: 0.5rem auto;
   .box_content {
     width: 100%;
     height: 6rem;
@@ -732,9 +729,8 @@ export default {
   }
 }
 .box6 {
-  width: 100%;
-  margin-bottom: 0.5rem;
-  padding: 0 0.8rem;
+  width: 12.5rem;
+  margin: 0.5rem auto;
   .box_title2 {
     width: 10rem;
     height: 1.5rem;
@@ -827,26 +823,23 @@ export default {
   }
 }
 .box7 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 12.5rem;
+  margin: 0.5rem auto;
   .box_content {
     width: fit-content;
     padding: 0.25rem 0.2rem 0.4rem 0.25rem;
     margin: 0 auto;
     background: url($urlImages + "bg11.webp") no-repeat;
     background-size: 100% 100%;
-    position: relative;
     video {
-      width: 70vw;
-      height: calc(70vw * 0.5625);
+      width: 50vw;
+      height: calc(50vw * 0.5625);
     }
   }
 }
 .box8 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 12.5rem;
+  margin: 0.5rem auto;
   position: relative;
   background: url($urlImages + "bg8.webp") no-repeat;
   background-size: auto 100%;
@@ -862,6 +855,7 @@ export default {
     }
     .top,
     .bottom {
+      height: 2rem;
       display: flex;
       > div {
         text-align: center;
@@ -883,22 +877,22 @@ export default {
     }
     .top {
       > div {
-        width: 1.9rem;
+        width: 1.8rem;
         height: 2rem;
         background: url($urlImages + "roadmap_bg2.webp") no-repeat;
         background-size: 100% 100%;
-        position: relative;
+        position: absolute;
         &:nth-child(1) {
-          left: 2.56rem;
+          left: 20.25%;
         }
         &:nth-child(2) {
-          left: 2.84rem;
+          left: 37.3%;
         }
         &:nth-child(3) {
-          left: 3.12rem;
+          left: 54.4%;
         }
         &:nth-child(4) {
-          left: 3.36rem;
+          left: 71.2%;
         }
       }
     }
@@ -907,25 +901,25 @@ export default {
       background-size: auto 100%;
       background-position: center;
       > div {
-        width: 1.6rem;
+        width: 1.5rem;
         height: 1.8rem;
         background: url($urlImages + "roadmap_bg1.webp") no-repeat;
         background-size: 100% 100%;
-        position: relative;
+        position: absolute;
         &:nth-child(1) {
-          left: 1.6rem;
+          left: 12.7%;
         }
         &:nth-child(2) {
-          left: 2.19rem;
+          left: 29.8%;
         }
         &:nth-child(3) {
-          left: 2.8rem;
+          left: 47.1%;
         }
         &:nth-child(4) {
-          left: 3.4rem;
+          left: 64.6%;
         }
         &:nth-child(5) {
-          left: 4.05rem;
+          left: 81.9%;
         }
       }
     }
