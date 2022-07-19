@@ -2,7 +2,9 @@
   <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'" @scroll="handleScrollScroll($event)">
     <HeaderLayout />
     <div id="container_body">
-      <router-view />
+      <section>
+        <router-view />
+      </section>
       <FooterLayout />
     </div>
   </div>
@@ -50,6 +52,13 @@ export default {
 </script>
 
 <style lang="scss">
+#container {
+  #container_body {
+    section {
+      min-height: calc(100vh - 5rem);
+    }
+  }
+}
 @media screen and (max-width: 750px) {
   #container {
     #container_body {

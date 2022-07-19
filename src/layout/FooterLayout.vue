@@ -28,16 +28,17 @@ export default {
 <style lang="scss" scoped>
 .footer_box {
   width: 100%;
-  height: 35vw;
+  height: 5rem;
   background: url($urlImages + "bg4.webp") no-repeat;
   background-size: 100% auto;
-  padding-top: 0.8rem;
   display: flex;
   justify-content: center;
   > div {
     width: 4.3rem;
-    height: auto;
+    height: fit-content;
     text-align: center;
+    position: relative;
+    top: 0.8rem;
     img {
       width: 100%;
       height: auto;

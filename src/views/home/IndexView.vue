@@ -120,7 +120,7 @@
       <div class="box_title">
         <span>{{ $t("home.text11") }}</span>
       </div>
-      <div class="box_title2">
+      <div class="row">
         <div>{{ $t("home.text12") }}</div>
         <div>{{ $t("home.text13") }}</div>
       </div>
@@ -352,6 +352,7 @@ export default {
 <style lang="scss" scoped>
 .home {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 .absolute1 {
@@ -730,7 +731,7 @@ export default {
 .box6 {
   width: 12.5rem;
   margin: 0.5rem auto;
-  .box_title2 {
+  .row {
     width: 10rem;
     height: 1.5rem;
     margin: 0.5rem auto;
