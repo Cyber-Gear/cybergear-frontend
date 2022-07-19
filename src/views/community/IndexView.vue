@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="container">
         <div class="box_title2">
-          <img src="../../assets/images/title_bg3.webp" alt="" />
+          <img :src="`${$urlImages}title_bg3.webp`" alt="" />
           <span>Record</span>
         </div>
         <ul class="tablist">
