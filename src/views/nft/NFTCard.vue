@@ -3,15 +3,12 @@
     <div class="topbox">
       <div class="title">
         <span></span>
-        <img src="@/assets/images/btn_icon4.webp" alt="" />
+        <img :src="`${$urlImages}btn_icon4.webp`" alt="" />
         <div>人物卡牌</div>
       </div>
       <div class="level">
-        <div>
-          <span>MR</span>
-          <!-- <span>UR</span>
-          <span>SR</span>
-          <span>R</span> -->
+        <div :class="[roleList[roleIndex].rarity]">
+          <span>{{ roleList[roleIndex].rarity }}</span>
         </div>
       </div>
     </div>
@@ -19,7 +16,7 @@
       <swiper class="role-thumbs" :options="roleOptionThumbs" ref="roleThumbs">
         <swiper-slide v-for="(item, index) in roleList" :key="index" :class="{ active: roleIndex == index }">
           <div class="row">
-            <img :src="item.attrIcon" alt="" />
+            <img :src="item.card4" alt="" />
             <span>{{ $t(item.name) }}</span>
           </div>
         </swiper-slide>
@@ -35,7 +32,7 @@
               <span>{{ $t(item.name) }}</span>
             </div>
             <div class="bottom">
-              <img class="angle" src="@/assets/images/angle4.webp" alt="" />
+              <img class="angle" :src="`${$urlImages}angle4.webp`" alt="" />
               <div>{{ $t(item.nftdes) }}</div>
             </div>
           </div>
@@ -54,8 +51,6 @@ export default {
       roleList: shikastudio.works,
       roleIndex: 0,
       roleOptionTop: {
-        // effect: "fade",
-        // fadeEffect: { crossFade: true },
         direction: "vertical",
         observer: true,
         observeParents: true,
@@ -70,7 +65,7 @@ export default {
       },
       roleOptionThumbs: {
         direction: "vertical",
-        slidesPerView: 8,
+        slidesPerView: 10,
         observer: true,
         observeParents: true,
         grabCursor: true,
@@ -90,7 +85,10 @@ export default {
       this.$refs.roleThumbs.swiper.slideTo(newVal);
     },
   },
-
+  mounted() {
+    this.$refs.roleTop.swiper.slideTo(this.roleIndex);
+    this.$refs.roleThumbs.swiper.slideTo(this.roleIndex);
+  },
   methods: {},
 };
 </script>
@@ -101,9 +99,8 @@ export default {
   height: 0.36rem;
   line-height: 0.36rem;
   display: flex;
-  justify-content: space-between;
   .title {
-    width: 2rem;
+    width: 25%;
     display: flex;
     align-items: center;
     span {
@@ -124,7 +121,7 @@ export default {
     }
   }
   .level {
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: grid;
     place-items: center;
@@ -134,31 +131,30 @@ export default {
       width: 1.24rem;
       height: 100%;
       text-align: center;
-      background-image: url("~@/assets/images/ShikaStudio/z-btn-MR2.webp");
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center center;
       &.MR {
-        background-image: url($urlImages + "ShikaStudio/btn-MR.webp");
+        background-image: url($urlImages + "ShikaStudio/z-btn-MR2.webp");
       }
       &.R {
-        background-image: url($urlImages + "ShikaStudio/btn-R.webp");
+        background-image: url($urlImages + "ShikaStudio/z-btn-R2.webp");
       }
       &.SR {
-        background-image: url($urlImages + "ShikaStudio/btn-SR.webp");
+        background-image: url($urlImages + "ShikaStudio/z-btn-SR2.webp");
       }
       &.UR {
-        background-image: url($urlImages + "ShikaStudio/btn-UR.webp");
+        background-image: url($urlImages + "ShikaStudio/z-btn-UR2.webp");
       }
     }
   }
 }
 .boxbottom {
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   display: flex;
   justify-content: space-between;
-  padding-left: 0.6rem;
+  padding-left: 5%;
 }
 .role-thumbs {
   width: 20%;
@@ -214,7 +210,7 @@ export default {
     .leftbox {
       width: 3.2rem;
       height: 50%;
-      background: url("~@/assets/images/bg3.webp");
+      background: url($urlImages + "bg3.webp");
       background-size: 100% 100%;
       background-position: left center;
       margin-left: 0.5rem;
@@ -246,7 +242,7 @@ export default {
       }
       .bottom {
         width: 100%;
-        height: 50%;
+        height: 60%;
         display: flex;
         .angle {
           width: 0.2rem;

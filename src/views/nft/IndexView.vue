@@ -41,7 +41,7 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0.8rem 0;
-  background: url("~@/assets/images/bg1.webp") no-repeat;
+  background: url($urlImages + "bg1.webp") no-repeat;
   background-size: 100% 100%;
   .inner {
     width: 12.5rem;
@@ -51,7 +51,7 @@ export default {
 .tablist {
   display: flex;
   align-items: center;
-  background: url("~@/assets/images/bg7.webp") no-repeat;
+  background: url($urlImages + "bg7.webp") no-repeat;
   background-size: 100% auto;
   li {
     width: 50%;
@@ -76,7 +76,7 @@ export default {
     }
     &.active {
       div {
-        background: url("~@/assets/images/btn_bg6.webp") no-repeat;
+        background: url($urlImages + "btn_bg6.webp") no-repeat;
         background-size: 100% 130%;
       }
     }

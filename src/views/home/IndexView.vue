@@ -345,7 +345,12 @@ export default {
       this.$refs.gameModeThumbs.swiper.slideTo(newVal);
     },
   },
-
+  mounted() {
+    this.$refs.roleTop.swiper.slideTo(this.roleIndex);
+    this.$refs.roleThumbs.swiper.slideTo(this.roleIndex);
+    this.$refs.gameModeTop.swiper.slideTo(this.gameModeIndex);
+    this.$refs.gameModeThumbs.swiper.slideTo(this.gameModeIndex);
+  },
   methods: {},
 };
 </script>
