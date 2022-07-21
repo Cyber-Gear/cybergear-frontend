@@ -62,6 +62,20 @@ pre {
   word-wrap: break-word;
   font-family: inherit;
 }
+// tbody 滚动
+table tbody {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+table thead,
+tbody tr,
+tfoot tr,
+thead tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
 
 .box_title {
   width: fit-content;
@@ -130,6 +144,46 @@ pre {
     height: 0.2rem;
     background: #12b2cb;
     margin-right: 0.15rem;
+  }
+}
+.community.list {
+  margin-bottom: 0.2rem;
+  width: 100%;
+  height: auto;
+  font-size: 0.18rem;
+  font-weight: 400;
+  text-align: center;
+  thead {
+    tr {
+      height: 0.5rem;
+      line-height: 0.5rem;
+      padding-right: 0.05rem;
+      background: #000000;
+    }
+  }
+  tbody {
+    max-height: 2rem;
+    -webkit-overflow-scrolling: touch; // 为了滚动顺畅
+    tr {
+      height: 0.5rem;
+      line-height: 0.5rem;
+      font-size: 0.15rem;
+      &:hover {
+        background: #000000;
+      }
+    }
+  }
+  .table_td_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .el-button {
+      width: 0.7rem;
+      height: 0.3rem;
+      font-size: 0.12rem;
+      font-weight: 400;
+      margin-left: 0.1rem;
+    }
   }
 }
 
@@ -275,33 +329,4 @@ pre {
       justify-content: space-between;
     }
   }
-}
-.el-table {
-  color: #ffffff;
-  font-size: 0.18rem;
-  font-weight: 400;
-  background-color: transparent;
-  td.el-table__cell,
-  th.el-table__cell.is-leaf {
-    border-bottom: none;
-  }
-  tr,
-  .el-table__expanded-cell,
-  &::before,
-  .el-table--border::after,
-  .el-table--group::after {
-    background-color: transparent;
-  }
-  thead {
-    color: #ffffff;
-    font-weight: 500;
-    border-radius: 0.09rem;
-  }
-  .el-table__header-wrapper {
-    border-radius: 0.09rem;
-  }
-}
-.el-table th.el-table__cell,
-.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
-  background-color: #000000;
 }

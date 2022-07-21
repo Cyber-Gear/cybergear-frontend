@@ -36,7 +36,7 @@
       <div class="box_content">
         <img class="border2" :src="`${$urlImages}border2.webp`" alt="" />
         <img class="border3" :src="`${$urlImages}border3.webp`" alt="" />
-        <img class="x" :src="`${$urlImages}x.webp`" alt="" />
+        <img class="x" :src="`${$urlImages}angle5.webp`" alt="" />
         <div class="left">
           <div class="top">
             <div class="box_title">

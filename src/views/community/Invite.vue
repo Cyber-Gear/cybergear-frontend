@@ -35,14 +35,24 @@
         <span class="border"></span>
         <span>邀请记录</span>
       </div>
-      <div class="list">
-        <el-table :data="tableData" height="30vh">
-          <el-table-column prop="name" label="地址" align="center"> </el-table-column>
-          <el-table-column prop="date" label="注册时间" align="center"> </el-table-column>
-          <el-table-column prop="number" label="碎片收益" align="center"> </el-table-column>
-          <el-table-column prop="bili" label="CT" align="center"> </el-table-column>
-        </el-table>
-      </div>
+      <table class="community list">
+        <thead>
+          <tr>
+            <td>地址</td>
+            <td>注册时间</td>
+            <td>碎片收益</td>
+            <td>CT</td>
+          </tr>
+        </thead>
+        <tbody @scroll="invitedListLoad">
+          <tr v-for="(item, index) in tableData" :key="index">
+            <th>{{ item.name }}</th>
+            <th>{{ item.date }}</th>
+            <th>{{ item.number }}</th>
+            <th>{{ item.number }}</th>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -60,20 +70,20 @@ export default {
         { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
         { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
         { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
       ],
     };
   },
-  methods: {},
+  methods: {
+    invitedListLoad(e) {
+      // console.log("invitedListLoad", e);
+      const scrollHeight = e.target.scrollHeight || e.srcElement.scrollHeight;
+      const clientHeight = e.target.clientHeight || e.srcElement.clientHeight;
+      const scrollTop = e.target.scrollTop || e.srcElement.scrollTop;
+      if (scrollTop >= scrollHeight - clientHeight - 10) {
+        console.log("邀请记录，加载下一页");
+      }
+    },
+  },
 };
 </script>
 

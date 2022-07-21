@@ -70,15 +70,6 @@ export default {
       } else if (to.path.indexOf("/community") !== -1) {
         this.navActive = 3;
       }
-      // else if (to.path.indexOf("/dao") !== -1) {
-      //   this.navActive = 2;
-      // } else if (to.path.indexOf("/launchpad") !== -1) {
-      //   this.navActive = 3;
-      // } else if (to.path.indexOf("/market") !== -1) {
-      //   this.navActive = 4;
-      // } else if (to.path.indexOf("/dashboard") !== -1) {
-      //   this.navActive = 5;
-      // }
     },
   },
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="box">
     <div class="topbox">
       <ul class="tablist">
         <li>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page {
+.box {
   width: 100%;
   .topbox {
     display: flex;
