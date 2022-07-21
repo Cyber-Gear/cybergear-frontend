@@ -9,10 +9,10 @@ export const shikastudio = {
   // des 画师描述
   id: "shikastudio",
   name: "Shika studio",
-  banner: urlImages + "ShikaStudio/banner.webp",
-  logo: urlImages + "ShikaStudio/logo.webp",
-  avatar: urlImages + "ShikaStudio/avatar.webp",
-  avatar2: urlImages + "ShikaStudio/avatar2.webp",
+  banner: urlImages + "ShikaStudio/z-banner.webp",
+  logo: urlImages + "ShikaStudio/z-logo.webp",
+  avatar: urlImages + "ShikaStudio/z-avatar.webp",
+  avatar2: urlImages + "ShikaStudio/z-avatar2.webp",
   title: "nftworks.shikastudio.title",
   des: "nftworks.shikastudio.des",
   works: [
