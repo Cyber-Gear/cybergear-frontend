@@ -81,7 +81,7 @@
         <span>{{ $t("home.text10") }}</span>
       </div>
       <div class="box_content">
-        <swiper class="role-left" :options="roleOptionTop" ref="roleTop">
+        <swiper class="role" :options="roleOptionTop" ref="roleTop">
           <swiper-slide v-for="(item, index) in roleList" :key="index">
             <img class="bg" :src="item.card2" alt="" />
             <div class="leftbox">
@@ -624,7 +624,7 @@ export default {
     display: flex;
     justify-content: space-between;
   }
-  .role-left {
+  .role {
     width: 80%;
     height: 100%;
     .swiper-slide {

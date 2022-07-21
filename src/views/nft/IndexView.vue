@@ -2,7 +2,7 @@
   <div class="page">
     <div class="inner">
       <ul class="tablist">
-        <li v-for="(item, index) in tablist" :key="index" @click="toRoute(item, index)" class="active">
+        <li v-for="(item, index) in tablist" :key="index" @click="toRoute(item, index)" :class="{ active: tabIndex == index }">
           <div>{{ item.label }}</div>
         </li>
       </ul>
@@ -42,7 +42,7 @@ export default {
   height: 100%;
   padding: 0.8rem 0;
   background: url("~@/assets/images/bg1.webp") no-repeat;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   .inner {
     width: 12.5rem;
     margin: 0.5rem auto 0 auto;
@@ -84,5 +84,6 @@ export default {
 }
 
 .box {
+  padding-top: 0.1rem;
 }
 </style>
