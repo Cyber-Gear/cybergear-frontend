@@ -6,7 +6,7 @@ export default {
     text4: "Community",
     text5: "White Paper",
     text6: "DAO",
-    text7: "Buy mystery box",
+    text7: "Buy Mystery Box",
     text8: "Connected",
     text9: "Disconnect",
   },

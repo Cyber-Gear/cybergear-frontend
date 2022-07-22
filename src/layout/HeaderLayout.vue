@@ -51,7 +51,7 @@ export default {
         { label: "nav.text4", icon: "pchome", link: "/community", isOpen: true },
         { label: "nav.text5", icon: "pchome", link: "/home", isOpen: false },
         { label: "nav.text6", icon: "pchome", link: "/home", isOpen: false },
-        { label: "nav.text7", icon: "pchome", link: "/home", isOpen: false },
+        { label: "nav.text7", icon: "pchome", link: "/buy-box", isOpen: true },
       ],
       showDisconnect: false,
       langArr: ["en", "zh"],
@@ -69,6 +69,8 @@ export default {
         this.navActive = 1;
       } else if (to.path.indexOf("/community") !== -1) {
         this.navActive = 3;
+      } else if (to.path.indexOf("/buy-box") !== -1) {
+        this.navActive = 6;
       }
     },
   },

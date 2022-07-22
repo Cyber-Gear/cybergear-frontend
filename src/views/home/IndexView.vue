@@ -22,7 +22,11 @@
         </div>
       </div>
       <el-dialog center top="0" :visible.sync="isShowVideo" :modal-append-to-body="false" :destroy-on-close="true">
-        <VideoPlayback :videoUrl="`${$urlVideos}video1.mp4`"></VideoPlayback>
+        <div class="logo_video">
+          <video loop autoplay muted controls>
+            <source :src="`${$urlVideos}video1.mp4`" type="video/mp4" />
+          </video>
+        </div>
       </el-dialog>
     </div>
     <div class="box2">
@@ -195,10 +199,8 @@
 
 <script>
 import { shikastudio } from "@/mock/nftworks";
-import VideoPlayback from "@/components/VideoPlayback.vue";
 export default {
   name: "Home",
-  components: { VideoPlayback },
   data() {
     return {
       isShowVideo: false,

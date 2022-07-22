@@ -25,6 +25,9 @@ export default {
       ],
     };
   },
+  created() {
+    this.tabIndex = this.$route.path == "/nft/card" ? 0 : 1;
+  },
   methods: {
     toRoute(item, index) {
       if (item.link) {
@@ -84,6 +87,6 @@ export default {
 }
 
 .box {
-  padding-top: 0.1rem;
+  padding-top: 0.2rem;
 }
 </style>

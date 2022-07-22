@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <video loop autoplay muted controls>
+  <div class="popupbox">
+    <video loop autoplay muted>
       <source :src="videoUrl" type="video/mp4" />
     </video>
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "VideoPlayback",
+  name: "PaintingVideo",
   props: {
     videoUrl: {
       type: String,

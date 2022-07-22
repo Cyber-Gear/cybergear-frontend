@@ -31,44 +31,40 @@ import {
   Icon,
   Button,
   Message,
-  Steps,
-  Step,
+  Loading,
   Dialog,
-  Collapse,
-  CollapseItem,
-  Tag,
+  Form,
+  FormItem,
   Select,
   Option,
-  Tooltip,
-  Backtop,
-  Drawer,
-  Menu,
-  Submenu,
-  MenuItem,
-  MenuItemGroup,
-  Loading,
-  Table,
-  TableColumn,
+  Input,
+
+  // Collapse,
+  // CollapseItem,
+  // Tooltip,
+  // Backtop,
+  // Menu,
+  // Submenu,
+  // MenuItem,
+  // MenuItemGroup,
 } from "element-ui";
 Vue.use(Icon);
 Vue.use(Button);
-Vue.use(Steps);
-Vue.use(Step);
 Vue.use(Dialog);
-Vue.use(Collapse);
-Vue.use(CollapseItem);
-Vue.use(Tag);
+Vue.use(Form);
+Vue.use(FormItem);
 Vue.use(Select);
 Vue.use(Option);
-Vue.use(Tooltip);
-Vue.use(Backtop);
-Vue.use(Drawer);
-Vue.use(Menu);
-Vue.use(Submenu);
-Vue.use(MenuItem);
-Vue.use(MenuItemGroup);
-Vue.use(Table);
-Vue.use(TableColumn);
+Vue.use(Input);
+
+// Vue.use(Collapse);
+// Vue.use(CollapseItem);
+// Vue.use(Tooltip);
+// Vue.use(Backtop);
+// Vue.use(Menu);
+// Vue.use(Submenu);
+// Vue.use(MenuItem);
+// Vue.use(MenuItemGroup);
 Vue.prototype.$message = (option: any) => {
   // option.duration = 0;
   // option.offset = 100;

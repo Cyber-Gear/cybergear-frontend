@@ -43,6 +43,10 @@ const routes: Array<RouteConfig> = [
       },
     ],
   },
+  {
+    path: "/buy-box",
+    component: () => import("../views/buybox/IndexView.vue"),
+  },
 ];
 
 const router = new VueRouter({
