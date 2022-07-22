@@ -2,18 +2,16 @@
   <div class="box">
     <div class="row">
       <div class="box_title3">
-        <span class="border"></span>
-        <span>我的公会</span>
+        <div><span class="border"></span><span>我的公会</span></div>
       </div>
       <div class="row_btn">
         <span>0x34578920600057dy7tk962hv90u7</span>
-        <el-button type="primary">复制邀请链接</el-button>
+        <el-button type="primary" @click="$utils.handleCopy('What?!')">复制邀请链接</el-button>
       </div>
     </div>
     <div class="row">
       <div class="box_title3">
-        <span class="border"></span>
-        <span>邀请数</span>
+        <div><span class="border"></span><span>邀请数</span></div>
       </div>
       <div class="row_btn">
         <span>当期邀请数</span>
@@ -22,8 +20,7 @@
     </div>
     <div class="row">
       <div class="box_title3">
-        <span class="border"></span>
-        <span>奖励</span>
+        <div><span class="border"></span><span>奖励</span></div>
       </div>
       <div class="row_btn">
         <span>奖励数</span>
@@ -32,8 +29,7 @@
     </div>
     <div class="row">
       <div class="box_title3">
-        <span class="border"></span>
-        <span>邀请记录</span>
+        <div><span class="border"></span><span>邀请记录</span></div>
       </div>
       <table class="community list">
         <thead>

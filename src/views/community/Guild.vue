@@ -1,8 +1,7 @@
 <template>
   <div class="box">
     <div class="box_title3">
-      <span class="border"></span>
-      <span>我的公会</span>
+      <div><span class="border"></span><span>我的公会</span></div>
     </div>
     <table class="community list">
       <thead>
@@ -40,8 +39,8 @@
       </tbody>
     </table>
     <div class="box_title3">
-      <span class="border"></span>
-      <span>公会排行榜</span>
+      <div><span class="border"></span><span>公会排行榜</span></div>
+      <el-button type="primary" @click="openCreate">创建公会</el-button>
     </div>
     <table class="community list">
       <thead>
@@ -63,6 +62,25 @@
         </tr>
       </tbody>
     </table>
+    <el-dialog center top="0" :title="'创建公会'" :visible.sync="isShowCreateGuild" :modal-append-to-body="false" :destroy-on-close="true">
+      <div class="formbox">
+        <el-form ref="form" class="create_guild_form" :model="form">
+          <el-form-item label="创建公会">
+            <el-input v-model="form.name" placeholder="请输入" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="公会地址">
+            <el-input v-model="form.addr" placeholder="请输入" clearable></el-input>
+          </el-form-item>
+          <el-form-item label="公会人数">
+            <el-input v-model="form.number" type="number" placeholder="请输入" clearable></el-input>
+          </el-form-item>
+        </el-form>
+        <div class="btns">
+          <el-button type="primary" @click="onSubmit">立即创建</el-button>
+          <el-button @click="onCancel">取消</el-button>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -73,11 +91,13 @@ export default {
     return {
       tableData: [
         { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
-        { name: "cyber", date: "2022-07-19", number: 300, bili: 20, shouyi: 300 },
       ],
+      isShowCreateGuild: false,
+      form: {
+        name: "",
+        addr: "",
+        number: null,
+      },
     };
   },
   methods: {
@@ -100,6 +120,15 @@ export default {
         console.log("公会排行榜，加载下一页");
       }
     },
+    openCreate() {
+      this.isShowCreateGuild = true;
+    },
+    onSubmit() {
+      this.isShowCreateGuild = false;
+    },
+    onCancel() {
+      this.isShowCreateGuild = false;
+    },
   },
 };
 </script>
@@ -111,6 +140,24 @@ export default {
     margin-bottom: 0.2rem;
     border-bottom: 1px solid;
     border-image: linear-gradient(135deg, rgba(212, 135, 241, 0.44), rgba(82, 224, 255, 0.44)) 1 1;
+    .el-button {
+      width: 1rem;
+      height: 0.3rem;
+    }
+  }
+}
+
+.formbox {
+  padding: 0.2rem 0.5rem;
+  .btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .el-button {
+    width: 1rem;
+    height: 0.35rem;
   }
 }
 </style>

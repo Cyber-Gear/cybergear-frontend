@@ -4,7 +4,7 @@
       <div class="container">
         <div class="box_title2">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <span>Record</span>
+          <div><span>Record</span></div>
         </div>
         <ul class="tablist">
           <li v-for="(item, index) in tablist" :key="index" @click="toRoute(item, index)" :class="{ active: tabIndex == index }">
