@@ -6,10 +6,11 @@
         <img :src="`${$urlImages}btn_icon4.webp`" alt="" />
         <div>人物卡牌</div>
       </div>
-      <div class="level">
-        <div :class="[roleList[roleIndex].rarity]">
-          <span>{{ roleList[roleIndex].rarity }}</span>
-        </div>
+      <div class="level" :class="[roleList[roleIndex].rarity]">
+        <div>MR</div>
+        <div>UR</div>
+        <div>SR</div>
+        <div>R</div>
       </div>
     </div>
     <div class="boxbottom">
@@ -123,10 +124,23 @@ export default {
   .level {
     width: 50%;
     height: 100%;
-    display: grid;
-    place-items: center;
     font-size: 0.21rem;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &.MR div:nth-child(1) {
+      background-image: url($urlImages + "ShikaStudio/z-btn-MR2.webp");
+    }
+    &.UR div:nth-child(2) {
+      background-image: url($urlImages + "ShikaStudio/z-btn-UR2.webp");
+    }
+    &.SR div:nth-child(3) {
+      background-image: url($urlImages + "ShikaStudio/z-btn-SR2.webp");
+    }
+    &.R div:nth-child(4) {
+      background-image: url($urlImages + "ShikaStudio/z-btn-R2.webp");
+    }
     div {
       width: 1.24rem;
       height: 100%;
@@ -134,18 +148,6 @@ export default {
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center center;
-      &.MR {
-        background-image: url($urlImages + "ShikaStudio/z-btn-MR2.webp");
-      }
-      &.R {
-        background-image: url($urlImages + "ShikaStudio/z-btn-R2.webp");
-      }
-      &.SR {
-        background-image: url($urlImages + "ShikaStudio/z-btn-SR2.webp");
-      }
-      &.UR {
-        background-image: url($urlImages + "ShikaStudio/z-btn-UR2.webp");
-      }
     }
   }
 }
