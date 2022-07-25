@@ -1,14 +1,14 @@
 export default {
   nav: {
-    text1: "Home",
+    text1: "HOME",
     text2: "NFT",
-    text3: "Market",
-    text4: "Community",
-    text5: "White Paper",
-    text6: "DAO",
-    text7: "Buy Mystery Box",
-    text8: "Connected",
-    text9: "Disconnect",
+    text3: "GAME",
+    text4: "COMMUNITY",
+    text5: "DAO",
+    text6: "购买盲盒",
+    text7: "Connected",
+    text8: "Disconnect",
+    text9: "DOWNLOAD",
   },
   footer: {
     text1: "COPYRIGHT 2022 CYBERGEAR, All rights Reserved",
@@ -242,5 +242,8 @@ export default {
   tips: {
     comming: "Comming Soon",
     loading: "Loading",
+  },
+  btns: {
+    text1: "Back",
   },
 };

@@ -2,13 +2,13 @@ export default {
   nav: {
     text1: "首页",
     text2: "NFT",
-    text3: "市场",
+    text3: "游戏",
     text4: "社区",
-    text5: "白皮书",
-    text6: "DAO",
-    text7: "购买盲盒",
-    text8: "连接",
-    text9: "断开连接",
+    text5: "DAO",
+    text6: "购买盲盒",
+    text7: "连接",
+    text8: "断开连接",
+    text9: "下载",
   },
   footer: {
     text1: "版权所有 2022 CYBERGEAR，保留所有权利",
@@ -236,5 +236,8 @@ export default {
   tips: {
     comming: "敬请期待",
     loading: "请稍等",
+  },
+  btns: {
+    text1: "Back",
   },
 };

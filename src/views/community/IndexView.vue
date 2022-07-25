@@ -61,14 +61,14 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0.8rem 0;
+  background: url($urlImages + "bg17.webp") no-repeat;
+  background-size: auto 100%;
+  background-position: center;
   .inner {
-    width: 12.5rem;
+    width: 11.5rem;
     height: 100%;
     margin: 0 auto;
     padding-top: 0.5rem;
-    background: url($urlImages + "bg2.webp") no-repeat;
-    background-size: 65% auto;
-    background-position: center center;
     display: flex;
     justify-content: space-between;
   }

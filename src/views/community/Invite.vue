@@ -2,7 +2,12 @@
   <div class="box">
     <div class="row">
       <div class="box_title3">
-        <div><span class="border"></span><span>我的公会</span></div>
+        <div><span class="border"></span><span>当前账户</span></div>
+        <div class="tips">
+          <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
+          <span>提示：您可以将链接分享给朋友，帮助您玩游戏并获得收益</span>
+          <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
+        </div>
       </div>
       <div class="row_btn">
         <span>0x34578920600057dy7tk962hv90u7</span>
@@ -89,32 +94,48 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  .row {
-    width: 100%;
-    background: #282834;
-    border-radius: 0.1rem;
-    padding: 0.1rem 0.2rem;
-    margin-bottom: 0.2rem;
-    .row_btn {
-      display: flex;
-      justify-content: space-between;
-      line-height: 0.35rem;
-      padding: 0.1rem;
-      background: #101017;
-      border-radius: 0.09rem;
-      font-size: 0.18rem;
+}
+.row {
+  width: 100%;
+  background: #282834;
+  border-radius: 0.1rem;
+  padding: 0.1rem 0.2rem;
+  margin-bottom: 0.2rem;
+  .row_btn {
+    display: flex;
+    justify-content: space-between;
+    line-height: 0.35rem;
+    padding: 0.1rem;
+    background: #101017;
+    border-radius: 0.09rem;
+    font-size: 0.18rem;
+    font-weight: 400;
+    .el-button {
+      width: 1.2rem;
+      height: 0.35rem;
+      font-size: 0.12rem;
       font-weight: 400;
-      .el-button {
-        width: 1.2rem;
-        height: 0.35rem;
-        font-size: 0.12rem;
-        font-weight: 400;
-      }
     }
-    &:nth-child(2),
-    &:nth-child(3) {
-      width: 49.5%;
-    }
+  }
+  &:nth-child(2),
+  &:nth-child(3) {
+    width: 49.5%;
+  }
+}
+.tips {
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 0.12rem;
+    font-weight: 400;
+    margin: 0 0.1rem;
+  }
+  img {
+    width: 0.1rem;
+    height: auto;
+  }
+  .angle2 {
+    transform: rotate(180deg);
   }
 }
 </style>

@@ -4,16 +4,16 @@
   src: url($urlFonts + "PingFang.ttf");
 }
 @font-face {
-  font-family: "CaviarDreams";
-  src: url($urlFonts + "CaviarDreams.ttf");
+  font-family: "Futura";
+  src: url($urlFonts + "Futura.ttc");
 }
 // 中文常规
 .fontfamily_zh {
-  font-family: PingFang;
+  font-family: PingFang !important;
 }
 // 英文常规
 .fontfamily_en {
-  font-family: CaviarDreams;
+  font-family: Futura !important;
 }
 html,
 body {
@@ -116,18 +116,22 @@ thead tr {
   }
 }
 .box_title2 {
+  line-height: 0.5rem;
   display: flex;
   align-items: center;
   margin-bottom: 0.2rem;
-  img {
+  position: relative;
+  > img {
     width: 1.5rem;
     height: auto;
-    margin-right: 0.1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1.6rem;
+    margin: auto;
   }
   > div {
-    width: fit-content;
-    height: 0.5rem;
-    line-height: 0.5rem;
+    width: 100%;
     font-size: 0.3rem;
     font-weight: bold;
     border-bottom: 1px solid;
@@ -210,7 +214,60 @@ thead tr {
     }
   }
 }
-
+.back_box {
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: #53ddfc;
+    span {
+      border-bottom: 1px solid #53ddfc;
+    }
+  }
+  span {
+    font-size: 0.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ffffff;
+    margin-left: 0.05rem;
+  }
+  i {
+    font-size: 0.2rem;
+    font-weight: bold;
+  }
+}
+.level_btn {
+  cursor: pointer;
+  width: 45%;
+  height: auto;
+  font-size: 0.15rem;
+  line-height: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.4rem;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  &.MR {
+    background-image: url($urlImages + "ShikaStudio/z-btn-MR.webp");
+  }
+  &.R {
+    background-image: url($urlImages + "ShikaStudio/z-btn-R.webp");
+  }
+  &.SR {
+    background-image: url($urlImages + "ShikaStudio/z-btn-SR.webp");
+  }
+  &.UR {
+    background-image: url($urlImages + "ShikaStudio/z-btn-UR.webp");
+  }
+}
 // 重置组件样式
 .el-message {
   min-width: 1rem;
@@ -240,7 +297,7 @@ thead tr {
   padding: 0;
   color: #ffffff;
   background-color: #211f24;
-  border-radius: 0.03rem;
+  border-radius: 0.05rem;
   border-color: #413f3f;
   &:focus,
   &:hover {
@@ -279,9 +336,8 @@ thead tr {
       height: 100%;
       color: #ffffff;
       text-align: left;
-      background-color: rgba(24, 24, 28, 0.8);
-      border-radius: 0.09rem;
-      border: 1px solid #606060;
+      background: #494848;
+      border-radius: 0.07rem;
     }
   }
 }

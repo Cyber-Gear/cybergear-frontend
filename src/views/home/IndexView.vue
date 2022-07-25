@@ -93,10 +93,10 @@
                 <span>{{ $t(item.name) }}</span>
                 <div>
                   <p>{{ $t(item.name) }}</p>
-                  <img v-show="item.rarity == 'MR'" :src="`${$urlImages}ShikaStudio/level-MR.webp`" alt="" />
-                  <img v-show="item.rarity == 'SR'" :src="`${$urlImages}ShikaStudio/level-SR.webp`" alt="" />
-                  <img v-show="item.rarity == 'UR'" :src="`${$urlImages}ShikaStudio/level-UR.webp`" alt="" />
-                  <img v-show="item.rarity == 'R'" :src="`${$urlImages}ShikaStudio/level-R.webp`" alt="" />
+                  <img v-show="item.rarity == 'MR'" :src="`${$urlImages}ShikaStudio/z-level-MR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'SR'" :src="`${$urlImages}ShikaStudio/z-level-SR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'UR'" :src="`${$urlImages}ShikaStudio/z-level-UR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'R'" :src="`${$urlImages}ShikaStudio/z-level-R2.webp`" alt="" />
                 </div>
               </div>
               <div class="bottom">
@@ -463,7 +463,7 @@ export default {
   }
 }
 .box3 {
-  width: 12.5rem;
+  width: 11.5rem;
   margin: 0.5rem auto;
   background: url($urlImages + "bg2.webp") no-repeat;
   background-size: 25% auto;
@@ -543,7 +543,7 @@ export default {
   }
 }
 .box4 {
-  width: 12.5rem;
+  width: 11.5rem;
   margin: 0.5rem auto;
   background: url($urlImages + "bg5.webp") no-repeat;
   background-size: 100% 100%;
@@ -623,7 +623,7 @@ export default {
   }
 }
 .box5 {
-  width: 12.5rem;
+  width: 11.5rem;
   margin: 0.5rem auto;
   .box_content {
     width: 100%;
@@ -683,9 +683,9 @@ export default {
           width: 88%;
           height: 55%;
           display: flex;
-          background: url($urlImages + "ShikaStudio/bg1.webp") no-repeat;
-          background-size: 100% auto;
-          background-position: left bottom;
+          // background: url($urlImages + "ShikaStudio/bg1.webp") no-repeat;
+          // background-size: 100% auto;
+          // background-position: left bottom;
           .angle {
             width: auto;
             height: 0.2rem;
@@ -736,7 +736,7 @@ export default {
   }
 }
 .box6 {
-  width: 12.5rem;
+  width: 11.5rem;
   margin: 0.5rem auto;
   .row {
     width: 10rem;
@@ -830,12 +830,12 @@ export default {
   }
 }
 .box7 {
-  width: 12.5rem;
+  width: 11.5rem;
   margin: 0.5rem auto;
   .box_content {
     width: fit-content;
     padding: 0.25rem 0.2rem 0.4rem 0.25rem;
-    margin: 0 auto;
+    margin: 0.2rem auto;
     background: url($urlImages + "bg11.webp") no-repeat;
     background-size: 100% 100%;
     video {
@@ -845,7 +845,7 @@ export default {
   }
 }
 .box8 {
-  width: 12.5rem;
+  width: 11.5rem;
   margin: 0.5rem auto;
   position: relative;
   background: url($urlImages + "bg8.webp") no-repeat;

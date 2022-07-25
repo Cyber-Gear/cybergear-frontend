@@ -5,9 +5,9 @@
         <img :src="`${$urlImages}title_bg3.webp`" alt="" />
         <div>
           <span>Claim Mystery Box</span>
-          <div>
+          <div class="tips">
             <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
-            <span>购买盲盒可获取稀有碎片，CT</span>
+            <span>购买盲盒可获取稀有碎片、CT</span>
             <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
           </div>
         </div>
@@ -28,7 +28,7 @@
           <li>
             <div>Amount</div>
             <div>
-              <el-input v-model="amount" type="number" placeholder="请输入" clearable></el-input>
+              <el-input v-model="amount" type="number" placeholder="Enter the amount" clearable></el-input>
             </div>
           </li>
           <li>
@@ -58,15 +58,17 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0.8rem 0;
+  background: url($urlImages + "bg13.webp") no-repeat;
+  background-size: 100% auto;
   .inner {
-    width: 12.5rem;
+    width: 11.5rem;
     height: 100%;
     margin: 0 auto;
     padding-top: 0.5rem;
-    // background: url($urlImages + "bg2.webp") no-repeat;
-    // background-size: 65% auto;
-    // background-position: center center;
   }
+}
+.box_title2 {
+  width: fit-content;
 }
 .box {
   width: 100%;
@@ -83,8 +85,8 @@ export default {
     align-items: center;
     justify-content: center;
     img {
-      width: 3.7rem;
-      height: 3.2rem;
+      width: 3rem;
+      height: auto;
     }
   }
   .box2 {
