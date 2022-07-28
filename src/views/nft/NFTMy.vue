@@ -36,7 +36,7 @@
     <ul class="list">
       <li v-for="(item, index) in cardList" :key="index">
         <div class="box">
-          <img :src="`${$urlImages}ShikaStudio/z-level-${item.rarity}.webp`" alt="" />
+          <img :src="`${$urlArtists}ShikaStudio/z-level-${item.rarity}.webp`" alt="" />
         </div>
         <div class="bottom">
           <span>{{ item.rarity }} /{{ item.length }}</span>

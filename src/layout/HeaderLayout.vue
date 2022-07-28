@@ -135,7 +135,7 @@ export default {
       .logo {
         cursor: pointer;
         width: auto;
-        height: 40%;
+        height: 35%;
         margin-right: 0.1rem;
       }
       .menu_pc {

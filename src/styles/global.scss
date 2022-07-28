@@ -22,6 +22,11 @@ body {
   position: relative;
   color: #ffffff;
   background: #0f0f16;
+  font-family: Futura, PingFang;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 .pc {
   display: flex !important;
@@ -47,6 +52,7 @@ input {
   outline: none;
   border: 0px;
   caret-color: white;
+  font-family: Futura, PingFang;
   &[type="number"] {
     -moz-appearance: textfield;
     &::-webkit-inner-spin-button,
@@ -59,6 +65,9 @@ input {
     color: #504e4e !important;
     font-weight: 400;
   }
+}
+button {
+  font-family: Futura, PingFang;
 }
 pre {
   white-space: pre-line;
@@ -256,16 +265,16 @@ thead tr {
   background-size: 100% 100%;
   background-position: center center;
   &.MR {
-    background-image: url($urlImages + "ShikaStudio/z-btn-MR.webp");
+    background-image: url($urlArtists + "ShikaStudio/z-btn-MR.webp");
   }
   &.R {
-    background-image: url($urlImages + "ShikaStudio/z-btn-R.webp");
+    background-image: url($urlArtists + "ShikaStudio/z-btn-R.webp");
   }
   &.SR {
-    background-image: url($urlImages + "ShikaStudio/z-btn-SR.webp");
+    background-image: url($urlArtists + "ShikaStudio/z-btn-SR.webp");
   }
   &.UR {
-    background-image: url($urlImages + "ShikaStudio/z-btn-UR.webp");
+    background-image: url($urlArtists + "ShikaStudio/z-btn-UR.webp");
   }
 }
 // 重置组件样式

@@ -69,13 +69,38 @@
         <span>{{ $t("home.text9") }}</span>
       </div>
       <ul class="box_content">
-        <li v-for="(item, index) in coreFeaturesList" :key="index">
-          <div>{{ $t(item.text1) }}</div>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="figure" :src="`${this.$urlImages}coreFeatures_figure1.webp`" alt="" />
           <div>
-            <img :src="`${$urlImages}angle2.webp`" alt="" />
-            <p>{{ $t(item.text2) }}</p>
+            <p>{{ $t("home.list1[0].text1") }}</p>
+            <pre>{{ $t("home.list1[0].text2") }}</pre>
           </div>
-          <img v-if="item.image" :src="item.image" alt="" />
+        </li>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="figure" :src="`${this.$urlImages}coreFeatures_figure2.webp`" alt="" />
+          <img class="bg" :src="`${this.$urlImages}bg18.webp`" alt="" />
+          <div>
+            <p>{{ $t("home.list1[1].text1") }}</p>
+            <pre>{{ $t("home.list1[1].text2") }}</pre>
+          </div>
+        </li>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="bg" :src="`${this.$urlImages}bg18.webp`" alt="" />
+          <div>
+            <p>{{ $t("home.list1[3].text1") }}</p>
+            <pre>{{ $t("home.list1[3].text2") }}</pre>
+          </div>
+        </li>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="figure" :src="`${this.$urlImages}coreFeatures_figure3.webp`" alt="" />
+          <div>
+            <p>{{ $t("home.list1[2].text1") }}</p>
+            <pre>{{ $t("home.list1[2].text2") }}</pre>
+          </div>
         </li>
       </ul>
     </div>
@@ -93,10 +118,10 @@
                 <span>{{ $t(item.name) }}</span>
                 <div>
                   <p>{{ $t(item.name) }}</p>
-                  <img v-show="item.rarity == 'MR'" :src="`${$urlImages}ShikaStudio/z-level-MR2.webp`" alt="" />
-                  <img v-show="item.rarity == 'SR'" :src="`${$urlImages}ShikaStudio/z-level-SR2.webp`" alt="" />
-                  <img v-show="item.rarity == 'UR'" :src="`${$urlImages}ShikaStudio/z-level-UR2.webp`" alt="" />
-                  <img v-show="item.rarity == 'R'" :src="`${$urlImages}ShikaStudio/z-level-R2.webp`" alt="" />
+                  <img v-show="item.rarity == 'MR'" :src="`${$urlArtists}ShikaStudio/z-level-MR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'SR'" :src="`${$urlArtists}ShikaStudio/z-level-SR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'UR'" :src="`${$urlArtists}ShikaStudio/z-level-UR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'R'" :src="`${$urlArtists}ShikaStudio/z-level-R2.webp`" alt="" />
                 </div>
               </div>
               <div class="bottom">
@@ -214,24 +239,6 @@ export default {
         { image: this.$urlImages + "contact_Twitter.webp", href: "" },
         { image: this.$urlImages + "contact_Discord.webp", href: "" },
         { image: this.$urlImages + "contact_Medium.webp", href: "" },
-      ],
-      coreFeaturesList: [
-        {
-          text1: "home.list1[0].text1",
-          text2: "home.list1[0].text2",
-          image: `${this.$urlImages}coreFeatures_figure1.webp`,
-        },
-        { text1: "home.list1[1].text1", text2: "home.list1[1].text2", image: "" },
-        {
-          text1: "home.list1[2].text1",
-          text2: "home.list1[2].text2",
-          image: `${this.$urlImages}coreFeatures_figure2.webp`,
-        },
-        {
-          text1: "home.list1[3].text1",
-          text2: "home.list1[3].text2",
-          image: `${this.$urlImages}coreFeatures_figure2.webp`,
-        },
       ],
       roadmapList1: [
         { time: "home.list4[1].time", text: "home.list4[1].text" },
@@ -549,75 +556,63 @@ export default {
   background-size: 100% 100%;
   .box_content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
     li {
-      width: 2rem;
-      height: 5rem;
-      background: url($urlImages + "bg6.webp") no-repeat;
-      background-size: 100% auto;
-      padding: 0 0.1rem;
+      display: flex;
+      padding: 0.4rem 0.2rem;
+      margin: 0.2rem;
       position: relative;
-      &:nth-child(1) {
-        margin-top: 5%;
-        > img {
-          top: -0.3rem;
-          right: 0;
-        }
+      .angle {
+        width: auto;
+        height: 0.25rem;
+        margin-right: 0.1rem;
       }
-      &:nth-child(2) {
-        margin-top: 12%;
+      .figure {
+        width: auto;
+        height: 0.88rem;
+        position: absolute;
+        top: -0.88rem;
+        right: 0.1rem;
       }
-      &:nth-child(3) {
-        margin-top: 0%;
-        > img {
-          transform: rotate(-90deg);
-          left: -0.8rem;
-          top: 1rem;
-        }
-      }
-      &:nth-child(4) {
-        margin-top: 8%;
-        > img {
-          transform: rotate(90deg);
-          right: -0.7rem;
-          top: 2rem;
-        }
-      }
-      > img {
-        width: 0.7rem;
+      .bg {
+        width: 1.2rem;
         height: auto;
         position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
       }
-      div {
-        &:nth-child(1) {
-          width: 40%;
-          height: 18%;
-          margin: 0 auto;
-          padding-right: 8%;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 0.14rem;
+      > div {
+        p {
+          font-size: 0.18rem;
           font-weight: 600;
-          background: linear-gradient(180deg, #ffffff 0%, #7ee9f4 98%, #72e7f3 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          line-height: 0.25rem;
+          margin-bottom: 0.2rem;
         }
-        &:nth-child(2) {
-          display: flex;
-          padding-top: 0.6rem;
-          img {
-            width: auto;
-            height: 0.3rem;
-            margin: 0 0.05rem;
-          }
-          p {
-            width: 80%;
-            font-size: 0.12rem;
-            font-weight: 400;
-          }
+        pre {
+          font-size: 0.12rem;
+          font-weight: 400;
+          line-height: 0.17rem;
         }
+      }
+      &:nth-child(1),
+      &:nth-child(4) {
+        width: 5rem;
+        height: 2.5rem;
+        background: linear-gradient(180deg, #5e6d9a 0%, rgba(79, 93, 129, 0.92) 19%, rgba(15, 15, 22, 0.57) 100%);
+        border-radius: 0.1rem;
+        border: 0.01rem solid #656975;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 4rem;
+        height: 2.5rem;
+        background: linear-gradient(134deg, #258696 0%, #41627d 24%, #70507b 64%, #5d4c78 100%);
+        border-radius: 0.1rem;
       }
     }
   }
@@ -683,9 +678,9 @@ export default {
           width: 88%;
           height: 55%;
           display: flex;
-          // background: url($urlImages + "ShikaStudio/bg1.webp") no-repeat;
-          // background-size: 100% auto;
-          // background-position: left bottom;
+          background: url($urlArtists + "ShikaStudio/z-bg.webp") no-repeat;
+          background-size: 100% auto;
+          background-position: left bottom;
           .angle {
             width: auto;
             height: 0.2rem;

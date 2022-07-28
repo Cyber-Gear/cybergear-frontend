@@ -8,9 +8,10 @@ import "./styles/global.scss";
 
 const isProd = process.env.NODE_ENV == "production";
 Vue.prototype.$isProd = isProd;
-const cdn = isProd ? "https://cdn.funtopia.io/cybergear_assets_main/" : "https://cdn.funtopia.io/cybergear_assets_test/";
 Vue.prototype.$urlNfts = "https://cdn.funtopia.io/nfts/";
-Vue.prototype.$urlBlindBoxs = "https://cdn.funtopia.io/blindboxs/";
+Vue.prototype.$urlArtists = "https://cdn.funtopia.io/z_artists/";
+Vue.prototype.$urlBlindBoxs = "https://cdn.funtopia.io/z_blindboxs/";
+const cdn = isProd ? "https://cdn.funtopia.io/cybergear_assets_main/" : "https://cdn.funtopia.io/cybergear_assets_test/";
 Vue.prototype.$urlImages = cdn + "images/";
 Vue.prototype.$urlVideos = cdn + "videos/";
 

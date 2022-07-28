@@ -130,16 +130,16 @@ export default {
     align-items: center;
     justify-content: space-around;
     &.MR div:nth-child(1) {
-      background-image: url($urlImages + "ShikaStudio/z-btn-MR2.webp");
+      background-image: url($urlArtists + "ShikaStudio/z-btn-MR2.webp");
     }
     &.UR div:nth-child(2) {
-      background-image: url($urlImages + "ShikaStudio/z-btn-UR2.webp");
+      background-image: url($urlArtists + "ShikaStudio/z-btn-UR2.webp");
     }
     &.SR div:nth-child(3) {
-      background-image: url($urlImages + "ShikaStudio/z-btn-SR2.webp");
+      background-image: url($urlArtists + "ShikaStudio/z-btn-SR2.webp");
     }
     &.R div:nth-child(4) {
-      background-image: url($urlImages + "ShikaStudio/z-btn-R2.webp");
+      background-image: url($urlArtists + "ShikaStudio/z-btn-R2.webp");
     }
     div {
       width: 1.24rem;
