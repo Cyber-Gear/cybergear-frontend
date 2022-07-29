@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .page {
   width: 100%;
-  height: 100%;
+  min-height: calc(100vh - 5rem);
   padding: 0.8rem 0;
   background: url($urlImages + "bg1.webp") no-repeat;
   background-size: 100% 100%;

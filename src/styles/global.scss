@@ -125,43 +125,50 @@ thead tr {
   }
 }
 .box_title2 {
+  width: fit-content;
+  height: 0.5rem;
   line-height: 0.5rem;
-  display: flex;
-  align-items: center;
   margin-bottom: 0.2rem;
   position: relative;
-  > img {
-    width: 1.5rem;
-    height: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -1.6rem;
-    margin: auto;
-  }
-  > div {
-    width: 100%;
-    font-size: 0.3rem;
-    font-weight: bold;
-    border-bottom: 1px solid;
-    border-image: linear-gradient(135deg, rgba(212, 135, 241, 0.44), rgba(82, 224, 255, 0.44)) 1 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .left {
     display: flex;
     align-items: center;
-    div {
-      margin-left: 1rem;
+    > img {
+      width: 1.5rem;
+      height: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1.6rem;
+      margin: auto;
+    }
+    > div {
+      width: 100%;
+      font-size: 0.3rem;
+      font-weight: bold;
+      border-bottom: 1px solid;
+      border-image: linear-gradient(135deg, rgba(212, 135, 241, 0.44), rgba(82, 224, 255, 0.44)) 1 1;
       display: flex;
       align-items: center;
-      span {
-        font-size: 0.14rem;
-        font-weight: 400;
-        margin: 0 0.1rem;
-      }
-      img {
-        width: 0.1rem;
-        height: auto;
-      }
-      .angle2 {
-        transform: rotate(180deg);
+      div {
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 0.14rem;
+          font-weight: 400;
+          margin: 0 0.1rem;
+        }
+        img {
+          width: 0.1rem;
+          height: auto;
+        }
+        .angle2 {
+          transform: rotate(180deg);
+        }
       }
     }
   }
@@ -249,9 +256,9 @@ thead tr {
 }
 .level_btn {
   cursor: pointer;
-  width: 45%;
+  width: 55%;
   height: auto;
-  font-size: 0.15rem;
+  font-size: 0.12rem;
   line-height: 0.35rem;
   display: flex;
   align-items: center;
@@ -333,23 +340,7 @@ thead tr {
     background: linear-gradient(90deg, #44819d 0%, #7a649e 100%);
   }
 }
-.el-select {
-  .el-input {
-    width: 100%;
-    height: 100%;
-    font-size: 0.16rem;
-    font-weight: 400;
-    .el-input__inner {
-      padding: 0 0.1rem;
-      width: 100%;
-      height: 100%;
-      color: #ffffff;
-      text-align: left;
-      background: #494848;
-      border-radius: 0.07rem;
-    }
-  }
-}
+
 .el-select-dropdown {
   box-shadow: 0px 2px 12px 0px rgba(255, 255, 255, 0.27);
   background-color: #18181c;
@@ -419,22 +410,12 @@ thead tr {
     }
   }
 }
-.el-form {
-  .el-form-item {
-    margin-bottom: 0.2rem;
-    display: flex;
-    .el-form-item__label {
-      // line-height: 0.4rem;
-      font-size: 0.15rem;
-      color: #ffffff;
-      padding: 0 0.1rem 0 0;
-    }
-    .el-form-item__content {
-    }
-  }
-}
+
 .el-input {
   .el-input__inner {
+    width: 100%;
+    height: 0.5rem;
+    line-height: 0.5rem;
     background-color: #181819;
     border-radius: 0.04rem;
     border: 0.01rem solid #504e4e;
@@ -443,19 +424,79 @@ thead tr {
     padding: 0 0.1rem;
   }
 }
+.el-select {
+  .el-input {
+    width: 100%;
+    height: 100%;
+    font-size: 0.16rem;
+    font-weight: 400;
+    .el-input__inner {
+      padding: 0 0.1rem;
+      width: 100%;
+      height: 100%;
+      color: #ffffff;
+      text-align: left;
+      background: #494848;
+      border-radius: 0.07rem;
+    }
+  }
+}
+.el-input-number {
+  .el-input-number__decrease,
+  .el-input-number__increase {
+    width: 0.5rem;
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.15rem;
+    border-color: #504e4e;
+  }
+  .el-input {
+    width: 100%;
+    height: 100%;
+    .el-input__inner {
+      font-size: 0.2rem;
+      font-weight: 400;
+    }
+  }
+}
 .create_guild_form {
   .el-form-item {
+    display: flex;
+    margin-bottom: 0.2rem;
     .el-form-item__label {
-      line-height: 0.4rem;
+      height: 0.5rem;
+      line-height: 0.5rem;
+      font-size: 0.15rem;
+      color: #ffffff;
+      padding: 0 0.1rem 0 0;
     }
     .el-form-item__content {
       .el-input {
         .el-input__inner {
           width: 3rem;
-          height: 0.4rem;
-          line-height: 0.4rem;
         }
       }
+    }
+  }
+}
+.el-collapse {
+  border-top: none;
+  border-bottom: none;
+  .el-collapse-item__header {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    .el-collapse-item__arrow {
+      color: #ffffff;
+      font-size: 0.25rem;
+    }
+  }
+  .el-collapse-item__wrap {
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    .el-collapse-item__content {
+      padding-bottom: 0;
     }
   }
 }

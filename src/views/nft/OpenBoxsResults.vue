@@ -8,10 +8,10 @@
       <div class="box_title2">
         <div class="left">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <div><span>Detail</span></div>
+          <div><span>打开盲盒详情</span></div>
         </div>
       </div>
-      <ul class="list" v-if="cardList.length > 0">
+      <ul class="list">
         <li v-for="(item, index) in cardList" :key="index">
           <div class="card">
             <img :src="item.card" alt="" />
@@ -23,12 +23,6 @@
           </div>
         </li>
       </ul>
-      <div class="nodata" v-if="isShowNoData">
-        <div>
-          <p>NO NATA!</p>
-          <el-button type="primary">BUY NFT</el-button>
-        </div>
-      </div>
       <el-dialog center top="0" :title="$t(videoInfo.name)" :visible.sync="isShowPopup" :destroy-on-close="true" append-to-body @close="closeVideo">
         <PaintingVideo :videoUrl="videoInfo.videoUrl"></PaintingVideo>
       </el-dialog>
@@ -40,25 +34,17 @@
 import { shikastudio } from "@/mock/nftworks";
 import PaintingVideo from "@/components/PaintingVideo.vue";
 export default {
-  name: "NFTDetails",
+  name: "OpenBoxsResults",
   components: { PaintingVideo },
   data() {
     return {
-      boxList: [],
       cardList: [],
       isShowPopup: false,
       videoInfo: { name: "", videoUrl: "" },
-      isShowNoData: false,
     };
   },
   created() {
-    if (Object.keys(this.$route.query).length > 0) {
-      const rarity = this.$route.query.rarity;
-      this.cardList = shikastudio.works.filter((item) => {
-        return item.rarity == rarity;
-      });
-      this.isShowNoData = this.cardList.length == 0;
-    }
+    this.cardList = shikastudio.works;
   },
   methods: {
     openVideo(item) {
@@ -83,7 +69,7 @@ export default {
   width: 100%;
   min-height: calc(100vh - 5rem);
   padding: 0.8rem 0;
-  background: url($urlImages + "bg12.webp") no-repeat;
+  background: url($urlImages + "bg13.webp") no-repeat;
   background-size: 100% auto;
   .inner {
     width: 11.5rem;
@@ -92,7 +78,7 @@ export default {
   }
 }
 .box_title2 {
-  width: 20%;
+  width: 50%;
 }
 .list {
   width: 100%;
@@ -127,25 +113,6 @@ export default {
       border-radius: 0.04rem;
       margin: 0.1rem auto;
       text-align: center;
-    }
-  }
-}
-.nodata {
-  width: 100%;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  > div {
-    p {
-      font-size: 0.2rem;
-      font-weight: bold;
-      margin-bottom: 0.2rem;
-    }
-    .el-button {
-      width: 1rem;
-      height: 0.4rem;
     }
   }
 }

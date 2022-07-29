@@ -14,7 +14,7 @@
     <ul class="list">
       <li>
         <div class="box">
-          <img :src="`${$urlImages}box.webp`" alt="" />
+          <LottieAnimation></LottieAnimation>
         </div>
         <div class="bottom">
           <span>Mystery BOX /30</span>
@@ -28,7 +28,7 @@
         <div>人物卡牌</div>
       </div>
       <div class="btns">
-        <el-button type="primary" @click="toGiving('card')">赠送</el-button>
+        <el-button type="primary" @click="toGiving('nft')">赠送</el-button>
         <!-- 绑定funtopia市场 -->
         <el-button>出售</el-button>
       </div>
@@ -48,9 +48,11 @@
 </template>
 
 <script>
+import LottieAnimation from "@/components/LottieAnimation.vue";
 import { shikastudio } from "@/mock/nftworks";
 export default {
   name: "NFTMy",
+  components: { LottieAnimation },
   data() {
     return {
       cardList: [],
@@ -139,10 +141,6 @@ export default {
       justify-content: center;
       background: url($urlImages + "box_bg1.webp") no-repeat;
       background-size: 100% 100%;
-      img {
-        width: 60%;
-        height: auto;
-      }
     }
     .bottom {
       width: 95%;
