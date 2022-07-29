@@ -407,7 +407,7 @@ export default {
       .el-input {
         width: 6.5rem;
         height: 0.5rem;
-        /deep/ .el-input__inner {
+        .el-input__inner {
           font-size: 0.2rem;
           font-weight: 400;
         }
