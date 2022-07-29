@@ -36,6 +36,7 @@
           </el-select>
         </div>
         <div class="download">
+          <i class="iconfont icon-xiazai"></i>
           <span>{{ $t("nav.text9") }}</span>
         </div>
       </div>
@@ -69,7 +70,12 @@ export default {
       }
       if (to.path == "/home") {
         this.navActive = 0;
-      } else if (to.path.indexOf("/nft") !== -1) {
+      } else if (
+        to.path.indexOf("/nft") !== -1 ||
+        to.path.indexOf("/nft-giving") !== -1 ||
+        to.path.indexOf("/card-details") !== -1 ||
+        to.path.indexOf("/open-boxs") !== -1
+      ) {
         this.navActive = 1;
       } else if (to.path.indexOf("/community") !== -1) {
         this.navActive = 3;
@@ -202,8 +208,8 @@ export default {
     .nav_right {
       .connect {
         cursor: pointer;
-        height: 0.3rem;
-        line-height: 0.3rem;
+        height: 0.35rem;
+        line-height: 0.35rem;
         font-size: 0.12rem;
         padding: 0 0.1rem;
         // background: linear-gradient(90deg, #38697f 0%, #5d4c78 100%);
@@ -227,14 +233,14 @@ export default {
       .lang_box {
         margin-left: 0.1rem;
         .el-select {
-          width: 0.6rem;
-          height: 0.3rem;
+          width: 0.7rem;
+          height: 0.35rem;
         }
       }
       .download {
         cursor: pointer;
-        height: 0.3rem;
-        line-height: 0.3rem;
+        height: 0.35rem;
+        line-height: 0.35rem;
         font-size: 0.12rem;
         padding: 0 0.1rem;
         background: linear-gradient(90deg, #38697f 0%, #5d4c78 100%);

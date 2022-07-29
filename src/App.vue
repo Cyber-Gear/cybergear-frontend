@@ -52,13 +52,6 @@ export default {
 </script>
 
 <style lang="scss">
-#container {
-  #container_body {
-    section {
-      min-height: calc(100vh - 5rem);
-    }
-  }
-}
 @media screen and (max-width: 750px) {
   #container {
     #container_body {

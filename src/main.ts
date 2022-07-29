@@ -5,6 +5,7 @@ import store from "./store";
 import i18n from "./i18n";
 import "./styles/reset.scss";
 import "./styles/global.scss";
+import "./assets/local/iconfonts/iconfont.css";
 
 const isProd = process.env.NODE_ENV == "production";
 Vue.prototype.$isProd = isProd;
@@ -41,9 +42,9 @@ import {
   Select,
   Option,
   Input,
-
-  // Collapse,
-  // CollapseItem,
+  Collapse,
+  CollapseItem,
+  InputNumber,
   // Tooltip,
   // Backtop,
   // Menu,
@@ -59,6 +60,9 @@ Vue.use(FormItem);
 Vue.use(Select);
 Vue.use(Option);
 Vue.use(Input);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+Vue.use(InputNumber);
 
 // Vue.use(Collapse);
 // Vue.use(CollapseItem);

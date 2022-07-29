@@ -55,6 +55,10 @@ const routes: Array<RouteConfig> = [
     path: "/open-boxs",
     component: () => import("../views/nft/OpenBoxs.vue"),
   },
+  {
+    path: "/open-boxs-results",
+    component: () => import("../views/nft/OpenBoxsResults.vue"),
+  },
 
   {
     path: "/buy-box",
