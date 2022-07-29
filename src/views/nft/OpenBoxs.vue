@@ -45,6 +45,7 @@ export default {
     return {
       boxList: [],
       selectedBoxList: [],
+      isSelectAll: false,
     };
   },
   created() {
