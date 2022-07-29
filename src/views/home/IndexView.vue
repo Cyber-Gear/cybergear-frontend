@@ -137,8 +137,8 @@
         <swiper class="role-thumbs" :options="roleOptionThumbs" ref="roleThumbs">
           <swiper-slide v-for="(item, index) in roleList" :key="index" :class="{ active: roleIndex == index }">
             <span>{{ $t(item.name) }}</span>
-            <img v-if="roleIndex == index" :src="item.attrIconActive" alt="" />
-            <img v-else :src="item.attrIcon" alt="" />
+            <img v-if="roleIndex == index" :src="item.skillImgActive" alt="" />
+            <img v-else :src="item.skillImg" alt="" />
             <span>{{ index + 1 }}</span>
           </swiper-slide>
         </swiper>

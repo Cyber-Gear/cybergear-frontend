@@ -8,12 +8,14 @@ import "./styles/global.scss";
 
 const isProd = process.env.NODE_ENV == "production";
 Vue.prototype.$isProd = isProd;
-Vue.prototype.$urlNfts = "https://cdn.funtopia.io/nfts/";
-Vue.prototype.$urlArtists = "https://cdn.funtopia.io/z_artists/";
-Vue.prototype.$urlBlindBoxs = "https://cdn.funtopia.io/z_blindboxs/";
 const cdn = isProd ? "https://cdn.funtopia.io/cybergear_assets_main/" : "https://cdn.funtopia.io/cybergear_assets_test/";
-Vue.prototype.$urlImages = cdn + "images/";
+
+Vue.prototype.$urlNfts = "https://cdn.funtopia.io/nfts/";
+Vue.prototype.$urlFonts = cdn + "fonts/";
 Vue.prototype.$urlVideos = cdn + "videos/";
+Vue.prototype.$urlImages = cdn + "images/";
+Vue.prototype.$urlArtists = cdn + "artists/";
+Vue.prototype.$urlBlindBoxs = cdn + "blindboxs/";
 
 import api from "./api/api";
 Vue.prototype.$api = api;
