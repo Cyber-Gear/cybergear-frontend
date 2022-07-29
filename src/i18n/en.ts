@@ -5,7 +5,7 @@ export default {
     text3: "GAME",
     text4: "COMMUNITY",
     text5: "DAO",
-    text6: "购买盲盒",
+    text6: "BUY BOX",
     text7: "Connected",
     text8: "Disconnect",
     text9: "DOWNLOAD",
