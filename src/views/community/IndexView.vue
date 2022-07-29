@@ -3,8 +3,10 @@
     <div class="inner">
       <div class="container">
         <div class="box_title2">
-          <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <div><span>Record</span></div>
+          <div class="left">
+            <img :src="`${$urlImages}title_bg3.webp`" alt="" />
+            <div><span>Record</span></div>
+          </div>
         </div>
         <ul class="tablist">
           <li v-for="(item, index) in tablist" :key="index" @click="toRoute(item, index)" :class="{ active: tabIndex == index }">
@@ -59,7 +61,7 @@ export default {
 <style lang="scss" scoped>
 .page {
   width: 100%;
-  height: 100%;
+  min-height: calc(100vh - 5rem);
   padding: 0.8rem 0;
   background: url($urlImages + "bg17.webp") no-repeat;
   background-size: auto 100%;
@@ -75,6 +77,9 @@ export default {
 }
 .container {
   width: 20%;
+  .box_title2 {
+    width: 100%;
+  }
   .tablist {
     li {
       cursor: pointer;
