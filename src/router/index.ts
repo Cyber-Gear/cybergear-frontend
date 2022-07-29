@@ -11,18 +11,62 @@ const routes: Array<RouteConfig> = [
   { path: "/", redirect: "/home" },
   {
     path: "/home",
-    name: "Home",
     component: () => import("../views/home/IndexView.vue"),
   },
   {
+    path: "/community",
+    component: () => import("../views/community/IndexView.vue"),
+    children: [
+      { path: "/", redirect: "guild" },
+      {
+        path: "guild",
+        component: () => import("../views/community/Guild.vue"),
+      },
+      {
+        path: "invite",
+        component: () => import("../views/community/Invite.vue"),
+      },
+    ],
+  },
+  {
     path: "/nft",
-    name: "NFT",
     component: () => import("../views/nft/IndexView.vue"),
+    children: [
+      { path: "/", redirect: "my" },
+      {
+        path: "card",
+        component: () => import("../views/nft/NFTCard.vue"),
+      },
+      {
+        path: "my",
+        component: () => import("../views/nft/NFTMy.vue"),
+      },
+    ],
+  },
+  {
+    path: "/nft-giving",
+    component: () => import("../views/nft/NFTGiving.vue"),
+  },
+  {
+    path: "/card-details",
+    component: () => import("../views/nft/CardDetails.vue"),
+  },
+  {
+    path: "/open-boxs",
+    component: () => import("../views/nft/OpenBoxs.vue"),
+  },
+
+  {
+    path: "/buy-box",
+    component: () => import("../views/buybox/IndexView.vue"),
   },
 ];
 
 const router = new VueRouter({
   routes,
 });
-
+// 跳转后返回顶部
+// router.afterEach(() => {
+//   window.scrollTo(0, 0);
+// });
 export default router;

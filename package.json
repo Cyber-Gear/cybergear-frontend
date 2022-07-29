@@ -1,5 +1,5 @@
 {
-  "name": "cybergear",
+  "name": "Cybergear",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,12 @@
     "publish": "npm run build:prod && rimraf -- prod && cpr -- dist prod"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "core-js": "^3.6.5",
     "cpr": "^3.0.1",
+    "element-ui": "^2.15.8",
+    "lottie-web": "^5.9.6",
+    "react": "^18.1.0",
     "rimraf": "^3.0.2",
     "sass-resources-loader": "^2.2.5",
     "vue": "^2.6.11",
@@ -21,7 +25,8 @@
     "vue-i18n": "^8.24.5",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",
@@ -33,6 +38,7 @@
     "@vue/cli-plugin-vuex": "~4.5.7",
     "@vue/cli-service": "~4.5.7",
     "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "6.0.1",

@@ -10,26 +10,24 @@
           </video>
         </div>
         <div class="contact">
-          <div class="center">
-            <img @click="openVideo" class="logo" :src="`${$urlImages}logo2.webp`" alt="" />
-            <span>{{ $t("message.home.text4") }}</span>
-            <div class="right">
-              <img :src="`${$urlImages}contact1.webp`" alt="" />
-              <img :src="`${$urlImages}contact2.webp`" alt="" />
-              <img :src="`${$urlImages}contact3.webp`" alt="" />
-              <img :src="`${$urlImages}contact4.webp`" alt="" />
+          <div>
+            <img @click="isShowVideo = true" class="logo" :src="`${$urlImages}logo2.webp`" alt="" />
+            <span>{{ $t("home.text4") }}</span>
+            <div class="linklist">
+              <a v-for="(item, index) in linkList" :key="index">
+                <img :src="item.image" alt="" />
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="center_video" v-if="isShowVideo">
-        <div>
-          <span @click="closeVideo">×</span>
+      <el-dialog center top="0" :visible.sync="isShowVideo" :modal-append-to-body="false" :destroy-on-close="true">
+        <div class="logo_video">
           <video loop autoplay muted controls>
             <source :src="`${$urlVideos}video1.mp4`" type="video/mp4" />
           </video>
         </div>
-      </div>
+      </el-dialog>
     </div>
     <div class="box2">
       <div v-for="(item, index) in btnList" :key="index">
@@ -37,24 +35,24 @@
         <p>{{ $t(item.text) }}</p>
       </div>
     </div>
+    <!-- Introduction -->
     <div class="box3">
-      <!-- <img class="bg12" :src=`${$urlImages}bg12.webp` alt="" /> -->
       <div class="box_content">
         <img class="border2" :src="`${$urlImages}border2.webp`" alt="" />
         <img class="border3" :src="`${$urlImages}border3.webp`" alt="" />
-        <img class="x" :src="`${$urlImages}x.webp`" alt="" />
+        <img class="x" :src="`${$urlImages}angle5.webp`" alt="" />
         <div class="left">
           <div class="top">
             <div class="box_title">
-              <span>{{ $t("message.home.text5") }}</span>
+              <span>{{ $t("home.text5") }}</span>
             </div>
           </div>
           <div class="bottom">
             <img :src="`${$urlImages}angle.webp`" alt="" />
             <div>
-              <p>{{ $t("message.home.text6") }}</p>
-              <p>{{ $t("message.home.text7") }}</p>
-              <p>{{ $t("message.home.text8") }}</p>
+              <p>{{ $t("home.text6") }}</p>
+              <p>{{ $t("home.text7") }}</p>
+              <p>{{ $t("home.text8") }}</p>
             </div>
           </div>
         </div>
@@ -65,66 +63,95 @@
         </div>
       </div>
     </div>
+    <!-- Core Features -->
     <div class="box4">
       <div class="box_title">
-        <span>{{ $t("message.home.text9") }}</span>
+        <span>{{ $t("home.text9") }}</span>
       </div>
       <ul class="box_content">
-        <li v-for="(item, index) in coreFeaturesList" :key="index">
-          <div>{{ $t(item.text1) }}</div>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="figure" :src="`${this.$urlImages}coreFeatures_figure1.webp`" alt="" />
           <div>
-            <img :src="`${$urlImages}angle2.webp`" alt="" />
-            <p>{{ $t(item.text2) }}</p>
+            <p>{{ $t("home.list1[0].text1") }}</p>
+            <pre>{{ $t("home.list1[0].text2") }}</pre>
           </div>
-          <img v-if="item.image" :src="item.image" alt="" />
+        </li>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="figure" :src="`${this.$urlImages}coreFeatures_figure2.webp`" alt="" />
+          <img class="bg" :src="`${this.$urlImages}bg18.webp`" alt="" />
+          <div>
+            <p>{{ $t("home.list1[1].text1") }}</p>
+            <pre>{{ $t("home.list1[1].text2") }}</pre>
+          </div>
+        </li>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="bg" :src="`${this.$urlImages}bg18.webp`" alt="" />
+          <div>
+            <p>{{ $t("home.list1[3].text1") }}</p>
+            <pre>{{ $t("home.list1[3].text2") }}</pre>
+          </div>
+        </li>
+        <li>
+          <img class="angle" :src="`${$urlImages}angle2.webp`" alt="" />
+          <img class="figure" :src="`${this.$urlImages}coreFeatures_figure3.webp`" alt="" />
+          <div>
+            <p>{{ $t("home.list1[2].text1") }}</p>
+            <pre>{{ $t("home.list1[2].text2") }}</pre>
+          </div>
         </li>
       </ul>
     </div>
+    <!-- Role -->
     <div class="box5">
       <div class="box_title">
-        <span>{{ $t("message.home.text10") }}</span>
+        <span>{{ $t("home.text10") }}</span>
       </div>
       <div class="box_content">
-        <div class="left_content">
-          <div class="characterClasses1" :class="showRoleItem ? 'show' : 'hidden'">
-            <img class="bg" :src="roleItem.image" alt="" />
-            <div class="left">
+        <swiper class="role" :options="roleOptionTop" ref="roleTop">
+          <swiper-slide v-for="(item, index) in roleList" :key="index">
+            <img class="bg" :src="item.card2" alt="" />
+            <div class="leftbox">
               <div class="top">
-                <div>{{ $t(roleItem.name) }}</div>
+                <span>{{ $t(item.name) }}</span>
                 <div>
-                  <div>{{ $t(roleItem.name) }}</div>
-                  <img :src="roleItem.level" alt="" />
+                  <p>{{ $t(item.name) }}</p>
+                  <img v-show="item.rarity == 'MR'" :src="`${$urlArtists}ShikaStudio/z-level-MR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'SR'" :src="`${$urlArtists}ShikaStudio/z-level-SR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'UR'" :src="`${$urlArtists}ShikaStudio/z-level-UR2.webp`" alt="" />
+                  <img v-show="item.rarity == 'R'" :src="`${$urlArtists}ShikaStudio/z-level-R2.webp`" alt="" />
                 </div>
               </div>
               <div class="bottom">
-                <div>
-                  <img class="angle" :src="`${$urlImages}angle.webp`" alt="" />
-                  <div>{{ $t(roleItem.description) }}</div>
-                </div>
-                <img class="bottom_img" :src="`${$urlImages}role_bg1.webp`" alt="" />
+                <img class="angle" :src="`${$urlImages}angle.webp`" alt="" />
+                <div>{{ $t(item.nftdes) }}</div>
               </div>
             </div>
-            <div class="right"><img :src="roleItem.image" alt="" /></div>
-          </div>
-        </div>
-        <div class="right_content">
-          <div class="characterClasses2">
-            <div class="item" v-for="(item, index) in roleList" :key="index" :class="{ active: roleIndex == index }" @click="switchClasses(index)">
-              <span>{{ $t(item.name) }}</span>
-              <img :src="roleIndex == index ? item.iconActive : item.icon" alt="" />
-              <span>{{ index + 1 > 9 ? index + 1 : "0" + (index + 1) }}</span>
+            <div class="rightbox">
+              <img :src="item.card3" alt="" />
             </div>
-          </div>
-        </div>
+          </swiper-slide>
+        </swiper>
+        <swiper class="role-thumbs" :options="roleOptionThumbs" ref="roleThumbs">
+          <swiper-slide v-for="(item, index) in roleList" :key="index" :class="{ active: roleIndex == index }">
+            <span>{{ $t(item.name) }}</span>
+            <img v-if="roleIndex == index" :src="item.skillImgActive" alt="" />
+            <img v-else :src="item.skillImg" alt="" />
+            <span>{{ index + 1 }}</span>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
+    <!-- Game Mode -->
     <div class="box6">
       <div class="box_title">
-        <span>{{ $t("message.home.text11") }}</span>
+        <span>{{ $t("home.text11") }}</span>
       </div>
-      <div class="box_title2">
-        <div>{{ $t("message.home.text12") }}</div>
-        <div>{{ $t("message.home.text13") }}</div>
+      <div class="row">
+        <div>{{ $t("home.text12") }}</div>
+        <div>{{ $t("home.text13") }}</div>
       </div>
       <div class="box_bg">
         <div class="box_content">
@@ -144,9 +171,10 @@
         </div>
       </div>
     </div>
+    <!-- Play To Earn -->
     <div class="box7">
       <div class="box_title">
-        <span>{{ $t("message.home.text14") }}</span>
+        <span>{{ $t("home.text14") }}</span>
       </div>
       <div class="box_content">
         <video loop muted controls :poster="`${$urlImages}video_poster1.webp`">
@@ -154,9 +182,10 @@
         </video>
       </div>
     </div>
+    <!-- Roadmap -->
     <div class="box8">
       <div class="box_title">
-        <span>{{ $t("message.home.text15") }}</span>
+        <span>{{ $t("home.text15") }}</span>
       </div>
       <div class="box_content">
         <div class="top">
@@ -182,7 +211,7 @@
     </div>
     <!-- <div class="box9">
       <div class="box_title">
-        <span>{{ $t("message.home.text16") }}</span>
+        <span>{{ $t("home.text16") }}</span>
       </div>
       <ul class="box_content">
         <li v-for="(image, index) in collaboratorsList" :key="index">
@@ -194,190 +223,35 @@
 </template>
 
 <script>
+import { shikastudio } from "@/mock/nftworks";
 export default {
+  name: "Home",
   data() {
     return {
       isShowVideo: false,
       btnList: [
-        { image: `${this.$urlImages}btn_icon1.webp`, text: "message.home.text1" },
-        { image: `${this.$urlImages}btn_icon2.webp`, text: "message.home.text2" },
-        { image: `${this.$urlImages}btn_icon3.webp`, text: "message.home.text3" },
+        { image: `${this.$urlImages}btn_icon1.webp`, text: "home.text1" },
+        { image: `${this.$urlImages}btn_icon2.webp`, text: "home.text2" },
+        { image: `${this.$urlImages}btn_icon3.webp`, text: "home.text3" },
       ],
-      coreFeaturesList: [
-        {
-          text1: "message.home.list1[0].text1",
-          text2: "message.home.list1[0].text2",
-          image: `${this.$urlImages}coreFeatures_figure1.webp`,
-        },
-        { text1: "message.home.list1[1].text1", text2: "message.home.list1[1].text2", image: "" },
-        {
-          text1: "message.home.list1[2].text1",
-          text2: "message.home.list1[2].text2",
-          image: `${this.$urlImages}coreFeatures_figure2.webp`,
-        },
-        {
-          text1: "message.home.list1[3].text1",
-          text2: "message.home.list1[3].text2",
-          image: `${this.$urlImages}coreFeatures_figure2.webp`,
-        },
-      ],
-      roleList: [
-        {
-          oldName: "K",
-          name: "message.home.list2[0].name",
-          description: "message.home.list2[0].des",
-          icon: `${this.$urlImages}professional1.webp`,
-          iconActive: `${this.$urlImages}professional_active1.webp`,
-          image: `${this.$urlImages}role_figure1.webp`,
-          level: `${this.$urlImages}role_level_mr.webp`,
-        },
-        {
-          oldName: "锦云",
-          name: "message.home.list2[1].name",
-          description: "message.home.list2[1].des",
-          icon: `${this.$urlImages}professional2.webp`,
-          iconActive: `${this.$urlImages}professional_active2.webp`,
-          image: `${this.$urlImages}role_figure2.webp`,
-          level: `${this.$urlImages}role_level_r.webp`,
-        },
-        {
-          oldName: "托娅",
-          name: "message.home.list2[2].name",
-          description: "message.home.list2[2].des",
-          icon: `${this.$urlImages}professional2.webp`,
-          iconActive: `${this.$urlImages}professional_active2.webp`,
-          image: `${this.$urlImages}role_figure3.webp`,
-          level: `${this.$urlImages}role_level_mr.webp`,
-        },
-        {
-          oldName: "沐风",
-          name: "message.home.list2[3].name",
-          description: "message.home.list2[3].des",
-          icon: `${this.$urlImages}professional5.webp`,
-          iconActive: `${this.$urlImages}professional_active5.webp`,
-          image: `${this.$urlImages}role_figure4.webp`,
-          level: `${this.$urlImages}role_level_sr.webp`,
-        },
-        {
-          oldName: "玲夏",
-          name: "message.home.list2[4].name",
-          description: "message.home.list2[4].des",
-          icon: `${this.$urlImages}professional4.webp`,
-          iconActive: `${this.$urlImages}professional_active4.webp`,
-          image: `${this.$urlImages}role_figure5.webp`,
-          level: `${this.$urlImages}role_level_sr.webp`,
-        },
-
-        {
-          oldName: "珞珈",
-          name: "message.home.list2[5].name",
-          description: "message.home.list2[5].des",
-          icon: `${this.$urlImages}professional4.webp`,
-          iconActive: `${this.$urlImages}professional_active4.webp`,
-          image: `${this.$urlImages}role_figure6.webp`,
-          level: `${this.$urlImages}role_level_mr.webp`,
-        },
-        {
-          oldName: "羽飞",
-          name: "message.home.list2[6].name",
-          description: "message.home.list2[6].des",
-          icon: `${this.$urlImages}professional1.webp`,
-          iconActive: `${this.$urlImages}professional_active1.webp`,
-          image: `${this.$urlImages}role_figure7.webp`,
-          level: `${this.$urlImages}role_level_r.webp`,
-        },
-        {
-          oldName: "魏子鱼",
-          name: "message.home.list2[7].name",
-          description: "message.home.list2[7].des",
-          icon: `${this.$urlImages}professional3.webp`,
-          iconActive: `${this.$urlImages}professional_active3.webp`,
-          image: `${this.$urlImages}role_figure8.webp`,
-          level: `${this.$urlImages}role_level_r.webp`,
-        },
-        {
-          oldName: "紫婧",
-          name: "message.home.list2[8].name",
-          description: "message.home.list2[8].des",
-          icon: `${this.$urlImages}professional6.webp`,
-          iconActive: `${this.$urlImages}professional_active6.webp`,
-          image: `${this.$urlImages}role_figure9.webp`,
-          level: `${this.$urlImages}role_level_mr.webp`,
-        },
-        {
-          oldName: "堇源",
-          name: "message.home.list2[9].name",
-          description: "message.home.list2[9].des",
-          icon: `${this.$urlImages}professional4.webp`,
-          iconActive: `${this.$urlImages}professional_active4.webp`,
-          image: `${this.$urlImages}role_figure10.webp`,
-          level: `${this.$urlImages}role_level_ur.webp`,
-        },
-        {
-          oldName: "君弘",
-          name: "message.home.list2[10].name",
-          description: "message.home.list2[10].des",
-          icon: `${this.$urlImages}professional3.webp`,
-          iconActive: `${this.$urlImages}professional_active3.webp`,
-          image: `${this.$urlImages}role_figure11.webp`,
-          level: `${this.$urlImages}role_level_sr.webp`,
-        },
-        {
-          oldName: "赵玥",
-          name: "message.home.list2[11].name",
-          description: "message.home.list2[11].des",
-          icon: `${this.$urlImages}professional1.webp`,
-          iconActive: `${this.$urlImages}professional_active1.webp`,
-          image: `${this.$urlImages}role_figure12.webp`,
-          level: `${this.$urlImages}role_level_ur.webp`,
-        },
-        {
-          oldName: "凤临",
-          name: "message.home.list2[12].name",
-          description: "message.home.list2[12].des",
-          icon: `${this.$urlImages}professional3.webp`,
-          iconActive: `${this.$urlImages}professional_active3.webp`,
-          image: `${this.$urlImages}role_figure13.webp`,
-          level: `${this.$urlImages}role_level_r.webp`,
-        },
-        {
-          oldName: "樱岚",
-          name: "message.home.list2[13].name",
-          description: "message.home.list2[13].des",
-          icon: `${this.$urlImages}professional2.webp`,
-          iconActive: `${this.$urlImages}professional_active2.webp`,
-          image: `${this.$urlImages}role_figure14.webp`,
-          level: `${this.$urlImages}role_level_ur.webp`,
-        },
-        {
-          oldName: "Null",
-          name: "message.home.list2[14].name",
-          description: "message.home.list2[14].des",
-          icon: `${this.$urlImages}professional5.webp`,
-          iconActive: `${this.$urlImages}professional_active5.webp`,
-          image: `${this.$urlImages}role_figure15.webp`,
-          level: `${this.$urlImages}role_level_ur.webp`,
-        },
-      ],
-      gameModeList: [
-        { text: "message.home.list3[0]", image: `${this.$urlImages}gamemode_pve.webp` },
-        { text: "message.home.list3[1]", image: `${this.$urlImages}gamemode_pve2.webp` },
-        { text: "message.home.list3[2]", image: `${this.$urlImages}gamemode_pvp.webp` },
-        { text: "message.home.list3[3]", image: `${this.$urlImages}gamemode_fighting.webp` },
-        { text: "message.home.list3[4]", image: `${this.$urlImages}gamemode_squad.webp` },
+      linkList: [
+        { image: this.$urlImages + "contact_Gitbook.webp", href: "" },
+        { image: this.$urlImages + "contact_Twitter.webp", href: "" },
+        { image: this.$urlImages + "contact_Discord.webp", href: "" },
+        { image: this.$urlImages + "contact_Medium.webp", href: "" },
       ],
       roadmapList1: [
-        { time: "message.home.list4[1].time", text: "message.home.list4[1].text" },
-        { time: "message.home.list4[3].time", text: "message.home.list4[3].text" },
-        { time: "message.home.list4[5].time", text: "message.home.list4[5].text" },
-        { time: "message.home.list4[7].time", text: "message.home.list4[7].text" },
+        { time: "home.list4[1].time", text: "home.list4[1].text" },
+        { time: "home.list4[3].time", text: "home.list4[3].text" },
+        { time: "home.list4[5].time", text: "home.list4[5].text" },
+        { time: "home.list4[7].time", text: "home.list4[7].text" },
       ],
       roadmapList2: [
-        { time: "message.home.list4[0].time", text: "message.home.list4[0].text" },
-        { time: "message.home.list4[2].time", text: "message.home.list4[2].text" },
-        { time: "message.home.list4[4].time", text: "message.home.list4[4].text" },
-        { time: "message.home.list4[6].time", text: "message.home.list4[6].text" },
-        { time: "message.home.list4[8].time", text: "message.home.list4[8].text" },
+        { time: "home.list4[0].time", text: "home.list4[0].text" },
+        { time: "home.list4[2].time", text: "home.list4[2].text" },
+        { time: "home.list4[4].time", text: "home.list4[4].text" },
+        { time: "home.list4[6].time", text: "home.list4[6].text" },
+        { time: "home.list4[8].time", text: "home.list4[8].text" },
       ],
       collaboratorsList: [
         `${this.$urlImages}collaborators1.webp`,
@@ -398,9 +272,44 @@ export default {
         `${this.$urlImages}collaborators16.webp`,
         `${this.$urlImages}collaborators17.webp`,
       ],
+      roleList: shikastudio.works,
       roleIndex: 0,
-      showRoleItem: false,
-      roleItem: null,
+      roleOptionTop: {
+        // effect: "fade",
+        // fadeEffect: { crossFade: true },
+        direction: "vertical",
+        observer: true,
+        observeParents: true,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        watchSlidesVisibility: true,
+        on: {
+          slideChange: () => {
+            this.roleIndex = this.$refs.roleTop.swiper.activeIndex;
+          },
+        },
+      },
+      roleOptionThumbs: {
+        direction: "vertical",
+        slidesPerView: 8,
+        observer: true,
+        observeParents: true,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        watchSlidesVisibility: true,
+        on: {
+          tap: () => {
+            this.roleIndex = this.$refs.roleThumbs.swiper.clickedIndex;
+          },
+        },
+      },
+      gameModeList: [
+        { text: "home.list3[0]", image: `${this.$urlImages}gamemode_pve.webp` },
+        { text: "home.list3[1]", image: `${this.$urlImages}gamemode_pve2.webp` },
+        { text: "home.list3[2]", image: `${this.$urlImages}gamemode_pvp.webp` },
+        { text: "home.list3[3]", image: `${this.$urlImages}gamemode_fighting.webp` },
+        { text: "home.list3[4]", image: `${this.$urlImages}gamemode_squad.webp` },
+      ],
       gameModeIndex: 0,
       gameModeOptionTop: {
         observer: true,
@@ -436,37 +345,28 @@ export default {
     };
   },
   watch: {
+    roleIndex(newVal) {
+      this.$refs.roleTop.swiper.slideTo(newVal);
+      this.$refs.roleThumbs.swiper.slideTo(newVal);
+    },
     gameModeIndex(newVal) {
       this.$refs.gameModeTop.swiper.slideTo(newVal);
       this.$refs.gameModeThumbs.swiper.slideTo(newVal);
     },
   },
-  created() {
-    this.roleItem = this.roleList[this.roleIndex];
-    this.showRoleItem = true;
+  mounted() {
+    this.$refs.roleTop.swiper.slideTo(this.roleIndex);
+    this.$refs.roleThumbs.swiper.slideTo(this.roleIndex);
+    this.$refs.gameModeTop.swiper.slideTo(this.gameModeIndex);
+    this.$refs.gameModeThumbs.swiper.slideTo(this.gameModeIndex);
   },
-  methods: {
-    openVideo() {
-      this.isShowVideo = true;
-    },
-    closeVideo() {
-      this.isShowVideo = false;
-    },
-    switchClasses(index) {
-      if (this.roleIndex == index) return;
-      this.roleIndex = index;
-      this.showRoleItem = false;
-      setTimeout(() => {
-        this.roleItem = this.roleList[this.roleIndex];
-        this.showRoleItem = true;
-      }, 500);
-    },
-  },
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
 .home {
   width: 100%;
+  height: 100%;
   position: relative;
 }
 .absolute1 {
@@ -503,7 +403,7 @@ export default {
       justify-content: center;
       position: absolute;
       bottom: 0.5rem;
-      .center {
+      > div {
         text-align: center;
         position: relative;
         .logo {
@@ -512,7 +412,7 @@ export default {
           height: auto;
           transition: all 0.2s;
           &:hover {
-            transform: scale(0.9);
+            transform: scale(0.95);
           }
         }
         span {
@@ -524,47 +424,26 @@ export default {
           right: 0;
           margin: auto;
         }
-      }
-      .right {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        position: absolute;
-        right: -70%;
-        top: 10%;
-        img {
-          width: 0.5rem;
-          height: 0.5rem;
-          margin: 0 0.05rem;
-          cursor: pointer;
+        .linklist {
+          display: flex;
+          position: absolute;
+          right: -70%;
+          top: 10%;
+          a {
+            width: 0.5rem;
+            height: 0.5rem;
+            margin: 0 0.05rem;
+            background: url($urlImages + "contact_border.webp") no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 55%;
+              height: auto;
+            }
+          }
         }
-      }
-    }
-  }
-  .center_video {
-    width: 60vw;
-    height: calc(60vw * 0.5625);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 99;
-    > div {
-      position: relative;
-      span {
-        font-size: 80px;
-        color: #00daff;
-        font-weight: bold;
-        position: absolute;
-        right: -50px;
-        top: -80px;
-        cursor: pointer;
-      }
-      video {
-        width: 100%;
-        height: 100%;
       }
     }
   }
@@ -591,11 +470,10 @@ export default {
   }
 }
 .box3 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 11.5rem;
+  margin: 0.5rem auto;
   background: url($urlImages + "bg2.webp") no-repeat;
-  background-size: 20% auto;
+  background-size: 25% auto;
   background-position: top left;
   position: relative;
   padding-top: 1.2rem;
@@ -636,23 +514,23 @@ export default {
       height: 5rem;
       .top {
         width: 100%;
-        height: 40%;
+        height: 38%;
+        margin-bottom: 4%;
         display: flex;
         align-items: flex-end;
       }
       .bottom {
         width: 100%;
-        height: 60%;
+        height: 58%;
         display: flex;
         img {
           width: auto;
-          height: 0.3rem;
-          margin-top: 0.1rem;
+          height: 0.2rem;
           transform: rotate(-90deg);
         }
         div {
           font-size: 0.12rem;
-          line-height: 0.36rem;
+          line-height: 0.2rem;
           font-weight: 400;
         }
       }
@@ -672,284 +550,190 @@ export default {
   }
 }
 .box4 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 11.5rem;
+  margin: 0.5rem auto;
   background: url($urlImages + "bg5.webp") no-repeat;
   background-size: 100% 100%;
   .box_content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
     li {
-      width: 2rem;
-      height: 5rem;
-      background: url($urlImages + "bg6.webp") no-repeat;
-      background-size: 100% auto;
-      padding: 0 0.1rem;
+      display: flex;
+      padding: 0.4rem 0.2rem;
+      margin: 0.2rem;
       position: relative;
-      &:nth-child(1) {
-        margin-top: 5%;
-        > img {
-          top: -0.3rem;
-          right: 0;
-        }
+      .angle {
+        width: auto;
+        height: 0.25rem;
+        margin-right: 0.1rem;
       }
-      &:nth-child(2) {
-        margin-top: 12%;
+      .figure {
+        width: auto;
+        height: 0.88rem;
+        position: absolute;
+        top: -0.88rem;
+        right: 0.1rem;
       }
-      &:nth-child(3) {
-        margin-top: 0%;
-        > img {
-          transform: rotate(-90deg);
-          left: -0.8rem;
-          top: 1rem;
-        }
-      }
-      &:nth-child(4) {
-        margin-top: 8%;
-        > img {
-          transform: rotate(90deg);
-          right: -0.7rem;
-          top: 2rem;
-        }
-      }
-      > img {
-        width: 0.7rem;
+      .bg {
+        width: 1.2rem;
         height: auto;
         position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
       }
-      div {
-        &:nth-child(1) {
-          width: 40%;
-          height: 18%;
-          margin: 0 auto;
-          padding-right: 8%;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 0.14rem;
+      > div {
+        p {
+          font-size: 0.18rem;
           font-weight: 600;
-          background: linear-gradient(180deg, #ffffff 0%, #7ee9f4 98%, #72e7f3 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          line-height: 0.25rem;
+          margin-bottom: 0.2rem;
         }
-        &:nth-child(2) {
-          display: flex;
-          padding-top: 0.6rem;
-          img {
-            width: auto;
-            height: 0.3rem;
-            margin: 0 0.05rem;
-          }
-          p {
-            width: 80%;
-            font-size: 0.12rem;
-            font-weight: 400;
-          }
+        pre {
+          font-size: 0.12rem;
+          font-weight: 400;
+          line-height: 0.17rem;
         }
+      }
+      &:nth-child(1),
+      &:nth-child(4) {
+        width: 5rem;
+        height: 2.5rem;
+        background: linear-gradient(180deg, #5e6d9a 0%, rgba(79, 93, 129, 0.92) 19%, rgba(15, 15, 22, 0.57) 100%);
+        border-radius: 0.1rem;
+        border: 0.01rem solid #656975;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 4rem;
+        height: 2.5rem;
+        background: linear-gradient(134deg, #258696 0%, #41627d 24%, #70507b 64%, #5d4c78 100%);
+        border-radius: 0.1rem;
       }
     }
   }
 }
 .box5 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 11.5rem;
+  margin: 0.5rem auto;
   .box_content {
     width: 100%;
     height: 6rem;
     display: flex;
     justify-content: space-between;
-    .left_content {
-      width: 80%;
-      height: 100%;
-    }
-    .right_content {
-      width: 20%;
-      height: 100%;
-    }
   }
-  .characterClasses1 {
-    width: 100%;
+  .role {
+    width: 80%;
     height: 100%;
-    display: flex;
-    background-repeat: no-repeat;
-    background-size: auto 90%;
-    background-position: left top;
-    transition: all 0.5s;
-    position: relative;
-    .bg {
-      width: auto;
-      height: 90%;
-      opacity: 0.3;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: rotateY(180deg);
-    }
-    &.show {
-      opacity: 1;
-      .left {
-        opacity: 1;
-        .top {
-          left: 0%;
-        }
-        .bottom {
-          bottom: -2%;
-          opacity: 1;
-        }
-      }
-      .right {
-        img {
-          right: 10%;
-          opacity: 1;
-        }
-      }
-    }
-    &.hidden {
-      opacity: 0;
-      .left {
-        opacity: 0;
-        .top {
-          left: -20%;
-        }
-        .bottom {
-          bottom: -20%;
-          opacity: 0;
-        }
-      }
-      .right {
-        img {
-          right: -20%;
-          opacity: 0;
-        }
-      }
-    }
-    .left {
-      width: 40%;
-      background: url($urlImages + "bg9.webp") no-repeat;
-      background-size: 100% 100%;
-      background-position: right center;
-      margin-top: 20%;
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
       position: relative;
-      transition: all 0.5s;
-      .top {
-        width: 88%;
-        height: 44%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        transition: all 0.5s;
+      display: flex;
+      .bg {
+        max-width: 6rem;
+        max-height: 5rem;
         position: absolute;
-        top: 0%;
-        > div {
-          position: relative;
-          &:nth-child(1) {
-            font-size: 0.45rem;
-            font-weight: bold;
-            color: #555555;
-            right: 10%;
-          }
-          &:nth-child(2) {
-            font-size: 0.2rem;
+        top: 0;
+        left: 0;
+        transform: rotateY(180deg);
+      }
+      .leftbox {
+        width: 50%;
+        background: url($urlImages + "bg9.webp") no-repeat;
+        background-size: 100% 100%;
+        background-position: right center;
+        margin-top: 10%;
+        .top {
+          width: 88%;
+          height: 42%;
+          margin-bottom: 3%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          > span {
+            font-size: 0.5rem;
             font-weight: 600;
-            color: #22bbff;
-            right: 0;
+            color: #555555;
+            margin-right: 0.3rem;
+          }
+          > div {
+            text-align: right;
+            p {
+              font-size: 0.2rem;
+              font-weight: 600;
+              color: #22bbff;
+            }
             img {
-              width: auto;
-              height: 0.45rem;
+              width: 0.45rem;
+              height: auto;
             }
           }
         }
-      }
-      .bottom {
-        width: 88%;
-        height: calc(100% - 44%);
-        transition: all 0.5s;
-        position: absolute;
-        > div {
+        .bottom {
+          width: 88%;
+          height: 55%;
           display: flex;
-          font-size: 0.12rem;
-          font-weight: 600;
-        }
-        .angle {
-          width: auto;
-          height: 0.3rem;
-          transform: rotate(-90deg);
-        }
-        .bottom_img {
-          width: 100%;
-          height: auto;
+          background: url($urlArtists + "ShikaStudio/z-bg.webp") no-repeat;
+          background-size: 100% auto;
+          background-position: left bottom;
+          .angle {
+            width: auto;
+            height: 0.2rem;
+            transform: rotate(-90deg);
+          }
+          div {
+            font-size: 0.15rem;
+            font-weight: 600;
+          }
         }
       }
-    }
-    .right {
-      width: 60%;
-      height: 100%;
-      position: relative;
-      img {
-        width: auto;
-        height: 90%;
-        transition: all 0.5s;
-        position: absolute;
+      .rightbox {
+        width: 50%;
+        img {
+          width: auto;
+          height: 100%;
+        }
       }
     }
   }
-  .characterClasses2 {
-    width: 100%;
+  .role-thumbs {
+    width: 20%;
     height: 100%;
-    overflow-y: auto;
-    padding: 0.1rem 0;
-    &::-webkit-scrollbar {
-      width: 0;
-    }
-    .item {
-      cursor: pointer;
-      padding: 0.1rem 0.05rem;
+    .swiper-slide {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: right;
-      transition: all 0.5s;
       span {
-        font-size: 0.25rem;
+        font-size: 0.2rem;
         font-weight: 400;
-        transition: all 0.5s;
       }
       img {
         width: 0.4rem;
         height: 0.4rem;
         margin: 0 0.2rem;
-        transition: all 0.5s;
       }
       &.active {
-        padding: 0.1rem 0.3rem;
+        padding: 0.1rem 0.2rem;
         span {
           color: #22bbff;
         }
         img {
-          transform: scale(1.5);
+          transform: scale(1.2);
         }
-      }
-      &:hover {
-        padding: 0.1rem 0.3rem;
       }
     }
   }
-  .character_animation-enter,
-  .character_animation-leave-to {
-    opacity: 0.5;
-  }
-  .character_animation-enter-to,
-  .character_animation-leave {
-    opacity: 1;
-  }
 }
 .box6 {
-  width: 100%;
-  margin-bottom: 0.5rem;
-  padding: 0 0.8rem;
-  .box_title2 {
+  width: 11.5rem;
+  margin: 0.5rem auto;
+  .row {
     width: 10rem;
     height: 1.5rem;
     margin: 0.5rem auto;
@@ -1041,26 +825,23 @@ export default {
   }
 }
 .box7 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 11.5rem;
+  margin: 0.5rem auto;
   .box_content {
     width: fit-content;
     padding: 0.25rem 0.2rem 0.4rem 0.25rem;
-    margin: 0 auto;
+    margin: 0.2rem auto;
     background: url($urlImages + "bg11.webp") no-repeat;
     background-size: 100% 100%;
-    position: relative;
     video {
-      width: 70vw;
-      height: calc(70vw * 0.5625);
+      width: 50vw;
+      height: calc(50vw * 0.5625);
     }
   }
 }
 .box8 {
-  width: 100%;
-  padding: 0 0.8rem;
-  margin-bottom: 0.5rem;
+  width: 11.5rem;
+  margin: 0.5rem auto;
   position: relative;
   background: url($urlImages + "bg8.webp") no-repeat;
   background-size: auto 100%;
@@ -1076,6 +857,7 @@ export default {
     }
     .top,
     .bottom {
+      height: 2rem;
       display: flex;
       > div {
         text-align: center;
@@ -1097,22 +879,22 @@ export default {
     }
     .top {
       > div {
-        width: 1.9rem;
+        width: 1.8rem;
         height: 2rem;
         background: url($urlImages + "roadmap_bg2.webp") no-repeat;
         background-size: 100% 100%;
-        position: relative;
+        position: absolute;
         &:nth-child(1) {
-          left: 2.56rem;
+          left: 20.25%;
         }
         &:nth-child(2) {
-          left: 2.84rem;
+          left: 37.3%;
         }
         &:nth-child(3) {
-          left: 3.12rem;
+          left: 54.4%;
         }
         &:nth-child(4) {
-          left: 3.36rem;
+          left: 71.2%;
         }
       }
     }
@@ -1121,25 +903,25 @@ export default {
       background-size: auto 100%;
       background-position: center;
       > div {
-        width: 1.6rem;
+        width: 1.5rem;
         height: 1.8rem;
         background: url($urlImages + "roadmap_bg1.webp") no-repeat;
         background-size: 100% 100%;
-        position: relative;
+        position: absolute;
         &:nth-child(1) {
-          left: 1.6rem;
+          left: 12.7%;
         }
         &:nth-child(2) {
-          left: 2.19rem;
+          left: 29.8%;
         }
         &:nth-child(3) {
-          left: 2.8rem;
+          left: 47.1%;
         }
         &:nth-child(4) {
-          left: 3.4rem;
+          left: 64.6%;
         }
         &:nth-child(5) {
-          left: 4.05rem;
+          left: 81.9%;
         }
       }
     }
