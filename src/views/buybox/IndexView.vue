@@ -2,19 +2,21 @@
   <div class="page">
     <div class="inner">
       <div class="box_title2">
-        <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-        <div>
-          <span>Claim Mystery Box</span>
-          <div class="tips">
-            <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
-            <span>购买盲盒可获取稀有碎片、CT</span>
-            <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
+        <div class="left">
+          <img :src="`${$urlImages}title_bg3.webp`" alt="" />
+          <div>
+            <span>Claim Mystery Box</span>
+            <div class="tips">
+              <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
+              <span>购买盲盒可获取稀有碎片、CT</span>
+              <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
+            </div>
           </div>
         </div>
       </div>
       <div class="box">
         <div class="box1">
-          <img :src="`${$urlImages}box.webp`" alt="" />
+          <LottieAnimation></LottieAnimation>
         </div>
         <ul class="box2">
           <li>
@@ -28,7 +30,7 @@
           <li>
             <div>Amount</div>
             <div>
-              <el-input v-model="amount" type="number" placeholder="Enter the amount" clearable></el-input>
+              <el-input-number v-model="amount" @change="handleChange" :min="1" :max="999999"></el-input-number>
             </div>
           </li>
           <li>
@@ -45,10 +47,17 @@
 </template>
 
 <script>
+import LottieAnimation from "@/components/LottieAnimation.vue";
 export default {
   name: "BuyMysteryBox",
+  components: { LottieAnimation },
   data() {
     return { amount: null };
+  },
+  methods: {
+    handleChange(value) {
+      // console.log(value);
+    },
   },
 };
 </script>
@@ -56,7 +65,7 @@ export default {
 <style lang="scss" scoped>
 .page {
   width: 100%;
-  height: 100%;
+  min-height: calc(100vh - 5rem);
   padding: 0.8rem 0;
   background: url($urlImages + "bg13.webp") no-repeat;
   background-size: 100% auto;
@@ -66,9 +75,6 @@ export default {
     margin: 0 auto;
     padding-top: 0.5rem;
   }
-}
-.box_title2 {
-  width: fit-content;
 }
 .box {
   width: 100%;
@@ -84,29 +90,30 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    img {
-      width: 3rem;
-      height: auto;
-    }
   }
   .box2 {
     width: 50%;
     background: rgba(0, 0, 0, 0.45);
     border-radius: 0.1rem;
-    padding: 0 0.2rem;
+    padding: 0.2rem;
     li {
+      width: 100%;
+      height: 1rem;
+      line-height: 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 0.25rem;
       font-weight: 400;
-      margin: 0.5rem 0;
-      .el-input {
+      .el-input-number {
         width: 3.2rem;
+        height: 0.5rem;
       }
       .el-button {
         width: 100%;
         height: 0.5rem;
+        font-size: 0.2rem;
+        font-weight: 400;
       }
     }
   }
