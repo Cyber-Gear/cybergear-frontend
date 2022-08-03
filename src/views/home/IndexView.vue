@@ -885,16 +885,16 @@ export default {
         background-size: 100% 100%;
         position: absolute;
         &:nth-child(1) {
-          left: 20.25%;
+          left: 19.65%;
         }
         &:nth-child(2) {
-          left: 37.3%;
+          left: 36.8%;
         }
         &:nth-child(3) {
-          left: 54.4%;
+          left: 53.8%;
         }
         &:nth-child(4) {
-          left: 71.2%;
+          left: 70.9%;
         }
       }
     }
@@ -909,19 +909,19 @@ export default {
         background-size: 100% 100%;
         position: absolute;
         &:nth-child(1) {
-          left: 12.7%;
+          left: 12.2%;
         }
         &:nth-child(2) {
-          left: 29.8%;
+          left: 29.3%;
         }
         &:nth-child(3) {
-          left: 47.1%;
+          left: 46.6%;
         }
         &:nth-child(4) {
-          left: 64.6%;
+          left: 64.1%;
         }
         &:nth-child(5) {
-          left: 81.9%;
+          left: 81.5%;
         }
       }
     }

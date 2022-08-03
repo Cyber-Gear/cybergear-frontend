@@ -1,5 +1,5 @@
 <template>
-  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'" @scroll="handleScrollScroll($event)">
+  <div id="container" :class="isEnLang ? 'fontfamily_en' : 'fontfamily_zh'">
     <HeaderLayout />
     <div id="container_body">
       <section>
@@ -7,14 +7,19 @@
       </section>
       <FooterLayout />
     </div>
+    <WalletListPopup></WalletListPopup>
+    <WalletConnectPopup></WalletConnectPopup>
   </div>
 </template>
 <script>
 import { mapGetters } from "vuex";
 import HeaderLayout from "@/layout/HeaderLayout.vue";
 import FooterLayout from "@/layout/FooterLayout.vue";
+import WalletListPopup from "@/components/WalletListPopup.vue";
+import WalletConnectPopup from "@/components/WalletConnectPopup.vue";
+
 export default {
-  components: { HeaderLayout, FooterLayout },
+  components: { HeaderLayout, FooterLayout, WalletListPopup, WalletConnectPopup },
   data() {
     return {};
   },
@@ -26,6 +31,7 @@ export default {
     window.addEventListener("resize", () => {
       this.resetRem();
     });
+    // this.$utils.addEventListenerFun();
   },
   beforeDestroy() {
     window.removeEventListener("load", this.resetRem());

@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "HeaderLayout",
   data() {
@@ -53,16 +54,16 @@ export default {
       navArr: [
         { label: "nav.text1", icon: "pchome", link: "/home", isOpen: true },
         { label: "nav.text2", icon: "pchome", link: "/nft", isOpen: !this.$isProd },
-        { label: "nav.text3", icon: "pchome", link: "/", isOpen: false },
+        { label: "nav.text3", icon: "pchome", link: "", isOpen: false },
         { label: "nav.text4", icon: "pchome", link: "/community", isOpen: !this.$isProd },
-        { label: "nav.text5", icon: "pchome", link: "/", isOpen: false },
+        { label: "nav.text5", icon: "pchome", link: "/dao", isOpen: !this.$isProd },
         { label: "nav.text6", icon: "pchome", link: "/buy-box", isOpen: !this.$isProd },
       ],
       showDisconnect: false,
       langArr: ["en", "zh"],
-      getWalletAccount: "",
     };
   },
+  computed: { ...mapGetters(["getWalletAccount"]) },
   watch: {
     $route(to, from) {
       if (from.matched.length && to.matched[0].path !== from.matched[0].path) {
@@ -71,15 +72,17 @@ export default {
       if (to.path == "/home") {
         this.navActive = 0;
       } else if (
-        to.path.indexOf("/nft") !== -1 ||
-        to.path.indexOf("/nft-giving") !== -1 ||
-        to.path.indexOf("/card-details") !== -1 ||
-        to.path.indexOf("/open-boxs") !== -1
+        to.path.includes("/nft/card") ||
+        to.path.includes("/nft/my") ||
+        to.path.includes("/nft-giving") ||
+        to.path.includes("/card-details") ||
+        to.path.includes("/open-boxs") ||
+        to.path.includes("/open-boxs-results")
       ) {
         this.navActive = 1;
-      } else if (to.path.indexOf("/community") !== -1) {
+      } else if (to.path.includes("/community/guild") || to.path.includes("/community/invite")) {
         this.navActive = 3;
-      } else if (to.path.indexOf("/buy-box") !== -1) {
+      } else if (to.path.includes("/buy-box")) {
         this.navActive = 5;
       }
     },
@@ -89,8 +92,11 @@ export default {
       this.$router.push("/home");
     },
     toRoute(item) {
-      if (item.isOpen) this.$router.push(item.link);
-      else this.$message({ message: this.$t("tips.comming") });
+      if (item.isOpen && item.link) {
+        if (item.link == "/dao") {
+          window.location.href = this.$isProd ? "https://www.funtopia.io/#/dao" : "https://test.funtopia.io/#/dao";
+        } else this.$router.push(item.link);
+      } else this.$message({ message: this.$t("tips.comming") });
     },
     changeLang(item) {
       this.$i18n.locale = item;
@@ -101,14 +107,14 @@ export default {
       this.$store.commit("setWalletListPopup", true);
     },
     showDisconnectFun() {
-      // if (this.getWalletAccount) this.showDisconnect = true;
+      if (this.getWalletAccount) this.showDisconnect = true;
     },
     hiddenDisconnectFun() {
-      // if (this.getWalletAccount) this.showDisconnect = false;
+      if (this.getWalletAccount) this.showDisconnect = false;
     },
     clickDisconnect() {
       this.showDisconnect = false;
-      // this.$utils.walletDisconnect();
+      this.$utils.walletDisconnect();
     },
   },
 };

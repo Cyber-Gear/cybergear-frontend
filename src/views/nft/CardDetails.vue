@@ -8,7 +8,7 @@
       <div class="box_title2">
         <div class="left">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <div><span>Detail</span></div>
+          <div><span>详情</span></div>
         </div>
       </div>
       <ul class="list" v-if="cardList.length > 0">

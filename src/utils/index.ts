@@ -1,5 +1,85 @@
+// import { wallet, network, util } from "funtopia-sdk";
 import { Message } from "element-ui";
+// import store from "../store/index";
 export default {
+  /**
+   * 获取当前连接的钱包地址
+   * @  wallet.getCurrentAccount() 获取当前连接的钱包地址
+   */
+  // getCurrentAccount() {
+  //   wallet
+  //     .getCurrentAccount()
+  //     .then((res) => {
+  //       this.handleAccountsChanged(res);
+  //     })
+  //     .catch((err) => {
+  //       console.error("获取当前连接帐户失败！", err);
+  //     });
+  // },
+  // /**
+  //  * 连接钱包
+  //  * @param walletType 准备连接的钱包类型
+  //  * @  wallet.getAccount() 获取已连接的钱包地址
+  //  * @  wallet.getChainId() 获取已连接的网络ID
+  //  * @  onAccountChanged  监听帐户变化
+  //  * @  onChainChanged  监听网络变化
+  //  * @  onDisconnect  监听断开连接
+  //  */
+  // async walletConnect(walletType: string) {
+  //   await wallet
+  //     .getAccount(walletType)
+  //     .then(this.handleAccountsChanged)
+  //     .catch((err) => {
+  //       if (err.code === 4001) {
+  //         console.log("If this happens, the user rejects the connection request");
+  //       } else {
+  //         console.error("wallet.getAccount()", err);
+  //       }
+  //     });
+  //   await wallet
+  //     .getChainId()
+  //     .then(this.handleChainChanged)
+  //     .catch((err) => {
+  //       console.error("wallet.getChainId()", err);
+  //     });
+  // },
+  // addEventListenerFun() {
+  //   wallet.onAccountChanged(this.handleAccountsChanged);
+  //   wallet.onChainChanged(this.handleChainChanged);
+  // },
+  // /**
+  //  * 帐户变化触发方法
+  //  * @param accounts 已连接的钱包地址
+  //  */
+  // handleAccountsChanged(accounts: string[]) {
+  //   if (store.getters.getWalletListPopup) store.commit("setWalletListPopup", false);
+  //   if (accounts.length === 0) {
+  //     Message({ message: "MetaMask is locked or the user is not connected to any account now", type: "warning" });
+  //   } else if (accounts[0] !== store.getters.getWalletAccount) {
+  //     Message({ message: "Connection succeeded", type: "success" });
+  //     store.commit("setWalletAccount", util.getAddress(accounts[0]));
+  //   }
+  // },
+  // /**
+  //  * 网络变化触发方法
+  //  * @param chainId 已连接的网络ID
+  //  * @  network() sdk网络的网络配置
+  //  */
+  // handleChainChanged(chainId: string) {
+  //   if (network().chainId !== chainId) {
+  //     Message({ message: "Error, please switch to the correct network", type: "warning" });
+  //     wallet.addChain();
+  //   }
+  // },
+  // /**
+  //  * 断开连接
+  //  * @  wallet.disconnect() 断开连接
+  //  */
+  // walletDisconnect() {
+  //   // wallet.disconnect();
+  //   store.commit("setWalletAccount", "");
+  // },
+
   /**数组根据某个字段去重 */
   unique(arr: any, val: string) {
     const res = new Map();
