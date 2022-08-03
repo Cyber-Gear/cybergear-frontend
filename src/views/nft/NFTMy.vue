@@ -141,6 +141,10 @@ export default {
       justify-content: center;
       background: url($urlImages + "box_bg1.webp") no-repeat;
       background-size: 100% 100%;
+      img {
+        width: 70%;
+        height: auto;
+      }
     }
     .bottom {
       width: 95%;
