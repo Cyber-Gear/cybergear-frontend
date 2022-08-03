@@ -104,7 +104,7 @@ export default {
       location.reload();
     },
     openWalletPopup() {
-      this.$store.commit("setWalletListPopup", true);
+      // this.$store.commit("setWalletListPopup", true);
     },
     showDisconnectFun() {
       if (this.getWalletAccount) this.showDisconnect = true;
@@ -114,7 +114,7 @@ export default {
     },
     clickDisconnect() {
       this.showDisconnect = false;
-      this.$utils.walletDisconnect();
+      // this.$utils.walletDisconnect();
     },
   },
 };

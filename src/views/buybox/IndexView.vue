@@ -8,7 +8,7 @@
             <span>Claim Mystery Box</span>
             <div class="tips">
               <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
-              <span>购买盲盒可获取稀有碎片、CT</span>
+              <span>购买盲盒可获取CT</span>
               <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
             </div>
           </div>
