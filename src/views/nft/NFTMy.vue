@@ -8,7 +8,7 @@
       <div class="btns">
         <el-button type="primary" @click="toGiving('box')">赠送</el-button>
         <!-- 绑定funtopia市场 -->
-        <el-button>出售</el-button>
+        <el-button @click="toMarket">出售</el-button>
       </div>
     </div>
     <ul class="list">
@@ -30,7 +30,7 @@
       <div class="btns">
         <el-button type="primary" @click="toGiving('nft')">赠送</el-button>
         <!-- 绑定funtopia市场 -->
-        <el-button>出售</el-button>
+        <el-button @click="toMarket">出售</el-button>
       </div>
     </div>
     <ul class="list">
@@ -91,6 +91,12 @@ export default {
     },
     toGiving(type) {
       this.$router.push({ path: "/nft-giving", query: { type: type } });
+    },
+    toMarket() {
+      // window.location.href = this.$isProd ? "https://www.funtopia.io/#/market" : "https://test.funtopia.io/#/market";
+      if (this.$isProd) {
+        this.$message({ message: this.$t("tips.comming") });
+      } else window.location.href = "https://test.funtopia.io/#/market";
     },
   },
 };
