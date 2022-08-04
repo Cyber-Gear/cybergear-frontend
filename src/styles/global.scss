@@ -459,26 +459,7 @@ thead tr {
     }
   }
 }
-.create_guild_form {
-  .el-form-item {
-    display: flex;
-    margin-bottom: 0.2rem;
-    .el-form-item__label {
-      height: 0.5rem;
-      line-height: 0.5rem;
-      font-size: 0.15rem;
-      color: #ffffff;
-      padding: 0 0.1rem 0 0;
-    }
-    .el-form-item__content {
-      .el-input {
-        .el-input__inner {
-          width: 3rem;
-        }
-      }
-    }
-  }
-}
+
 .el-collapse {
   border-top: none;
   border-bottom: none;

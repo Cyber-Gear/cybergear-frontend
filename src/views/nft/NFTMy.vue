@@ -3,12 +3,11 @@
     <div class="titlebox">
       <div class="title">
         <span></span>
-        <div>我的盲盒</div>
+        <div>{{ $t("nftpage.text3") }}</div>
       </div>
       <div class="btns">
-        <el-button type="primary" @click="toGiving('box')">赠送</el-button>
-        <!-- 绑定funtopia市场 -->
-        <el-button @click="toMarket">出售</el-button>
+        <el-button type="primary" @click="toGiving('box')">{{ $t("nftpage.text4") }}</el-button>
+        <el-button @click="toMarket">{{ $t("nftpage.text5") }}</el-button>
       </div>
     </div>
     <ul class="list">
@@ -18,19 +17,18 @@
         </div>
         <div class="bottom">
           <span>Mystery BOX /30</span>
-          <el-button type="primary" @click="toOpenBoxs()">打开</el-button>
+          <el-button type="primary" @click="toOpenBoxs()">{{ $t("nftpage.text6") }}</el-button>
         </div>
       </li>
     </ul>
     <div class="titlebox">
       <div class="title">
         <span></span>
-        <div>人物卡牌</div>
+        <div>{{ $t("nftpage.text7") }}</div>
       </div>
       <div class="btns">
-        <el-button type="primary" @click="toGiving('nft')">赠送</el-button>
-        <!-- 绑定funtopia市场 -->
-        <el-button @click="toMarket">出售</el-button>
+        <el-button type="primary" @click="toGiving('nft')">{{ $t("nftpage.text4") }}</el-button>
+        <el-button @click="toMarket">{{ $t("nftpage.text5") }}</el-button>
       </div>
     </div>
     <ul class="list">
@@ -40,7 +38,7 @@
         </div>
         <div class="bottom">
           <span>{{ item.rarity }} /{{ item.length }}</span>
-          <el-button type="primary" @click="toCardDetail(item.rarity)">详情</el-button>
+          <el-button type="primary" @click="toCardDetail(item.rarity)">{{ $t("nftpage.text8") }}</el-button>
         </div>
       </li>
     </ul>
@@ -165,7 +163,7 @@ export default {
       margin: 0.1rem auto;
       padding-left: 0.1rem;
       .el-button {
-        width: 0.7rem;
+        width: 0.8rem;
         height: 0.4rem;
       }
     }

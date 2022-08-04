@@ -2,47 +2,55 @@
   <div class="box">
     <div class="row">
       <div class="box_title3">
-        <div><span class="border"></span><span>当前账户</span></div>
+        <div>
+          <span class="border"></span><span>{{ $t("community.text21") }}</span>
+        </div>
         <div class="tips">
           <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
-          <span>提示：您可以将链接分享给朋友，帮助您玩游戏并获得收益</span>
+          <span>{{ $t("community.text22") }}</span>
           <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
         </div>
       </div>
       <div class="row_btn">
         <span>0x34578920600057dy7tk962hv90u7</span>
-        <el-button type="primary" @click="$utils.handleCopy('What?!')">复制邀请链接</el-button>
+        <el-button type="primary" @click="$utils.handleCopy('What?!')">{{ $t("community.text23") }}</el-button>
       </div>
     </div>
     <div class="row">
       <div class="box_title3">
-        <div><span class="border"></span><span>邀请数</span></div>
+        <div>
+          <span class="border"></span><span>{{ $t("community.text24") }}</span>
+        </div>
       </div>
       <div class="row_btn">
-        <span>当期邀请数</span>
+        <span>{{ $t("community.text25") }}</span>
         <el-button type="primary">499</el-button>
       </div>
     </div>
     <div class="row">
       <div class="box_title3">
-        <div><span class="border"></span><span>奖励</span></div>
+        <div>
+          <span class="border"></span><span>{{ $t("community.text26") }}</span>
+        </div>
       </div>
       <div class="row_btn">
-        <span>奖励数</span>
+        <span>{{ $t("community.text27") }}</span>
         <el-button type="primary">300 碎片</el-button>
       </div>
     </div>
     <div class="row">
       <div class="box_title3">
-        <div><span class="border"></span><span>邀请记录</span></div>
+        <div>
+          <span class="border"></span><span>{{ $t("community.text28") }}</span>
+        </div>
       </div>
       <table class="community list">
         <thead>
           <tr>
-            <td>地址</td>
-            <td>注册时间</td>
-            <td>碎片收益</td>
-            <td>CT</td>
+            <td>{{ $t("community.text29") }}</td>
+            <td>{{ $t("community.text30") }}</td>
+            <td>{{ $t("community.text9") }}</td>
+            <td>{{ $t("community.text31") }}</td>
           </tr>
         </thead>
         <tbody @scroll="invitedListLoad">

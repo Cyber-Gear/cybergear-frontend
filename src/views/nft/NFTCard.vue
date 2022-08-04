@@ -4,7 +4,7 @@
       <div class="title">
         <span></span>
         <img :src="`${$urlImages}btn_icon4.webp`" alt="" />
-        <div>人物卡牌</div>
+        <div>{{ $t("nftpage.text7") }}</div>
       </div>
       <div class="level" :class="[roleList[roleIndex].rarity]">
         <div>MR</div>

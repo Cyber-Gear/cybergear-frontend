@@ -20,8 +20,8 @@ export default {
     return {
       tabIndex: 0,
       tablist: [
-        { label: "NFT卡牌", link: "card" },
-        { label: "我的NFT", link: "my" },
+        { label: this.$t("nftpage.text1"), link: "card" },
+        { label: this.$t("nftpage.text2"), link: "my" },
       ],
     };
   },

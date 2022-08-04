@@ -5,7 +5,9 @@
         <div class="box_title2">
           <div class="left">
             <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-            <div><span>Record</span></div>
+            <div>
+              <span>{{ $t("community.text1") }}</span>
+            </div>
           </div>
         </div>
         <ul class="tablist">
@@ -30,9 +32,9 @@ export default {
     return {
       tabIndex: 0,
       tablist: [
-        { label: "公会", link: "guild" },
-        { label: "邀请", link: "invite" },
-        { label: "论坛", link: "" },
+        { label: this.$t("community.text2"), link: "guild" },
+        { label: this.$t("community.text3"), link: "invite" },
+        { label: this.$t("community.text4"), link: "" },
       ],
     };
   },

@@ -8,7 +8,9 @@
       <div class="box_title2">
         <div class="left">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <div><span>打开盲盒详情</span></div>
+          <div>
+            <span>{{ $t("nftpage.text15") }}</span>
+          </div>
         </div>
       </div>
       <ul class="list">
@@ -16,7 +18,7 @@
           <div class="card">
             <img :src="item.card" alt="" />
             <span>{{ $t(item.name) }}</span>
-            <div class="level_btn" :class="item.rarity" @click="openVideo(item)">查看立绘</div>
+            <div class="level_btn" :class="item.rarity" @click="openVideo(item)">{{ $t("nftpage.text12") }}</div>
           </div>
           <div class="bottom">
             <span>{{ $t(item.name) }} #{{ item.id }}</span>

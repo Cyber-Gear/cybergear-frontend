@@ -5,10 +5,10 @@
         <div class="left">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
           <div>
-            <span>Claim Mystery Box</span>
+            <span>{{ $t("buybox.text2") }}</span>
             <div class="tips">
               <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
-              <span>购买盲盒可获取CT</span>
+              <span>{{ $t("buybox.text3") }}</span>
               <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
             </div>
           </div>
@@ -20,25 +20,25 @@
         </div>
         <ul class="box2">
           <li>
-            <div>Unclaimed</div>
+            <div>{{ $t("buybox.text4") }}</div>
             <div>38900</div>
           </li>
           <li>
-            <div>Price</div>
+            <div>{{ $t("buybox.text5") }}</div>
             <div>50 BUSD</div>
           </li>
           <li>
-            <div>Amount</div>
+            <div>{{ $t("buybox.text6") }}</div>
             <div>
               <el-input-number v-model="amount" @change="handleChange" :min="1" :max="999999"></el-input-number>
             </div>
           </li>
           <li>
-            <div>Pay</div>
+            <div>{{ $t("buybox.text7") }}</div>
             <div>1000 BUSD</div>
           </li>
           <li>
-            <el-button type="primary">CLAIM</el-button>
+            <el-button type="primary">{{ $t("buybox.text8") }}</el-button>
           </li>
         </ul>
       </div>
@@ -86,20 +86,21 @@ export default {
   display: flex;
   justify-content: space-between;
   .box1 {
-    width: 50%;
+    width: 5rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .box2 {
-    width: 50%;
+    width: 5rem;
     background: rgba(0, 0, 0, 0.45);
     border-radius: 0.1rem;
-    padding: 0.2rem;
+    padding: 0 0.2rem;
     li {
       width: 100%;
-      height: 1rem;
-      line-height: 1rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;

@@ -8,11 +8,13 @@
       <div class="box_title2">
         <div class="left">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <div><span>打开盲盒</span></div>
+          <div>
+            <span>{{ $t("nftpage.text9") }}</span>
+          </div>
         </div>
         <div class="right">
-          <i v-if="isSelectAll" class="iconfont icon-fuxuankuang-weiquanxuan" @click="selectAllOrCancel">取消全选</i>
-          <i v-else class="iconfont icon-fuxuankuang-quanxuan" @click="selectAllOrCancel">全选</i>
+          <i v-if="isSelectAll" class="iconfont icon-fuxuankuang-weiquanxuan" @click="selectAllOrCancel">{{ $t("nftpage.text10") }}</i>
+          <i v-else class="iconfont icon-fuxuankuang-quanxuan" @click="selectAllOrCancel">{{ $t("nftpage.text11") }}</i>
         </div>
       </div>
       <ul class="list">
@@ -30,7 +32,7 @@
         </li>
       </ul>
       <div class="open_btn">
-        <el-button type="primary" @click="openBox">打开</el-button>
+        <el-button type="primary" @click="openBox">{{ $t("nftpage.text6") }}</el-button>
       </div>
     </div>
   </div>

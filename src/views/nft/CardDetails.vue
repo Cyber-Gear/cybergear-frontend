@@ -8,7 +8,9 @@
       <div class="box_title2">
         <div class="left">
           <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-          <div><span>详情</span></div>
+          <div>
+            <span>{{ $t("nftpage.text8") }}</span>
+          </div>
         </div>
       </div>
       <ul class="list" v-if="cardList.length > 0">
@@ -16,7 +18,7 @@
           <div class="card">
             <img :src="item.card" alt="" />
             <span>{{ $t(item.name) }}</span>
-            <div class="level_btn" :class="item.rarity" @click="openVideo(item)">查看立绘</div>
+            <div class="level_btn" :class="item.rarity" @click="openVideo(item)">{{ $t("nftpage.text12") }}</div>
           </div>
           <div class="bottom">
             <span>{{ $t(item.name) }} #{{ item.id }}</span>
@@ -25,8 +27,8 @@
       </ul>
       <div class="nodata" v-if="isShowNoData">
         <div>
-          <p>NO NATA!</p>
-          <el-button type="primary">BUY NFT</el-button>
+          <p>{{ $t("nftpage.text13") }}</p>
+          <el-button type="primary">{{ $t("nftpage.text14") }}</el-button>
         </div>
       </div>
       <el-dialog center top="0" :title="$t(videoInfo.name)" :visible.sync="isShowPopup" :destroy-on-close="true" append-to-body @close="closeVideo">

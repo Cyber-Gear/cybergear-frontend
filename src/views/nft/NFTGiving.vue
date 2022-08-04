@@ -10,12 +10,14 @@
           <div class="box_title2">
             <div class="left">
               <img :src="`${$urlImages}title_bg3.webp`" alt="" />
-              <div><span>Filter</span></div>
+              <div>
+                <span>{{ $t("nftpage.text16") }}</span>
+              </div>
             </div>
           </div>
           <div class="list">
             <!-- accordion -->
-            <el-collapse v-model="activeName">
+            <el-collapse accordion v-model="activeName">
               <el-collapse-item v-for="(item, index) in newFilter" :key="index" :name="index.toString()">
                 <template slot="title">
                   <div class="check_title"><i class="iconfont" :class="item.icon"></i> {{ item.label }}</div>
@@ -35,14 +37,14 @@
           <div class="rightbox_title">
             <div class="tips">
               <img class="angle1" :src="`${$urlImages}angle6.webp`" alt="" />
-              <span>赠送完成后游戏数据将被清零</span>
+              <span>{{ $t("nftpage.text20") }}</span>
               <img class="angle2" :src="`${$urlImages}angle6.webp`" alt="" />
             </div>
             <div>
-              <div>总量 9</div>
-              <div class="active">已选 {{ selectedBoxList.length }}</div>
-              <i v-if="isSelectAll" class="iconfont icon-fuxuankuang-weiquanxuan" @click="selectAllOrCancel">取消全选</i>
-              <i v-else class="iconfont icon-fuxuankuang-quanxuan" @click="selectAllOrCancel">全选</i>
+              <div>{{ $t("nftpage.text21") }} 9</div>
+              <div class="active">{{ $t("nftpage.text22") }} {{ selectedBoxList.length }}</div>
+              <i v-if="isSelectAll" class="iconfont icon-fuxuankuang-weiquanxuan" @click="selectAllOrCancel">{{ $t("nftpage.text10") }}</i>
+              <i v-else class="iconfont icon-fuxuankuang-quanxuan" @click="selectAllOrCancel">{{ $t("nftpage.text11") }}</i>
             </div>
           </div>
           <ul class="list" v-if="isShowBlindbox">
@@ -65,13 +67,13 @@
               <div class="card">
                 <img :src="item.card" alt="" />
                 <span>{{ $t(item.name) }}</span>
-                <div class="level_btn" :class="item.rarity" @click.stop="openVideo(item)">查看立绘</div>
+                <div class="level_btn" :class="item.rarity" @click.stop="openVideo(item)">{{ $t("nftpage.text12") }}</div>
               </div>
             </li>
           </ul>
           <div class="givingbox" v-if="boxList.length > 0 || cardList.length > 0">
-            <el-input placeholder="｜输入地址" v-model="addr" clearable></el-input>
-            <el-button type="primary" @click="toGiving">确认</el-button>
+            <el-input :placeholder="`| ${$t('nftpage.text24')}`" v-model="addr" clearable></el-input>
+            <el-button type="primary" @click="toGiving">{{ $t("nftpage.text23") }}</el-button>
           </div>
         </div>
       </div>
@@ -95,19 +97,18 @@ export default {
       cardList: [],
       isShowPopup: false,
       videoInfo: { name: "", videoUrl: "" },
-
-      activeName: ["0", "1", "2"],
+      activeName: "0",
       oldFilter: {
-        label: "类型",
+        label: this.$t("nftpage.text17"),
         icon: "icon-category",
         children: [
-          { label: "盲盒", isChecked: false },
+          { label: "Mystery Box", isChecked: false },
           { label: "NFT", isChecked: false },
         ],
       },
       nftFilter: [
         {
-          label: "稀有度",
+          label: this.$t("nftpage.text18"),
           icon: "icon-dengji",
           children: [
             { label: "MR", isChecked: false },
@@ -117,7 +118,7 @@ export default {
           ],
         },
         {
-          label: "角色",
+          label: this.$t("nftpage.text19"),
           icon: "icon-Customermanagement-fill",
           children: [],
         },
@@ -195,7 +196,7 @@ export default {
       console.log("当前查询条件：", this.filterConditions);
     },
     toGiving() {
-      if (!this.addr) return this.$message({ message: "请输入赠送地址" });
+      if (!this.addr) return this.$message({ message: this.$t("nftpage.text25") });
     },
 
     selectBox(item) {
