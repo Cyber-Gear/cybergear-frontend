@@ -243,7 +243,7 @@ export default {
     text1: "NFT",
     text2: "MY NFT",
     text3: "Mystery Box",
-    text4: "GIFT",
+    text4: "Gift",
     text5: "Sell",
     text6: "Open",
     text7: "NFT",
