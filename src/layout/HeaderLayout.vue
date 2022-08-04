@@ -43,7 +43,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import { mapGetters } from "vuex";
 export default {
@@ -99,7 +98,6 @@ export default {
       } else this.$message({ message: this.$t("tips.comming") });
     },
     changeLang(item) {
-      this.$i18n.locale = item;
       this.$utils.setCookie("LANG", item);
       location.reload();
     },
