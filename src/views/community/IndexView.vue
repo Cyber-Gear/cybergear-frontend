@@ -69,7 +69,7 @@ export default {
   background-size: auto 100%;
   background-position: center;
   .inner {
-    width: 11.5rem;
+    width: 12.5rem;
     height: 100%;
     margin: 0 auto;
     padding-top: 0.5rem;

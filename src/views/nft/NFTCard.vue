@@ -101,7 +101,7 @@ export default {
   line-height: 0.36rem;
   display: flex;
   .title {
-    width: 25%;
+    width: 20%;
     display: flex;
     align-items: center;
     span {
@@ -122,13 +122,13 @@ export default {
     }
   }
   .level {
-    width: 50%;
+    width: 80%;
     height: 100%;
     font-size: 0.21rem;
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    padding-left: 10%;
     &.MR div:nth-child(1) {
       background-image: url($urlArtists + "ShikaStudio/z-btn-MR2.webp");
     }
@@ -159,20 +159,20 @@ export default {
   padding-left: 5%;
 }
 .role-thumbs {
-  width: 20%;
+  width: 15%;
   height: 100%;
   .swiper-slide {
     width: 100%;
     display: flex;
     align-items: center;
     .row {
-      width: 80%;
+      width: 100%;
       display: flex;
       align-items: center;
       img {
         width: 0.4rem;
         height: 0.4rem;
-        margin-right: 0.2rem;
+        margin-right: 0.1rem;
       }
       span {
         font-size: 0.2rem;
@@ -183,13 +183,13 @@ export default {
       background: rgba(255, 255, 255, 0.3);
       border-radius: 0.12rem;
       img {
-        margin-right: 0.4rem;
+        margin-right: 0.2rem;
       }
     }
   }
 }
 .role {
-  width: 80%;
+  width: 85%;
   height: 100%;
   .swiper-slide {
     width: 100%;
@@ -199,7 +199,7 @@ export default {
     align-items: center;
     justify-content: center;
     .rightbox {
-      width: 50%;
+      width: calc(100% - 3.2rem);
       height: 100%;
       display: flex;
       align-items: center;

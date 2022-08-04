@@ -70,7 +70,7 @@ export default {
   background: url($urlImages + "bg13.webp") no-repeat;
   background-size: 100% auto;
   .inner {
-    width: 11.5rem;
+    width: 12.5rem;
     height: 100%;
     margin: 0 auto;
     padding-top: 0.5rem;

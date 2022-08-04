@@ -470,7 +470,7 @@ export default {
   }
 }
 .box3 {
-  width: 11.5rem;
+  width: 12.5rem;
   margin: 0.5rem auto;
   background: url($urlImages + "bg2.webp") no-repeat;
   background-size: 25% auto;
@@ -550,7 +550,7 @@ export default {
   }
 }
 .box4 {
-  width: 11.5rem;
+  width: 12.5rem;
   margin: 0.5rem auto;
   background: url($urlImages + "bg5.webp") no-repeat;
   background-size: 100% 100%;
@@ -618,7 +618,7 @@ export default {
   }
 }
 .box5 {
-  width: 11.5rem;
+  width: 12.5rem;
   margin: 0.5rem auto;
   .box_content {
     width: 100%;
@@ -643,7 +643,7 @@ export default {
         transform: rotateY(180deg);
       }
       .leftbox {
-        width: 50%;
+        width: 40%;
         background: url($urlImages + "bg9.webp") no-repeat;
         background-size: 100% 100%;
         background-position: right center;
@@ -693,10 +693,13 @@ export default {
         }
       }
       .rightbox {
-        width: 50%;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
-          width: auto;
-          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
         }
       }
     }
@@ -731,7 +734,7 @@ export default {
   }
 }
 .box6 {
-  width: 11.5rem;
+  width: 12.5rem;
   margin: 0.5rem auto;
   .row {
     width: 10rem;
@@ -825,7 +828,7 @@ export default {
   }
 }
 .box7 {
-  width: 11.5rem;
+  width: 12.5rem;
   margin: 0.5rem auto;
   .box_content {
     width: fit-content;
@@ -840,7 +843,7 @@ export default {
   }
 }
 .box8 {
-  width: 11.5rem;
+  width: 12.5rem;
   margin: 0.5rem auto;
   position: relative;
   background: url($urlImages + "bg8.webp") no-repeat;

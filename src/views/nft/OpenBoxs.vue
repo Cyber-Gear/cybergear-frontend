@@ -119,7 +119,7 @@ export default {
   background: url($urlImages + "bg13.webp") no-repeat;
   background-size: 100% auto;
   .inner {
-    width: 11.5rem;
+    width: 12.5rem;
     margin: 0.5rem auto 0 auto;
     position: relative;
   }
@@ -145,8 +145,8 @@ export default {
   padding-left: 0.16rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 0.25rem;
-  grid-row-gap: 0.25rem;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
   li {
     width: 2.4rem;
     position: relative;

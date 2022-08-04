@@ -35,7 +35,7 @@
       </div>
       <div class="row_btn">
         <span>{{ $t("community.text27") }}</span>
-        <el-button type="primary">300 碎片</el-button>
+        <el-button type="primary">300</el-button>
       </div>
     </div>
     <div class="row">

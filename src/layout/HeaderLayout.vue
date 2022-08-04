@@ -129,7 +129,7 @@ export default {
   transition: all 0.5s;
   border-bottom: 1px solid #1b6e7c;
   .nav_inset {
-    width: 11.5rem;
+    width: 12.5rem;
     height: 100%;
     margin: 0 auto;
     display: flex;
