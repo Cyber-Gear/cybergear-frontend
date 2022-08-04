@@ -32,7 +32,7 @@ const routes: Array<RouteConfig> = [
     path: "/nft",
     component: () => import("../views/nft/IndexView.vue"),
     children: [
-      { path: "/", redirect: "my" },
+      { path: "/", redirect: "card" },
       {
         path: "card",
         component: () => import("../views/nft/NFTCard.vue"),
