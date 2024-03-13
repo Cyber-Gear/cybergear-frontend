@@ -1,34 +1,35 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import i18n from "./i18n";
-import "./styles/reset.scss";
-import "./styles/global.scss";
-import "./assets/local/iconfonts/iconfont.css";
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import i18n from './i18n';
+import './styles/reset.scss';
+import './styles/global.scss';
+import './assets/local/iconfonts/iconfont.css';
 
-const isProd = process.env.NODE_ENV == "production";
+const isProd = process.env.NODE_ENV == 'production';
 Vue.prototype.$isProd = isProd;
-const cdn = isProd ? "https://cdn.funtopia.io/cybergear_assets_main/" : "https://cdn.funtopia.io/cybergear_assets_test/";
 
-Vue.prototype.$urlNfts = "https://cdn.funtopia.io/nfts/";
-Vue.prototype.$urlFonts = cdn + "fonts/";
-Vue.prototype.$urlVideos = cdn + "videos/";
-Vue.prototype.$urlImages = cdn + "images/";
-Vue.prototype.$urlArtists = cdn + "artists/";
-Vue.prototype.$urlBlindBoxs = cdn + "blindboxs/";
+const cdn = '//bafybeidx26q5dglmtujjnyi5jzey3wdpdnlpkffjsmxvtaklnsy6twv6fy.ipfs.nftstorage.link/';
 
-import api from "./api/api";
+Vue.prototype.$urlNfts = cdn + 'nfts/';
+Vue.prototype.$urlFonts = cdn + 'fonts/';
+Vue.prototype.$urlVideos = cdn + 'videos/';
+Vue.prototype.$urlImages = cdn + 'images/';
+Vue.prototype.$urlArtists = cdn + 'artists/';
+Vue.prototype.$urlBlindBoxs = cdn + 'blindboxs/';
+
+import api from './api/api';
 Vue.prototype.$api = api;
-import utils from "./utils/index";
+import utils from './utils/index';
 Vue.prototype.$utils = utils;
-import filters from "./utils/filters";
+import filters from './utils/filters';
 Object.keys(filters).forEach((key) => {
   Vue.filter(key, filters[key]);
 });
 
-import VueAwesomeSwiper from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/dist/css/swiper.css';
 Vue.use(VueAwesomeSwiper);
 
 import {
@@ -44,14 +45,14 @@ import {
   Input,
   Collapse,
   CollapseItem,
-  InputNumber,
+  InputNumber
   // Tooltip,
   // Backtop,
   // Menu,
   // Submenu,
   // MenuItem,
   // MenuItemGroup,
-} from "element-ui";
+} from 'element-ui';
 Vue.use(Icon);
 Vue.use(Button);
 Vue.use(Dialog);
@@ -75,7 +76,7 @@ Vue.use(InputNumber);
 Vue.prototype.$message = (option: any) => {
   // option.duration = 0;
   // option.offset = 100;
-  option.customClass = i18n.locale == "en" ? "fontfamily_en" : "fontfamily_zh";
+  option.customClass = i18n.locale == 'en' ? 'fontfamily_en' : 'fontfamily_zh';
   // this.$message({ message: this.$t("tips.text12") });
   // this.$message({ message: this.$t("tips.text12"), type: "success" });
   // this.$message({ message: this.$t("tips.text12"), type: "warning" });
@@ -90,5 +91,5 @@ new Vue({
   router,
   store,
   i18n,
-  render: (h) => h(App),
-}).$mount("#app");
+  render: (h) => h(App)
+}).$mount('#app');
